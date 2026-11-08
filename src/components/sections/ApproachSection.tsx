@@ -30,7 +30,7 @@ export function ApproachSection() {
               accentClassName="text-lime"
             />
           }
-          intro="Research, design, policy, enterprise and foresight are usually run as separate tracks. We connect them deliberately — so insight travels, prototypes meet policy, and measurement feeds the next question."
+          intro="Research, policy, design, enterprise, professional development, foresight and measurement are usually run as separate tracks. We connect them deliberately — so insight travels, prototypes meet policy, and measurement feeds the next question."
         />
 
         <Reveal className="mt-14 lg:mt-20" y={20}>

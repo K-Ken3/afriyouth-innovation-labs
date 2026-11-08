@@ -151,7 +151,7 @@ export function MobileNav({ open, onClose, triggerRef }: MobileNavProps) {
 
             <div className="container-editorial safe-bottom mt-8 flex-none border-t border-ivory/15 pt-5 text-[0.6875rem] leading-relaxed text-ivory/45">
               <p className="uppercase tracking-[0.16em]">
-                Research · Design · Enterprise · Policy · Foresight
+                Research · Policy · Design · Enterprise · Development · Foresight · Measurement
               </p>
               <p className={cn("mt-1.5")}>
                 Official contact details pending verification.

@@ -59,7 +59,7 @@ export function ClosingCTA() {
         </div>
 
         <Reveal delay={0.12} className="mt-10 flex flex-wrap items-center justify-between gap-4 text-[0.625rem] uppercase tracking-[0.16em] text-forest/50">
-          <span>Research · Design · Enterprise · Policy · Foresight</span>
+          <span>Research · Policy · Design · Enterprise · Development · Foresight · Measurement</span>
           <Link to="/contact" className="link-underline inline-flex items-center gap-2 text-forest/70">
             Contact the lab
             <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />

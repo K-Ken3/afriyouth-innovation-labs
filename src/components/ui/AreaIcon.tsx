@@ -4,6 +4,7 @@ import {
   Microscope,
   PenTool,
   Rocket,
+  Target,
   Telescope,
   type LucideIcon,
 } from "lucide-react";
@@ -17,6 +18,7 @@ const icons: Record<AreaIconName, LucideIcon> = {
   entrepreneurship: Rocket,
   professional: GraduationCap,
   foresight: Telescope,
+  impact: Target,
 };
 
 export function AreaIcon({

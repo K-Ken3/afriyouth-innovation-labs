@@ -22,12 +22,12 @@ export default function WhatWeDoPage() {
         eyebrow="What we do"
         chapter="02"
         title={["A connected", "practice for", "complex change."]}
-        intro="Six areas of work that can stand alone or reinforce one another. Research, design, enterprise, policy, professional development and foresight are brought together around a question — not sold as separate tracks."
+        intro="Seven areas of work that can stand alone or reinforce one another. Research, policy, human-centered design, entrepreneurship, professional development, strategic foresight and impact measurement are brought together around a question — not sold as separate tracks."
         meta={[
-          { label: "Practices", value: "06" },
+          { label: "Practices", value: "07" },
           { label: "Model", value: "Connected practice" },
           { label: "Measurement", value: "Verified only" },
-          { label: "Content status", value: "Provisional" },
+          { label: "Content status", value: "Brief-verified" },
         ]}
       />
 
@@ -38,7 +38,7 @@ export default function WhatWeDoPage() {
             meta="Select an area to read more"
             title={
               <KineticHeading
-                lines={["One team.", "Six ways to", "work on change."]}
+                lines={["One team.", "Seven ways to", "work on change."]}
                 className="display-xl text-forest"
                 accentLines={[2]}
                 accentClassName="text-forest/32"

@@ -106,7 +106,7 @@ export const whatWeDoProcess = [
   {
     number: "02",
     title: "Assemble the practice",
-    text: "Research, design, policy, enterprise and foresight expertise are combined around the problem — not sold as separate tracks.",
+    text: "Research, policy, design, enterprise, professional development, foresight and measurement expertise are combined around the problem — not sold as separate tracks.",
   },
   {
     number: "03",

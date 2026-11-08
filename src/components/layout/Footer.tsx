@@ -66,7 +66,7 @@ export function Footer() {
             </Badge>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-[0.6875rem] uppercase tracking-[0.16em] text-ivory/40">
-            <span>Research · Design · Enterprise · Policy · Foresight</span>
+            <span>Research · Policy · Design · Enterprise · Development · Foresight · Measurement</span>
             <span className="hidden sm:inline">·</span>
             <span>Contact channels pending verification</span>
           </div>

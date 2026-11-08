@@ -3,9 +3,10 @@ import type { NavItem, Pathway } from "./types";
 /**
  * ORGANIZATIONAL CONTENT
  * ----------------------
- * All copy below is provisional and derived only from the challenge brief.
- * Replace these values with official AfriYouth material when supplied.
- * Nothing in this file should be treated as a verified public claim.
+ * Mission, vision, positioning, brand pillars and areas of work are verified
+ * from the challenge brief. All other copy is provisional and must be replaced
+ * with official AfriYouth material when supplied. Nothing here should be
+ * presented as a verified claim about programmes, partners, people or results.
  */
 
 export const site = {
@@ -14,13 +15,23 @@ export const site = {
   wordmark: { primary: "AFRIYOUTH", secondary: "INNOVATION LABS" },
   tagline: "Evidence. Innovation. African futures.",
   description:
-    "A research and innovation institution working where evidence, human-centered design, enterprise and policy meet — expanding what young Africans can build and shape.",
+    "A research and innovation institution connecting research, policy, human-centered design, entrepreneurship, professional development, foresight and impact measurement — expanding what young Africans can build and shape.",
   mission:
-    "To generate rigorous evidence and build human-centered innovations that expand opportunity for young Africans — and shift the systems around them.",
+    "AfriYouth Innovation Labs seeks to empower Africa's youth to generate evidence, shape policy, and develop innovative solutions to pressing socioeconomic challenges through research, human-centered design, and entrepreneurship.",
   vision:
-    "African futures shaped by the people who will live them.",
+    "An Africa where empowered young people use evidence, innovation, and entrepreneurship to address complex challenges and drive inclusive and sustainable socioeconomic transformation.",
+  positioning:
+    "AfriYouth connects research, policy, human-centered design, entrepreneurship, and foresight rather than operating solely as a conventional youth organization, incubator, think tank, or training organization.",
+  brandPillars: [
+    "Innovation",
+    "Youth empowerment",
+    "Sustainability",
+    "Global impact",
+    "Human-centered design",
+    "Leadership development",
+  ],
   provisionalNotice:
-    "Prototype site. Organizational content is provisional and will be replaced with official AfriYouth materials. No impact figures, partnerships, named programmes, staff or contact details are published until verified.",
+    "Prototype site. Mission, vision, positioning, brand pillars and areas of work follow the challenge brief. Programmes, partnerships, impact figures, staff, social accounts and contact details remain unpublished until officially verified.",
   contact: {
     email: null as string | null,
     phone: null as string | null,
@@ -147,7 +158,7 @@ export const pathways: Pathway[] = [
       "Commission research, evaluation, co-design, policy analysis, foresight or professional learning from one connected team.",
     to: "/what-we-do",
     cta: "Explore areas of work",
-    note: "Six connected practices",
+    note: "Seven connected practices",
   },
   {
     audience: "For institutions",

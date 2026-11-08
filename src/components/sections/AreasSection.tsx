@@ -13,11 +13,11 @@ export function AreasSection() {
       <div className="container-editorial">
         <SectionHeading
           eyebrow="Areas of work"
-          meta="Six practices · one team"
+          meta="Seven practices · one team"
           title={
             <KineticHeading
               id="areas-heading"
-              lines={["Six practices.", "One connected", "agenda."]}
+              lines={["Seven practices.", "One connected", "agenda."]}
               className="display-xl text-forest"
               accentLines={[2]}
               accentClassName="text-forest/32"

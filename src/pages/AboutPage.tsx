@@ -34,7 +34,7 @@ export default function AboutPage() {
         meta={[
           { label: "Focus", value: "Research & innovation" },
           { label: "Structure", value: "Connected practice" },
-          { label: "Content status", value: "Provisional" },
+          { label: "Content status", value: "Brief-verified" },
           { label: "Edition", value: "Prototype 01" },
         ]}
       />
@@ -72,8 +72,9 @@ export default function AboutPage() {
                   Provisional content
                 </p>
                 <p className="mt-2 text-xs leading-relaxed text-forest/55">
-                  This page is derived from the design brief. Official mission,
-                  history and governance copy will replace it.
+                  Mission, vision, positioning and brand pillars follow the
+                  challenge brief. History, people and governance remain
+                  unpublished until verified.
                 </p>
               </div>
             </div>
@@ -120,7 +121,7 @@ export default function AboutPage() {
               <div className="flex items-center justify-between gap-4">
                 <p className="eyebrow text-lime/80">Mission</p>
                 <Badge variant="provisional" className="border-ivory/20 text-ivory/55">
-                  Provisional
+                  Brief-verified
                 </Badge>
               </div>
               <p className="display-md mt-12 max-w-xl text-ivory">{site.mission}</p>
@@ -141,6 +142,42 @@ export default function AboutPage() {
                 The future we are working toward
               </p>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section id="pillars" className="section-tight border-b border-forest/12 bg-ivory">
+        <div className="container-editorial">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+            <div className="lg:col-span-4">
+              <Reveal>
+                <p className="eyebrow text-forest/55">Brand pillars</p>
+              </Reveal>
+              <KineticHeading
+                lines={["Six commitments", "that frame", "the work."]}
+                className="display-lg mt-5 text-forest"
+              />
+              <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest/60">
+                Verified from the challenge brief, these pillars frame how the
+                lab presents its work while official brand materials are pending.
+              </p>
+            </div>
+
+            <ol className="grid gap-px overflow-hidden rounded-2xl border border-forest/15 bg-forest/15 sm:grid-cols-2 lg:col-span-8">
+              {site.brandPillars.map((pillar, index) => (
+                <li
+                  key={pillar}
+                  className="group flex min-h-[8.5rem] flex-col justify-between bg-paper p-5 transition-colors duration-300 hover:bg-lime sm:p-6"
+                >
+                  <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/35">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-8 font-display text-2xl leading-tight tracking-[-0.035em] text-forest">
+                    {pillar}
+                  </h3>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>

@@ -12,7 +12,8 @@ export type AreaIconName =
   | "innovation"
   | "entrepreneurship"
   | "professional"
-  | "foresight";
+  | "foresight"
+  | "impact";
 
 export type Area = {
   id: string;

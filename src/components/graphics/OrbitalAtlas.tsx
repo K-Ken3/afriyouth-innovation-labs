@@ -12,7 +12,8 @@ const orbits = [
 
 /**
  * Original abstract hero composition: a 3D-inspired evidence sphere held by
- * five practice orbits. Built from SVG + GSAP so it stays crisp and light.
+ * five core practice orbits, with measurement returning learning to the loop.
+ * Built from SVG + GSAP so it stays crisp and light.
  */
 export function OrbitalAtlas({ className }: { className?: string }) {
   const root = useRef<HTMLDivElement>(null);
@@ -130,7 +131,7 @@ export function OrbitalAtlas({ className }: { className?: string }) {
         <svg
           viewBox="0 0 600 720"
           role="img"
-          aria-label="Abstract system map: an evidence sphere orbited by five connected practices — research, design, enterprise, policy and foresight — around a continuous learning loop."
+          aria-label="Abstract system map: an evidence sphere orbited by five core practices — research, design, enterprise, policy and foresight — around a continuous learning loop fed by impact measurement."
           className="block h-auto w-full"
         >
           <defs>

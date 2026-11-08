@@ -1,8 +1,9 @@
+import { site } from "./site";
+
 export const aboutIntro = {
   eyebrow: "About AfriYouth",
   heading: "A research and innovation institution for African futures.",
-  intro:
-    "AfriYouth Innovation Labs works at the intersection of evidence, human-centered design, enterprise and policy. We exist to make sure that insight does not stop at publication, and that young people are not an afterthought in the systems meant to serve them.",
+  intro: site.positioning,
 };
 
 export const whyNow = {
@@ -48,6 +49,7 @@ export const partnershipStatement = {
 export const aboutChapters = [
   { id: "purpose", label: "Purpose" },
   { id: "mission", label: "Mission & vision" },
+  { id: "pillars", label: "Brand pillars" },
   { id: "principles", label: "How we work" },
   { id: "people", label: "People & governance" },
   { id: "accountability", label: "Accountability" },

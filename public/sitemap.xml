@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Provisional host. Replace every occurrence of
+     https://afriyouth-innovation-labs.vercel.app with the verified
+     production URL before launch, then redeploy. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://afriyouth-innovation-labs.vercel.app/</loc>

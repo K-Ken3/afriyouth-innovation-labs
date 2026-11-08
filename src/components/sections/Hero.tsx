@@ -17,7 +17,7 @@ export function Hero() {
       <div className="container-editorial relative z-10">
         <div className="mb-9 flex flex-wrap items-center justify-between gap-4 border-b border-forest/15 pb-4 sm:mb-12">
           <p className="eyebrow text-forest/65">
-            Research · Design · Enterprise · Policy · Foresight
+            Research · Policy · Design · Enterprise · Development · Foresight · Measurement
           </p>
           <p className="flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.18em] text-forest/40">
             <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
@@ -28,8 +28,8 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-7">
+        <div className="grid items-start gap-14 xl:grid-cols-12 xl:gap-8">
+          <div className="xl:col-span-7">
             <KineticHeading
               as="h1"
               id="hero-title"
@@ -82,7 +82,7 @@ export function Hero() {
                     Practice
                   </dt>
                   <dd className="mt-1.5 text-xs leading-snug text-forest/75">
-                    Six connected areas of work
+                    Seven connected areas of work
                   </dd>
                 </div>
                 <div className="col-span-2 flex items-end gap-2 sm:col-span-1 sm:justify-end">
@@ -95,9 +95,9 @@ export function Hero() {
             </Reveal>
           </div>
 
-          <div className="lg:col-span-5">
+          <div className="xl:col-span-5">
             <Reveal delay={0.3} y={30}>
-              <OrbitalAtlas className="lg:mt-2" />
+              <OrbitalAtlas className="xl:mt-2" />
             </Reveal>
             <div className="mt-6 flex items-start justify-between gap-6 px-1">
               <p className="max-w-[16rem] text-xs leading-relaxed text-forest/55">
