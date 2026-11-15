@@ -28,21 +28,21 @@ function ProgramCard({ program }: { program: Program }) {
       <p className="mt-3 flex-1 text-sm leading-relaxed text-forest/65">{program.summary}</p>
       <dl className="mt-6 space-y-2 border-t border-forest/12 pt-4 text-xs text-forest/65">
         <div className="flex items-start gap-2">
-          <CalendarClock aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/40" />
+          <CalendarClock aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/60" />
           <div>
             <dt className="sr-only">Deadline</dt>
             <dd>{program.deadline}</dd>
           </div>
         </div>
         <div className="flex items-start gap-2">
-          <MapPin aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/40" />
+          <MapPin aria-hidden="true" className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/60" />
           <div>
             <dt className="sr-only">Format</dt>
             <dd>{program.format}</dd>
           </div>
         </div>
       </dl>
-      <p className="mt-3 text-xs leading-relaxed text-forest/50">
+      <p className="mt-3 text-xs leading-relaxed text-forest/60">
         <span className="font-medium text-forest/70">Eligibility:</span> {program.eligibility}
       </p>
       <a
@@ -114,7 +114,7 @@ export function ProgramBoard() {
               <div className="relative">
                 <Search
                   aria-hidden="true"
-                  className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-forest/40"
+                  className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-forest/60"
                 />
                 <input
                   id="program-search"
@@ -129,7 +129,7 @@ export function ProgramBoard() {
                     type="button"
                     onClick={() => setQuery("")}
                     aria-label="Clear search"
-                    className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-forest/50 hover:bg-forest/5 hover:text-forest"
+                    className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-forest/60 hover:bg-forest/5 hover:text-forest"
                   >
                     <X aria-hidden="true" className="h-3.5 w-3.5" />
                   </button>
@@ -138,7 +138,7 @@ export function ProgramBoard() {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="flex items-center gap-1.5 text-[0.625rem] uppercase tracking-[0.14em] text-forest/45">
+              <span className="flex items-center gap-1.5 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                 <SlidersHorizontal aria-hidden="true" className="h-3.5 w-3.5" />
                 Status
               </span>
@@ -172,7 +172,7 @@ export function ProgramBoard() {
           </div>
 
           <div className="flex flex-wrap items-center justify-between gap-3 border-t border-forest/10 pt-4">
-            <p aria-live="polite" className="text-xs text-forest/55">
+            <p aria-live="polite" className="text-xs text-forest/60">
               Showing{" "}
               <span className="font-medium text-forest">
                 {String(filtered.length).padStart(2, "0")}
@@ -227,7 +227,7 @@ export function ProgramBoard() {
       <div id="how-it-works" className="mt-14 scroll-mt-28 border-t border-forest/15 pt-10">
         <div className="grid gap-8 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-forest/55">How listings work</p>
+            <p className="eyebrow text-forest/60">How listings work</p>
             <h2 className="display-md mt-4 text-forest">Every opportunity states its terms.</h2>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-forest/60">
               The board is a verified interface. Nothing is published until the
@@ -238,12 +238,12 @@ export function ProgramBoard() {
             {programListingFields.map((field, index) => (
               <div key={field.label} className="border-b border-forest/15 py-4 sm:px-5 sm:odd:pl-0">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/35">
+                  <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/60">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-sm font-semibold text-forest">{field.label}</h3>
                 </div>
-                <p className="mt-2 pl-7 text-xs leading-relaxed text-forest/55">{field.text}</p>
+                <p className="mt-2 pl-7 text-xs leading-relaxed text-forest/60">{field.text}</p>
               </div>
             ))}
           </div>

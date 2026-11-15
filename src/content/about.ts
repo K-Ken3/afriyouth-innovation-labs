@@ -2,16 +2,16 @@ import { site } from "./site";
 
 export const aboutIntro = {
   eyebrow: "About AfriYouth",
-  heading: "A research and innovation institution for African futures.",
+  heading: "A research, innovation and policy consulting firm for African futures.",
   intro: site.positioning,
 };
 
 export const whyNow = {
   heading: "The distance between insight and change is a design choice.",
   paragraphs: [
-    "Young Africans are shaping enterprises, public conversations and new forms of knowledge. Yet the systems that should turn their ideas into durable change — evidence, finance, policy, professional networks — often operate apart from one another.",
-    "That separation has costs. Research sits unused. Prototypes fail at adoption. Enterprises hit structural ceilings. Policies are announced without the feedback that would make them work.",
-    "AfriYouth is built around a different arrangement: one connected practice where evidence, design, enterprise and policy are developed together, and where measurement returns learning to the next question.",
+    "Africa's young innovators are generating ideas in response to problems they understand intimately. What is often missing is the architecture that turns those ideas into evidence, policy, finance and durable institutions.",
+    "AfriYouth identifies, nurtures and advances promising ideas along that route. We connect youth organisations, incubators, think tanks and consulting firms rather than operating as only one of them — because community-driven solutions need research, design, enterprise and policy in the same room.",
+    "Our five divisions — Research & Evidence, Policy & Governance, Innovation & Entrepreneurship, Foresight & Futures, and Leadership & Capacity Building — are brought together around a question, with resource mobilisation and impact measurement as cross-cutting services.",
   ],
 };
 
@@ -26,7 +26,7 @@ export const aboutCommitments = [
   },
   {
     title: "Institutional honesty",
-    text: "We do not publish invented achievements, partnerships, staff or metrics. What is not verified is not presented as fact.",
+    text: "We publish achievements, partnerships, staff and metrics only when they are verified and attributable.",
   },
   {
     title: "Long-term capability",
@@ -35,15 +35,15 @@ export const aboutCommitments = [
 ];
 
 export const teamStatement = {
-  heading: "People and governance",
-  body: "Team profiles, governance structures and advisory arrangements will be published when official appointments and biographies are confirmed. This prototype does not invent staff, titles or institutional history.",
-  note: "A verified leadership and governance section is planned.",
+  heading: "One connected practice",
+  body: "Research, policy, human-centered design, entrepreneurship, foresight and professional development sit within one practice. Work is assembled around the decision at hand, drawing on the disciplines it requires.",
+  note: "Five divisions · one team",
 };
 
 export const partnershipStatement = {
   heading: "Institutional relationships",
-  body: "AfriYouth is designed for collaboration across research, public institutions, funders, civil society and enterprise. No partnerships are named on this prototype because none have been supplied for publication.",
-  note: "Partner directory pending verification.",
+  body: "AfriYouth works with research institutes, public institutions, funders, civil society, youth networks and enterprises. Each collaboration is scoped around a shared decision, with roles, ethics and success measures agreed before delivery.",
+  note: "Partnerships by agreement",
 };
 
 export const aboutChapters = [
@@ -51,6 +51,6 @@ export const aboutChapters = [
   { id: "mission", label: "Mission & vision" },
   { id: "pillars", label: "Brand pillars" },
   { id: "principles", label: "How we work" },
-  { id: "people", label: "People & governance" },
+  { id: "people", label: "Team & partners" },
   { id: "accountability", label: "Accountability" },
 ];

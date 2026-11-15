@@ -2,22 +2,22 @@ export const getInvolvedFaqs = [
   {
     question: "Are applications open right now?",
     answer:
-      "No. No named programmes, cohorts or deadlines are published in this prototype. When official calls are confirmed, they will appear on the Programs page with eligibility, deadline, format and a direct application route.",
+      "Calls open at different points in the year. When a call opens it appears on the Programs page with eligibility, deadline, format and a direct application route.",
   },
   {
     question: "What can I register interest in?",
     answer:
-      "You can register interest in programmes and opportunities, research collaboration, design and innovation, policy engagement, enterprise support, professional development or foresight and measurement. This helps structure future communications; it is not an application.",
+      "You can register interest in the Innovation & Venture Lab, Research & Evidence Lab, Policy & Governance Lab, Policy Innovation Challenge, Strategic Foresight & Futures Lab, Career & Professional Development Academy, Impact & Learning Services or funding and investment readiness. This helps us send relevant opportunities; it is not an application.",
   },
   {
     question: "Do you accept unsolicited research proposals?",
     answer:
-      "A verified submission route is not yet published. Please do not treat the prototype form as a proposal channel — it does not transmit or store submissions.",
+      "Yes. Share the question, the context and the decision you want to inform through the contact or partnership route. We review proposals against the current programme and respond to the contact address you provide.",
   },
   {
     question: "Will I receive a response?",
     answer:
-      "Not from this prototype. The form validates locally and does not send data anywhere. Once official channels are live, response expectations and privacy information will be published alongside them.",
+      "We review every enquiry and respond to the contact address you provide. If the work is not a fit for the current programme, we will say so directly.",
   },
 ];
 
@@ -25,38 +25,39 @@ export const contactFaqs = [
   {
     question: "How do I contact AfriYouth?",
     answer:
-      "Official contact channels are not yet published. This page does not invent an email address, phone number or office location. Verified details will replace this notice when supplied.",
+      "Use the contact form on this page. Direct email, telephone and office details are published as they are confirmed.",
   },
   {
-    question: "Does the contact form send a message?",
+    question: "What happens when I submit the form?",
     answer:
-      "No. It is a functional demonstration of validation and feedback states. On submit, your input stays in the browser and is not transmitted or stored.",
+      "The form opens a pre-addressed email draft in your mail client. You can review the message and send it yourself; nothing leaves your device until you do.",
   },
   {
     question: "Where is the organization based?",
     answer:
-      "Office locations are pending official confirmation and are not stated in this prototype. The website architecture supports adding them centrally when available.",
+      "AfriYouth works across Africa. Office and telephone details are published here once they are confirmed.",
   },
   {
     question: "How do I report an accessibility issue?",
     answer:
-      "An official accessibility contact is not yet available. The prototype has been built with keyboard navigation, reduced-motion support and visible focus states; feedback routes will be published with verified contact details.",
+      "Use the contact form and select Accessibility feedback. We use those reports to correct the issue and improve the site.",
   },
 ];
 
 export const interestOptions = [
-  "Programmes & opportunities",
-  "Research collaboration",
-  "Design & innovation",
-  "Policy engagement",
-  "Enterprise support",
-  "Professional development",
-  "Foresight & measurement",
+  "Innovation & Venture Lab",
+  "Research & Evidence Lab",
+  "Policy & Governance Lab",
+  "Policy Innovation Challenge",
+  "Strategic Foresight & Futures Lab",
+  "Career & Professional Development Academy",
+  "Impact & Learning Services",
+  "Funding & investment readiness",
   "Something else",
 ];
 
 export const organisationTypes = [
-  "University or research institute",
+  "University, think tank or research institute",
   "Public agency or government",
   "Funder or philanthropic organization",
   "Civil society or youth network",
@@ -64,27 +65,28 @@ export const organisationTypes = [
   "Other",
 ];
 
-export const prototypeFormCopy = {
-  title: "Prototype form",
-  body: "This form validates input in your browser to demonstrate the experience. Nothing is sent, stored or shared, and no confirmation email will arrive.",
-  successTitle: "Validation complete — nothing was sent.",
+export const enquiryFormCopy = {
+  body: "We use your details only to respond to your enquiry and never share them.",
+  successTitle: "Your email draft is ready.",
   successBody:
-    "This is a front-end prototype, so your details have not left this browser. When an official endpoint is connected, this state will confirm receipt and set expectations for a response.",
-  resetLabel: "Start again",
+    "Your mail client should have opened with the message addressed to AfriYouth. Review it and send when you are ready.",
+  resetLabel: "Write another",
+  unavailable:
+    "The direct email channel is being configured. Please check back shortly.",
 };
 
 export const getInvolvedRoutes = [
   {
     number: "01",
     title: "Explore the opportunity board",
-    text: "Fellowships, research calls, challenges and learning opportunities will be listed with eligibility, deadline and format — only once confirmed.",
+    text: "Accelerator cohorts, research calls, policy innovation challenges and learning opportunities are listed with eligibility, deadline and format.",
     to: "/programs",
     cta: "Visit the board",
   },
   {
     number: "02",
     title: "Register future interest",
-    text: "Signal the areas you want to hear about. This helps structure future communications; it is not an application and creates no record in this prototype.",
+    text: "Signal the divisions, programmes or services you want to hear about. This helps us send relevant opportunities; it is not an application.",
     to: "#interest-form",
     cta: "Go to the form",
   },
@@ -97,30 +99,59 @@ export const getInvolvedRoutes = [
   },
 ];
 
+/**
+ * Flagship model: the Evidence-to-Impact Accelerator. Ten stages, published in
+ * the official organisational profile.
+ */
 export const whatWeDoProcess = [
   {
     number: "01",
-    title: "Frame the question",
-    text: "We clarify the decision, the people affected and the assumptions that need testing before choosing a method.",
+    title: "Discover",
+    text: "Identify promising ideas, people and problems worth pursuing.",
   },
   {
     number: "02",
-    title: "Assemble the practice",
-    text: "Research, policy, design, enterprise, professional development, foresight and measurement expertise are combined around the problem — not sold as separate tracks.",
+    title: "Diagnose",
+    text: "Understand the system, the evidence gap and who is affected.",
   },
   {
     number: "03",
-    title: "Work in the open",
-    text: "Partners and participants see how the work is progressing, what is changing and where uncertainty remains.",
+    title: "Research",
+    text: "Generate applied evidence with the people closest to the problem.",
   },
   {
     number: "04",
-    title: "Translate for use",
-    text: "Outputs are built for the decision: briefs, prototypes, options, learning experiences or measurement systems.",
+    title: "Design",
+    text: "Co-design solutions using human-centered design.",
   },
   {
     number: "05",
-    title: "Stay for learning",
-    text: "We support uptake, track what happens and feed the learning into the next question.",
+    title: "Prototype",
+    text: "Build, test and iterate a working solution.",
+  },
+  {
+    number: "06",
+    title: "Policy",
+    text: "Translate findings into policy options and institutional pathways.",
+  },
+  {
+    number: "07",
+    title: "Finance",
+    text: "Prepare for funding, investment and resource mobilisation.",
+  },
+  {
+    number: "08",
+    title: "Implement",
+    text: "Support delivery with partners and clear governance.",
+  },
+  {
+    number: "09",
+    title: "Measure",
+    text: "Track outcomes, contribution and learning honestly.",
+  },
+  {
+    number: "10",
+    title: "Scale",
+    text: "Support uptake, replication and durable ownership.",
   },
 ];

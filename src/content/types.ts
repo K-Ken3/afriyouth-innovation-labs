@@ -13,7 +13,8 @@ export type AreaIconName =
   | "entrepreneurship"
   | "professional"
   | "foresight"
-  | "impact";
+  | "impact"
+  | "funding";
 
 export type Area = {
   id: string;
@@ -62,11 +63,11 @@ export type Program = {
 
 export type InsightCategory =
   | "Research & evidence"
-  | "Design"
-  | "Policy"
-  | "Enterprise"
+  | "Design & innovation"
+  | "Policy & governance"
+  | "Enterprise & venture"
   | "Futures"
-  | "Measurement";
+  | "Impact & learning";
 
 export type Insight = {
   slug: string;
@@ -78,7 +79,6 @@ export type Insight = {
   readingTime: number;
   body: string[];
   pullQuote?: string;
-  provisional: boolean;
 };
 
 export type Pathway = {

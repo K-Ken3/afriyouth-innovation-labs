@@ -38,7 +38,7 @@ export default function InsightDetailPage() {
       <header className="relative overflow-hidden border-b border-forest/15 bg-ivory pb-10 pt-8 sm:pb-14">
         <div className="container-editorial">
           <nav aria-label="Breadcrumb" className="mb-10 border-b border-forest/15 pb-4">
-            <ol className="flex flex-wrap items-center gap-2 text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
+            <ol className="flex flex-wrap items-center gap-2 text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
               <li>
                 <Link to="/" className="transition-colors hover:text-forest">
                   Home
@@ -59,20 +59,18 @@ export default function InsightDetailPage() {
             <div className="lg:col-span-8">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge variant="soft">{insight.category}</Badge>
-                <Badge variant="provisional" dot>
-                  Provisional editorial
-                </Badge>
+                <Badge variant="outline">{insight.kind}</Badge>
               </div>
               <h1 className="display-xl mt-6 max-w-4xl text-forest">{insight.title}</h1>
               <p className="lede mt-6 max-w-2xl text-forest/70">{insight.excerpt}</p>
-              <div className="mt-7 flex flex-wrap items-center gap-5 border-t border-forest/15 pt-4 text-[0.625rem] uppercase tracking-[0.14em] text-forest/45">
+              <div className="mt-7 flex flex-wrap items-center gap-5 border-t border-forest/15 pt-4 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                 <span>{insight.kind}</span>
                 <span className="flex items-center gap-1.5">
                   <Clock aria-hidden="true" className="h-3 w-3" />
                   {insight.readingTime} min read
                 </span>
                 <span>{insight.edition}</span>
-                <span>No author attribution supplied</span>
+                <span>AfriYouth Innovation Labs</span>
               </div>
             </div>
 
@@ -82,12 +80,12 @@ export default function InsightDetailPage() {
                   <Info aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none text-forest/60" />
                   <div>
                     <p className="text-[0.625rem] font-semibold uppercase tracking-[0.15em] text-forest/60">
-                      About this essay
+                      About this perspective
                     </p>
                     <p className="mt-2 text-xs leading-relaxed text-forest/65">
-                      A prototype perspective piece written to demonstrate the
-                      editorial platform. It will be replaced by official
-                      AfriYouth publications, with verified authorship and dates.
+                      An editorial perspective from the AfriYouth practice. It
+                      discusses method and practice rather than reporting research
+                      findings.
                     </p>
                     <Link
                       to="/insights"
@@ -107,7 +105,7 @@ export default function InsightDetailPage() {
       <div className="container-editorial mt-8">
         <MaskReveal className="rounded-2xl">
           <PhotoPlate
-            photo={photos.meetingPresentation}
+            photo={photos.circuitWork}
             variant={0}
             className="aspect-[16/7] w-full"
             title={insight.category}
@@ -120,16 +118,16 @@ export default function InsightDetailPage() {
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <aside className="lg:col-span-3">
             <div className="lg:sticky lg:top-28">
-              <p className="text-[0.625rem] uppercase tracking-[0.18em] text-forest/40">
+              <p className="text-[0.625rem] uppercase tracking-[0.18em] text-forest/60">
                 Reading note
               </p>
-              <p className="mt-3 text-xs leading-relaxed text-forest/55">
-                This essay argues from practice rather than reporting research
-                findings. It contains no statistics, named programmes or claims
-                about AfriYouth's results.
+              <p className="mt-3 text-xs leading-relaxed text-forest/60">
+                This perspective argues from practice rather than reporting
+                research findings. It contains no statistics, named programmes or
+                claims about AfriYouth's results.
               </p>
               <div className="mt-6 border-t border-forest/15 pt-4">
-                <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/35">
+                <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                   Category
                 </p>
                 <p className="mt-1 text-sm text-forest/75">{insight.category}</p>
@@ -155,11 +153,11 @@ export default function InsightDetailPage() {
             {insight.pullQuote ? (
               <Reveal className="my-10 border-y border-forest/20 py-8">
                 <blockquote className="font-display text-2xl leading-snug tracking-[-0.035em] text-forest sm:text-3xl">
-                  <span aria-hidden="true" className="mr-1 text-lime [text-shadow:0_0_1px_#153d32]">
+                  <span aria-hidden="true" className="mr-1 text-lime [text-shadow:0_0_1px_#0D0624]">
                     “
                   </span>
                   {insight.pullQuote}
-                  <span aria-hidden="true" className="text-lime [text-shadow:0_0_1px_#153d32]">
+                  <span aria-hidden="true" className="text-lime [text-shadow:0_0_1px_#0D0624]">
                     ”
                   </span>
                 </blockquote>
@@ -167,13 +165,14 @@ export default function InsightDetailPage() {
             ) : null}
 
             <div className="mt-10 rounded-xl border border-forest/15 bg-sage/25 p-5">
-              <p className="text-[0.625rem] uppercase tracking-[0.15em] text-forest/45">
-                Provisional publication
+              <p className="text-[0.625rem] uppercase tracking-[0.15em] text-forest/60">
+                AfriYouth perspectives
               </p>
               <p className="mt-2 text-sm leading-relaxed text-forest/65">
-                This essay is part of the prototype knowledge platform. Official
-                publications will include verified authorship, methodology and
-                publication details.
+                This perspective is part of the AfriYouth editorial series.
+                Research findings, evaluations and policy proposals are published
+                separately through the Evidence Reports, Policy Solutions Series
+                and Futures Series.
               </p>
             </div>
 
@@ -216,14 +215,14 @@ export default function InsightDetailPage() {
                   className="group flex h-full flex-col justify-between gap-6 border-t border-forest/20 pt-5"
                 >
                   <div>
-                    <p className="text-[0.625rem] uppercase tracking-[0.15em] text-forest/45">
+                    <p className="text-[0.625rem] uppercase tracking-[0.15em] text-forest/60">
                       {item.category} · {item.kind}
                     </p>
                     <h3 className="mt-3 font-display text-2xl leading-snug tracking-[-0.035em] text-forest transition-colors group-hover:text-forest/65">
                       {item.title}
                     </h3>
                   </div>
-                  <span className="flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.14em] text-forest/40">
+                  <span className="flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                     Read
                     <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
                   </span>

@@ -1,20 +1,25 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { site } from "@/content/site";
 
 export type FormErrors<T> = Partial<Record<keyof T, string>>;
+export type EnquiryDraft = { subject: string; body: string };
 
 /**
- * Client-side prototype form state. No request is made anywhere in this hook:
- * it exists to demonstrate validation, loading and success states honestly.
+ * Client-side enquiry state. A valid submission opens a pre-addressed email
+ * draft in the visitor's mail client; the site never stores or transmits the
+ * answers itself.
  */
-export function usePrototypeForm<T extends Record<string, string | boolean>>(
+export function useEnquiryForm<T extends Record<string, string | boolean>>(
   initialValues: T,
   validate: (values: T) => FormErrors<T>,
+  compose: (values: T) => EnquiryDraft,
 ) {
   const [values, setValues] = useState<T>(initialValues);
   const [errors, setErrors] = useState<FormErrors<T>>({});
   const [touched, setTouched] = useState<Partial<Record<keyof T, boolean>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [deliveryUnavailable, setDeliveryUnavailable] = useState(false);
   const timer = useRef<number | null>(null);
 
   useEffect(() => {
@@ -65,6 +70,15 @@ export function usePrototypeForm<T extends Record<string, string | boolean>>(
     setIsSubmitting(true);
     timer.current = window.setTimeout(() => {
       setIsSubmitting(false);
+      const recipient = site.contact.email;
+      if (!recipient) {
+        setDeliveryUnavailable(true);
+        return;
+      }
+      const draft = compose(values);
+      window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(
+        draft.subject,
+      )}&body=${encodeURIComponent(draft.body)}`;
       setSubmitted(true);
     }, 480);
   };
@@ -76,6 +90,7 @@ export function usePrototypeForm<T extends Record<string, string | boolean>>(
     setTouched({});
     setSubmitted(false);
     setIsSubmitting(false);
+    setDeliveryUnavailable(false);
   };
 
   return {
@@ -84,6 +99,7 @@ export function usePrototypeForm<T extends Record<string, string | boolean>>(
     touched,
     submitted,
     isSubmitting,
+    deliveryUnavailable,
     update,
     markTouched,
     handleSubmit,
@@ -112,7 +128,11 @@ export const validate = {
     return undefined;
   },
   accepted(value: boolean): string | undefined {
-    if (!value) return "Please confirm that you understand the prototype notice.";
+    if (!value) return "Please confirm that you agree to be contacted about this enquiry.";
     return undefined;
   },
 };
+
+export function draftBody(lines: (string | undefined)[]): string {
+  return lines.filter(Boolean).join("\n\n");
+}

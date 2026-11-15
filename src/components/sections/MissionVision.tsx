@@ -19,7 +19,7 @@ export function MissionVision() {
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-ivory/15 pb-5">
             <p className="eyebrow text-lime">Mission &amp; vision</p>
             <p className="text-[0.625rem] uppercase tracking-[0.18em] text-ivory/60">
-              Exact wording · challenge brief
+              AfriYouth Innovation Labs
             </p>
           </div>
         </Reveal>

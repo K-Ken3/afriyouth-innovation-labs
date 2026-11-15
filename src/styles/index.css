@@ -1,5 +1,8 @@
-@import "@fontsource-variable/space-grotesk";
 @import "@fontsource-variable/dm-sans";
+@import "@fontsource/poppins/latin-400.css";
+@import "@fontsource/poppins/latin-500.css";
+@import "@fontsource/poppins/latin-600.css";
+@import "@fontsource/poppins/latin-700.css";
 
 @tailwind base;
 @tailwind components;
@@ -7,20 +10,31 @@
 
 /* ==========================================================================
    DESIGN TOKENS
-   Replace colour values here and in tailwind.config.js when official
-   AfriYouth branding arrives. Components reference tokens, never raw hex.
+   Official AfriYouth brand system.
+
+   Dark Purple  #0D0624  primary ink and dark surfaces
+   Steel Pink   #C723DF  accent
+   Duke Blue    #0301FF  secondary accent
+   Blue         #0200A7  deep supporting blue
+   White        #FFFFFF  cards and reversal
+
+   Token names are semantic slots inherited from the first build. `forest`
+   is the primary ink slot, `lime` the accent slot and `clay` the secondary
+   accent slot, so a future palette change remains a one-file edit.
    ========================================================================== */
 :root {
-  --c-forest: 21 61 50;
-  --c-ink: 23 27 24;
-  --c-lime: 201 243 106;
-  --c-ivory: 245 243 235;
-  --c-sage: 220 230 219;
+  --c-forest: 13 6 36;
+  --c-ink: 7 3 20;
+  --c-lime: 199 35 223;
+  --c-ivory: 247 245 251;
+  --c-sage: 233 229 247;
   --c-paper: 255 255 255;
-  --c-clay: 196 115 76;
+  --c-clay: 3 1 255;
+  --c-blush: 250 232 253;
+  --c-blue: 2 0 167;
 
-  --focus: #153d32;
-  --focus-offset: #f5f3eb;
+  --focus: #0d0624;
+  --focus-offset: #f7f5fb;
   --header-height: 4.75rem;
   --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 180ms;
@@ -55,6 +69,8 @@
     margin: 0;
     background: rgb(var(--c-ivory));
     color: rgb(var(--c-forest));
+    /* Gilroy is a licensed typeface. DM Sans is the closest self-hosted
+       geometric substitute and is documented in DESIGN_SYSTEM.md. */
     font-family: "DM Sans Variable", "DM Sans", system-ui, sans-serif;
     font-size: var(--text-base);
     line-height: 1.6;
@@ -69,7 +85,7 @@
   h3,
   h4,
   h5 {
-    font-family: "Space Grotesk Variable", "Space Grotesk", system-ui, sans-serif;
+    font-family: "Poppins", "DM Sans Variable", system-ui, sans-serif;
     font-weight: 500;
     line-height: 0.98;
     letter-spacing: -0.035em;
@@ -107,8 +123,8 @@
   }
 
   ::selection {
-    background: rgb(var(--c-lime));
-    color: rgb(var(--c-forest));
+    background: rgb(var(--c-blue));
+    color: #ffffff;
   }
 
   :focus-visible {
@@ -117,11 +133,17 @@
     border-radius: 2px;
   }
 
+  /* On Dark Purple, Steel Pink is lightened to #E879F9 for text and focus
+     contrast while the official pink remains the brand accent on light. */
+  .on-dark {
+    --c-lime: 232 121 249;
+  }
+
   .on-dark :focus-visible,
   .on-dark:focus-visible {
-    --focus: #c9f36a;
-    --focus-offset: #153d32;
-    outline-color: #c9f36a;
+    --focus: #e879f9;
+    --focus-offset: #0d0624;
+    outline-color: #e879f9;
   }
 
   summary {

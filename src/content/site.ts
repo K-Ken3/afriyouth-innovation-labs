@@ -3,25 +3,33 @@ import type { NavItem, Pathway } from "./types";
 /**
  * ORGANIZATIONAL CONTENT
  * ----------------------
- * Mission, vision, positioning, brand pillars and areas of work are verified
- * from the challenge brief. All other copy is provisional and must be replaced
- * with official AfriYouth material when supplied. Nothing here should be
- * presented as a verified claim about programmes, partners, people or results.
+ * Mission, vision, positioning, divisions and service descriptions follow the
+ * official AfriYouth organisational profile (September 2026). Brand pillars
+ * follow the official logo and brand guidelines. Figures, partners and people
+ * are published only when they can be sourced and attributed.
  */
 
 export const site = {
   name: "AfriYouth Innovation Labs",
   shortName: "AfriYouth",
   wordmark: { primary: "AFRIYOUTH", secondary: "INNOVATION LABS" },
-  tagline: "Evidence. Innovation. African futures.",
+  tagline: "Fueling Innovators for Sustainable Development",
   description:
-    "A research and innovation institution connecting research, policy, human-centered design, entrepreneurship, professional development, foresight and impact measurement — expanding what young Africans can build and shape.",
+    "A research, innovation and policy consulting firm that identifies, nurtures and advances promising ideas from Africa's young innovators to address the Sustainable Development Goals.",
   mission:
-    "AfriYouth Innovation Labs seeks to empower Africa's youth to generate evidence, shape policy, and develop innovative solutions to pressing socioeconomic challenges through research, human-centered design, and entrepreneurship.",
+    "To empower Africa's youth to generate evidence, shape policy, and develop innovative solutions to Africa's most pressing socio-economic challenges through research, human-centered design, and entrepreneurship.",
   vision:
-    "An Africa where empowered young people use evidence, innovation, and entrepreneurship to address complex challenges and drive inclusive and sustainable socioeconomic transformation.",
+    "To build an Africa where empowered young people use evidence, innovation, and entrepreneurship to solve complex challenges, shape policies and drive inclusive and sustainable socio-economic transformation by 2050.",
   positioning:
-    "AfriYouth connects research, policy, human-centered design, entrepreneurship, and foresight rather than operating solely as a conventional youth organization, incubator, think tank, or training organization.",
+    "AfriYouth is a research, innovation and policy consulting firm. We connect research, policy, human-centered design, entrepreneurship and foresight to identify, nurture and advance promising ideas from Africa's young innovators — transforming community-driven ideas into practical, scalable solutions.",
+  advantage: [
+    "Research",
+    "Policy",
+    "Human-centered design",
+    "Entrepreneurship",
+    "Foresight",
+  ],
+  philosophy: ["Think", "Research", "Design", "Build", "Influence", "Scale"],
   brandPillars: [
     "Innovation",
     "Youth empowerment",
@@ -30,44 +38,46 @@ export const site = {
     "Human-centered design",
     "Leadership development",
   ],
-  provisionalNotice:
-    "Prototype site. Mission, vision, positioning, brand pillars and areas of work follow the challenge brief. Programmes, partnerships, impact figures, staff, social accounts and contact details remain unpublished until officially verified.",
+  accountability:
+    "We publish what we can stand behind: figures with their source, date and method; partnerships with permission; and programme calls with eligibility, deadlines and a direct application route.",
   contact: {
     email: null as string | null,
     phone: null as string | null,
     address: null as string | null,
-    note: "Official contact channels will be published here once confirmed. This prototype does not invent an email address, phone number or office location.",
+    note: "For enquiries, use the form on this page. Direct email, telephone and office details are published as they are confirmed.",
   },
   socials: [] as { label: string; href: string }[],
   socialNote:
-    "Verified social channels will be listed here. No unverified links are shown.",
-  formNotice:
-    "Prototype form. Your input is validated in the browser and is not sent or stored anywhere.",
+    "AfriYouth's official social channels are published here when they go live.",
   copyrightYear: 2026,
 };
 
 export const purpose = {
-  heading: "A lab for the questions that shape African futures.",
+  heading: "A consulting firm for African ideas that deserve to travel.",
   paragraphs: [
-    "AfriYouth Innovation Labs exists to close the distance between knowledge and change. We bring research and evidence generation into the same room as human-centered design, entrepreneurship, policy engagement, professional development and strategic foresight.",
-    "That proximity matters. Evidence without design rarely travels. Enterprise without policy hits ceilings. Policy without lived experience misses the point. We work across these boundaries so that ideas are tested, decisions are informed, and young people are not consulted at the end but involved from the start.",
+    "AfriYouth Innovation Labs is a research, innovation and policy consulting firm. We identify, nurture and advance promising ideas from Africa's young innovators to address the Sustainable Development Goals — transforming community-driven ideas into practical, scalable solutions.",
+    "One connected practice brings research, policy, human-centered design, entrepreneurship, foresight and professional development together around a question. We connect youth organisations, incubators, think tanks and consulting firms rather than working as any one of them alone.",
   ],
   relationship: [
     {
-      label: "Evidence",
-      text: "Research that earns its place in decisions.",
+      label: "Research & Evidence",
+      text: "Applied research, surveys, evaluations and evidence that decisions can use.",
     },
     {
-      label: "Design",
-      text: "Solutions built with the people who use them.",
+      label: "Policy & Governance",
+      text: "Policy analysis, regulatory review and governance support that hold change in place.",
     },
     {
-      label: "Enterprise",
-      text: "Ventures with ownership, not just participation.",
+      label: "Innovation & Entrepreneurship",
+      text: "Human-centered design and venture support from idea to investable enterprise.",
     },
     {
-      label: "Policy",
-      text: "Rules, budgets and institutions that hold change in place.",
+      label: "Foresight & Futures",
+      text: "Scenarios and horizon scanning that widen the choices available today.",
+    },
+    {
+      label: "Leadership & Capacity",
+      text: "Employability, professional skills and learning systems that stay in place.",
     },
   ],
   loop: "A continuous loop — each engagement returns knowledge to the next.",
@@ -76,28 +86,33 @@ export const purpose = {
 export const principles = [
   {
     number: "01",
-    title: "Evidence before assumption",
-    text: "We start with the question, not the answer. Rigour is a form of respect for the people and problems involved.",
+    title: "Think",
+    text: "Clarify the decision, the people affected and the assumptions before choosing a method.",
   },
   {
     number: "02",
-    title: "Design with, not for",
-    text: "Young people are collaborators in framing the problem, shaping the solution and judging what counts as progress.",
+    title: "Research",
+    text: "Generate applied evidence with the people closest to the problem.",
   },
   {
     number: "03",
-    title: "Build for ownership",
-    text: "We favour capability that stays in place: local teams, transferable skills, durable institutions and enterprises that can hold their own.",
+    title: "Design",
+    text: "Co-design solutions using human-centered design and test them in context.",
   },
   {
     number: "04",
-    title: "Work across systems",
-    text: "A single programme rarely changes a system. We connect the evidence, enterprise and policy conditions that make change last.",
+    title: "Build",
+    text: "Prototype, strengthen and prepare ideas for real-world use.",
   },
   {
     number: "05",
-    title: "Measure honestly",
-    text: "We publish what we can verify, explain what we cannot, and treat learning as a result in its own right.",
+    title: "Influence",
+    text: "Translate evidence into policy options, dialogue and institutional uptake.",
+  },
+  {
+    number: "06",
+    title: "Scale",
+    text: "Support finance, implementation and ownership so that change can last.",
   },
 ];
 
@@ -124,8 +139,8 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     items: [
       { label: "Programs", to: "/programs" },
       { label: "Get Involved", to: "/get-involved" },
-      { label: "Professional development", to: "/what-we-do#professional-development" },
-      { label: "Enterprise support", to: "/what-we-do#entrepreneurship" },
+      { label: "Career & professional development", to: "/what-we-do#professional-development" },
+      { label: "Innovation & venture lab", to: "/what-we-do#entrepreneurship" },
     ],
   },
   {
@@ -134,7 +149,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
       { label: "Partner With Us", to: "/partner-with-us" },
       { label: "Contact", to: "/contact" },
       { label: "Research & evidence", to: "/what-we-do#research" },
-      { label: "Policy engagement", to: "/what-we-do#policy" },
+      { label: "Policy & governance", to: "/what-we-do#policy" },
     ],
   },
 ];
@@ -145,39 +160,39 @@ export const pathways: Pathway[] = [
     number: "01",
     title: "Explore opportunities",
     description:
-      "Find fellowships, research calls, learning experiences and enterprise support as they open. The board will publish eligibility and deadlines only when confirmed.",
+      "Find accelerator cohorts, research calls, policy challenges, learning experiences and venture support as they open. Each listing publishes its eligibility, deadline and application route.",
     to: "/programs",
     cta: "Visit the opportunity board",
-    note: "No calls are published yet",
+    note: "Calls announced as cohorts open",
   },
   {
     audience: "For organizations",
     number: "02",
-    title: "Discover our services",
+    title: "Commission the work",
     description:
-      "Commission research, evaluation, co-design, policy analysis, foresight or professional learning from one connected team.",
+      "Commission applied research, policy analysis, human-centered design, foresight, professional learning or impact and learning services from one connected team.",
     to: "/what-we-do",
-    cta: "Explore areas of work",
-    note: "Seven connected practices",
+    cta: "Explore the divisions",
+    note: "Five divisions · eight practices",
   },
   {
     audience: "For institutions",
     number: "03",
     title: "Build a partnership",
     description:
-      "Explore research consortiums, co-design partnerships, policy collaborations and long-term learning relationships.",
+      "Explore research consortia, policy collaborations, innovation programmes, funding readiness and long-term learning relationships.",
     to: "/partner-with-us",
     cta: "Start a partnership",
-    note: "Collaboration models",
+    note: "Five collaboration models",
   },
 ];
 
 export const tickerItems = [
   "Research with rigour",
-  "Design with people",
   "Policy with evidence",
+  "Design with people",
   "Enterprise with ownership",
-  "Futures with intent",
+  "Foresight with intent",
   "Impact measured honestly",
 ];
 

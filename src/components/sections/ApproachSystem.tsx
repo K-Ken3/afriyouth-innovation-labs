@@ -63,7 +63,7 @@ export function ApproachSystem({ className }: { className?: string }) {
           ref={root}
           className="relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-ivory/15 bg-ivory/[0.025]"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(201,243,106,0.06),transparent_62%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(199,35,223,0.08),transparent_62%)]" />
 
           <svg
             viewBox="0 0 800 640"
@@ -76,7 +76,7 @@ export function ApproachSystem({ className }: { className?: string }) {
               cy={CENTER.y}
               r="204"
               fill="none"
-              stroke="#F5F3EB"
+              stroke="#F7F5FB"
               strokeOpacity="0.1"
               strokeDasharray="2 8"
             />
@@ -85,7 +85,7 @@ export function ApproachSystem({ className }: { className?: string }) {
               cy={CENTER.y}
               r="268"
               fill="none"
-              stroke="#F5F3EB"
+              stroke="#F7F5FB"
               strokeOpacity="0.05"
             />
             {approachNodes.map((node) => {
@@ -97,27 +97,27 @@ export function ApproachSystem({ className }: { className?: string }) {
                     data-system-path
                     d={d}
                     fill="none"
-                    stroke={isActive ? "#C9F36A" : "#F5F3EB"}
+                    stroke={isActive ? "#C723DF" : "#F7F5FB"}
                     strokeOpacity={isActive ? 0.85 : 0.16}
                     strokeWidth={isActive ? 1.6 : 1}
                     className="transition-[stroke,stroke-opacity,stroke-width] duration-500"
                   />
                   {isActive && !reduced ? (
-                    <circle r="3.2" fill="#C9F36A">
+                    <circle r="3.2" fill="#C723DF">
                       <animateMotion dur="3.2s" repeatCount="indefinite" path={d} />
                     </circle>
                   ) : null}
                 </g>
               );
             })}
-            <circle cx={CENTER.x} cy={CENTER.y} r="6" fill="#C9F36A" opacity="0.9" />
-            <circle cx={CENTER.x} cy={CENTER.y} r="18" fill="none" stroke="#C9F36A" strokeOpacity="0.35" />
+            <circle cx={CENTER.x} cy={CENTER.y} r="6" fill="#C723DF" opacity="0.9" />
+            <circle cx={CENTER.x} cy={CENTER.y} r="18" fill="none" stroke="#C723DF" strokeOpacity="0.35" />
           </svg>
 
           <div className="pointer-events-none absolute left-1/2 top-1/2 z-[5] -translate-x-1/2 -translate-y-1/2">
             <span className="absolute inset-0 -m-3 animate-pulse-ring rounded-full border border-lime/40" />
             <div className="flex h-24 w-24 flex-col items-center justify-center rounded-full border border-lime/40 bg-forest/95 text-center backdrop-blur-sm sm:h-28 sm:w-28">
-              <span className="text-[0.5rem] uppercase tracking-[0.18em] text-ivory/45">Continuous</span>
+              <span className="text-[0.5rem] uppercase tracking-[0.18em] text-ivory/60">Continuous</span>
               <span className="mt-1 font-display text-sm leading-tight tracking-[-0.02em] text-lime sm:text-base">
                 Impact
                 <br />
@@ -141,7 +141,7 @@ export function ApproachSystem({ className }: { className?: string }) {
                 className={cn(
                   "absolute z-10 flex min-h-9 -translate-x-1/2 -translate-y-1/2 items-center gap-2 whitespace-nowrap rounded-full border px-2.5 py-1.5 text-[0.6rem] font-medium uppercase tracking-[0.1em] transition-all duration-300 ease-editorial sm:px-3 sm:text-[0.65rem]",
                   isActive
-                    ? "border-lime bg-lime text-forest"
+                    ? "border-lime bg-blush text-forest"
                     : "border-ivory/25 bg-forest/80 text-ivory/70 backdrop-blur-sm hover:border-ivory/60 hover:text-ivory",
                 )}
               >
@@ -157,11 +157,11 @@ export function ApproachSystem({ className }: { className?: string }) {
             );
           })}
 
-          <div className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.16em] text-ivory/35 sm:bottom-5 sm:left-5">
+          <div className="absolute bottom-4 left-4 flex items-center gap-2 text-[0.6rem] uppercase tracking-[0.16em] text-ivory/60 sm:bottom-5 sm:left-5">
             <RotateCcw aria-hidden="true" className="h-3 w-3" />
             Select a node to trace the connection
           </div>
-          <span className="absolute right-4 top-4 font-display text-xs tabular-nums tracking-[0.12em] text-ivory/40 sm:right-5 sm:top-5">
+          <span className="absolute right-4 top-4 font-display text-xs tabular-nums tracking-[0.12em] text-ivory/60 sm:right-5 sm:top-5">
             {String(activeIndex + 1).padStart(2, "0")} / 05
           </span>
         </div>
@@ -183,7 +183,7 @@ export function ApproachSystem({ className }: { className?: string }) {
 
               <div className="mt-8 border-t border-ivory/15 pt-4">
                 <div className="flex items-start justify-between gap-6">
-                  <span className="text-[0.625rem] uppercase tracking-[0.16em] text-ivory/40">
+                  <span className="text-[0.625rem] uppercase tracking-[0.16em] text-ivory/60">
                     Returns to the loop
                   </span>
                   <span className="text-right text-xs font-medium text-ivory/80">{active.output}</span>

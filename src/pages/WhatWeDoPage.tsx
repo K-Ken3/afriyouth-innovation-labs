@@ -21,13 +21,13 @@ export default function WhatWeDoPage() {
       <PageHero
         eyebrow="What we do"
         chapter="02"
-        title={["A connected", "practice for", "complex change."]}
-        intro="Seven areas of work that can stand alone or reinforce one another. Research, policy, human-centered design, entrepreneurship, professional development, strategic foresight and impact measurement are brought together around a question — not sold as separate tracks."
+        title={["Five divisions.", "One connected", "practice."]}
+        intro="AfriYouth is a research, innovation and policy consulting firm. Research & Evidence, Policy & Governance, Innovation & Entrepreneurship, Foresight & Futures and Leadership & Capacity Building are organised as five divisions, with impact and funding readiness as cross-cutting services."
         meta={[
-          { label: "Practices", value: "07" },
-          { label: "Model", value: "Connected practice" },
-          { label: "Measurement", value: "Verified only" },
-          { label: "Content status", value: "Brief-verified" },
+          { label: "Divisions", value: "05" },
+          { label: "Practices", value: "08" },
+          { label: "Flagship model", value: "Evidence-to-Impact" },
+          { label: "Cross-cutting", value: "Impact & funding" },
         ]}
       />
 
@@ -38,13 +38,13 @@ export default function WhatWeDoPage() {
             meta="Select an area to read more"
             title={
               <KineticHeading
-                lines={["One team.", "Seven ways to", "work on change."]}
+                lines={["Five divisions.", "Eight practices.", "One agenda."]}
                 className="display-xl text-forest"
                 accentLines={[2]}
                 accentClassName="text-forest/32"
               />
             }
-            intro="Every engagement begins with the decision, not the deliverable. The mix of practices follows from what the question actually needs."
+            intro="Every engagement begins with the decision, not the deliverable. The mix of divisions follows from what the question actually needs."
           />
 
           <nav aria-label="Practice sections" className="mt-10 overflow-x-auto no-scrollbar">
@@ -55,7 +55,7 @@ export default function WhatWeDoPage() {
                     href={`#${area.id}`}
                     className="group flex items-center gap-3 border-r border-forest/12 px-4 py-3 text-xs text-forest/60 transition-colors first:pl-0 hover:text-forest"
                   >
-                    <span className="tabular-nums text-[0.625rem] tracking-[0.12em] text-forest/30">
+                    <span className="tabular-nums text-[0.625rem] tracking-[0.12em] text-forest/60">
                       {area.number}
                     </span>
                     {area.shortTitle}
@@ -85,7 +85,7 @@ export default function WhatWeDoPage() {
               <div className="lg:col-span-4">
                 <div className="lg:sticky lg:top-28">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="font-display text-[3.25rem] leading-none tracking-[-0.06em] text-forest/15">
+                    <span className="font-display text-[3.25rem] leading-none tracking-[-0.06em] text-forest/45">
                       {area.number}
                     </span>
                     <span className="flex h-12 w-12 items-center justify-center rounded-full border border-forest/20 bg-ivory text-forest">
@@ -93,7 +93,7 @@ export default function WhatWeDoPage() {
                     </span>
                   </div>
                   <h2 className="display-lg mt-7 text-forest">{area.title}</h2>
-                  <p className="mt-4 max-w-sm font-display text-xl leading-snug tracking-[-0.025em] text-forest/55">
+                  <p className="mt-4 max-w-sm font-display text-xl leading-snug tracking-[-0.025em] text-forest/60">
                     {area.tagline}
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
@@ -117,7 +117,7 @@ export default function WhatWeDoPage() {
                 </div>
 
                 <div className="mt-9 border-t border-forest/20 pt-6">
-                  <p className="text-[0.625rem] uppercase tracking-[0.18em] text-forest/40">
+                  <p className="text-[0.625rem] uppercase tracking-[0.18em] text-forest/60">
                     What we can bring
                   </p>
                   <ul className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -125,7 +125,7 @@ export default function WhatWeDoPage() {
                       <li key={capability} className="flex items-start gap-2.5 text-sm text-forest/70">
                         <Check
                           aria-hidden="true"
-                          className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/40"
+                          className="mt-0.5 h-3.5 w-3.5 flex-none text-forest/60"
                           strokeWidth={2}
                         />
                         {capability}
@@ -136,7 +136,7 @@ export default function WhatWeDoPage() {
 
                 <div className="mt-9 flex flex-col gap-4 rounded-xl border border-forest/15 bg-ivory/80 p-5 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/40">
+                    <p className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/60">
                       A question we bring
                     </p>
                     <p className="mt-1.5 max-w-lg text-sm leading-relaxed text-forest/75">
@@ -164,17 +164,17 @@ export default function WhatWeDoPage() {
         <div className="container-editorial section">
           <SectionHeading
             theme="dark"
-            eyebrow="How we work"
-            meta="From question to uptake"
+            eyebrow="Flagship model"
+            meta="Evidence-to-Impact Accelerator · ten stages"
             title={
               <KineticHeading
-                lines={["From question", "to uptake."]}
+                lines={["From evidence", "to impact."]}
                 className="display-xl text-ivory"
                 accentLines={[1]}
                 accentClassName="text-lime"
               />
             }
-            intro="No surprise outputs. No method chosen before the decision is understood. The process is collaborative, visible and built for use."
+            intro="Our flagship model moves an idea through ten connected stages — discovery, diagnosis, research, design, prototype, policy, finance, implementation, measurement and scale."
           />
 
           <ol className="mt-14 grid gap-6 border-t border-ivory/15 pt-7 lg:grid-cols-5 lg:gap-4">
@@ -204,7 +204,7 @@ export default function WhatWeDoPage() {
       <PageCTA
         eyebrow="Commission the work"
         title="One team around the whole question."
-        body="Research, design, policy, enterprise, learning, foresight and measurement can be combined in a single engagement — or scoped to the part that is most useful now."
+        body="Research, policy, design, venture support, learning, foresight, funding readiness and measurement can be combined in a single engagement — or scoped to the part that is most useful now."
         primary={{ label: "Partner With Us", to: "/partner-with-us" }}
         secondary={{ label: "Contact the lab", to: "/contact" }}
       />

@@ -1,5 +1,4 @@
-# Provisional host. Replace the sitemap URL with the verified production
-# domain before launch.
+# Production host. Update this URL if the public domain changes.
 User-agent: *
 Allow: /
 

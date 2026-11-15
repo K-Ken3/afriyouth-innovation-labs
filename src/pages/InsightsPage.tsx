@@ -50,15 +50,15 @@ export default function InsightsPage() {
         eyebrow="Insights"
         chapter="04"
         title={["Thinking in", "public."]}
-        intro="Essays, field notes and future publications on evidence, design, policy, enterprise, foresight and the discipline of measuring what matters."
+        intro="Perspectives and field notes on evidence, policy, design, enterprise, foresight and the discipline of measuring what matters. Research outputs sit alongside them in the AfriYouth Evidence Reports, the Policy Solutions Series, the Africa 2050 Futures Series and learning reports."
         meta={[
           {
             label: "Published",
-            value: `${String(insights.length).padStart(2, "0")} provisional essays`,
+            value: `${String(insights.length).padStart(2, "0")} perspectives`,
           },
           { label: "Format", value: "Editorial" },
-          { label: "Status", value: "Prototype edition" },
-          { label: "Official archive", value: "Pending" },
+          { label: "Series", value: "Perspectives" },
+          { label: "Research archive", value: "Evidence Reports" },
         ]}
       />
 
@@ -67,10 +67,9 @@ export default function InsightsPage() {
           <div className="flex flex-col gap-4 rounded-xl border border-forest/15 bg-sage/35 p-4 sm:flex-row sm:items-start">
             <Info aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none text-forest/60" />
             <p className="text-sm leading-relaxed text-forest/70">
-              <span className="font-semibold text-forest">Provisional editorial.</span>{" "}
-              These prototype essays illustrate the knowledge platform and contain no
-              invented research findings, authors, dates or statistics. They will be
-              replaced by official AfriYouth publications.
+              <span className="font-semibold text-forest">Editorial perspective.</span>{" "}
+              These pieces discuss method and practice. They are not research
+              findings and contain no programme results or statistics.
             </p>
           </div>
 
@@ -88,6 +87,7 @@ export default function InsightsPage() {
           </div>
 
           <div className="mt-12">
+            <h2 className="sr-only">Insight archive</h2>
             {filtered.length === 0 ? (
               <EmptyState
                 marker="No matching insights"
@@ -104,17 +104,18 @@ export default function InsightsPage() {
                 {!isFiltering ? (
                   <Reveal className="mb-12">
                     <div className="mb-5 flex items-center gap-3">
-                      <p className="eyebrow text-forest/45">Featured essay</p>
+                      <p className="eyebrow text-forest/60">Featured perspective</p>
                       <span aria-hidden="true" className="h-px flex-1 bg-forest/12" />
                     </div>
                     <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
                       <MaskReveal className="rounded-xl lg:col-span-4">
                         <PhotoPlate
-                          photo={photos.teamLaptop}
+                          photo={photos.youngInnovatorVr}
                           variant={2}
                           className="aspect-[4/3] w-full lg:aspect-[4/5]"
                           title="Insight / Featured"
                           index="01"
+                          position="center 35%"
                         />
                       </MaskReveal>
                       <div className="lg:col-span-8">
@@ -143,7 +144,7 @@ export default function InsightsPage() {
       <PageCTA
         eyebrow="Contribute a question"
         title="A knowledge platform is a conversation."
-        body="A verified channel for research collaborations, responses and submissions will be published with official contact details. This prototype does not accept submissions."
+        body="We welcome responses, research collaborations and submissions for the Evidence Reports, Policy Solutions Series and Futures Series. Use the partnership or contact route to start the conversation."
         primary={{ label: "Partner With Us", to: "/partner-with-us" }}
         secondary={{ label: "Contact", to: "/contact" }}
       />
@@ -181,7 +182,7 @@ function SectionFilter({
             <div className="relative">
               <Search
                 aria-hidden="true"
-                className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-forest/40"
+                className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-forest/60"
               />
               <input
                 id="insight-search"
@@ -196,7 +197,7 @@ function SectionFilter({
                   type="button"
                   onClick={() => onQuery("")}
                   aria-label="Clear search"
-                  className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-forest/50 hover:bg-forest/5 hover:text-forest"
+                  className="absolute right-2.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-forest/60 hover:bg-forest/5 hover:text-forest"
                 >
                   <X aria-hidden="true" className="h-3.5 w-3.5" />
                 </button>
@@ -205,7 +206,7 @@ function SectionFilter({
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <p aria-live="polite" className="text-xs text-forest/55">
+            <p aria-live="polite" className="text-xs text-forest/60">
               <span className="font-medium text-forest">{String(resultCount).padStart(2, "0")}</span>{" "}
               {resultCount === 1 ? "insight" : "insights"}
             </p>

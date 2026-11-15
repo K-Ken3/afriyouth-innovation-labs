@@ -18,7 +18,7 @@ export default function NotFoundPage() {
       </span>
       <div className="container-editorial relative z-10">
         <div className="max-w-2xl">
-          <p className="eyebrow text-forest/55">Page not found</p>
+          <p className="eyebrow text-forest/60">Page not found</p>
           <KineticHeading
             as="h1"
             lines={["This page is", "off the map."]}
@@ -26,9 +26,8 @@ export default function NotFoundPage() {
             scroll={false}
           />
           <p className="lede mt-6 text-forest/65">
-            The route may have changed, or the page may not be part of this
-            prototype. Nothing has been lost — the navigation below will take you
-            back to the work.
+            The route may have changed, or the page may have moved. Nothing has
+            been lost — the navigation below will take you back to the work.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink to="/">Return home</ButtonLink>
@@ -36,7 +35,7 @@ export default function NotFoundPage() {
               Explore our work
             </ButtonLink>
           </div>
-          <div className="mt-10 flex flex-wrap gap-5 border-t border-forest/15 pt-5 text-sm text-forest/55">
+          <div className="mt-10 flex flex-wrap gap-5 border-t border-forest/15 pt-5 text-sm text-forest/60">
             <Link to="/programs" className="link-underline inline-flex items-center gap-1.5">
               Programs <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
             </Link>

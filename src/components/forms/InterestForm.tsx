@@ -1,10 +1,10 @@
-import { usePrototypeForm, validate } from "@/hooks/usePrototypeForm";
-import { interestOptions, prototypeFormCopy } from "@/content/pages";
+import { draftBody, useEnquiryForm, validate } from "@/hooks/useEnquiryForm";
+import { enquiryFormCopy, interestOptions } from "@/content/pages";
 import { Button } from "@/components/ui/Button";
 import { FormSuccess } from "@/components/ui/FormSuccess";
 import {
   CheckboxField,
-  PrototypeNotice,
+  FormNotice,
   SelectField,
   TextAreaField,
   TextField,
@@ -41,6 +41,19 @@ function validateInterest(values: InterestValues) {
   };
 }
 
+function composeInterest(values: InterestValues) {
+  return {
+    subject: `Register interest — ${values.interest}`,
+    body: draftBody([
+      `Name: ${values.firstName} ${values.lastName}`,
+      `Email: ${values.email}`,
+      values.location ? `City or country: ${values.location}` : undefined,
+      `Area of interest: ${values.interest}`,
+      `What they would like to explore:\n${values.motivation}`,
+    ]),
+  };
+}
+
 export function InterestForm() {
   const {
     values,
@@ -48,19 +61,20 @@ export function InterestForm() {
     touched,
     submitted,
     isSubmitting,
+    deliveryUnavailable,
     update,
     markTouched,
     handleSubmit,
     reset,
-  } = usePrototypeForm(initialValues, validateInterest);
+  } = useEnquiryForm(initialValues, validateInterest, composeInterest);
 
   if (submitted) {
     return (
       <FormSuccess
-        title={prototypeFormCopy.successTitle}
-        body={prototypeFormCopy.successBody}
+        title={enquiryFormCopy.successTitle}
+        body={enquiryFormCopy.successBody}
         onReset={reset}
-        resetLabel={prototypeFormCopy.resetLabel}
+        resetLabel={enquiryFormCopy.resetLabel}
       />
     );
   }
@@ -74,12 +88,12 @@ export function InterestForm() {
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="eyebrow text-forest/50">Register interest</p>
+          <p className="eyebrow text-forest/60">Register interest</p>
           <h2 id="interest-form-title" className="display-md mt-3 text-forest">
             Tell us where your interest sits.
           </h2>
         </div>
-        <span className="hidden font-display text-xs uppercase tracking-[0.16em] text-forest/30 sm:block">
+        <span className="hidden font-display text-xs uppercase tracking-[0.16em] text-forest/60 sm:block">
           Form 01
         </span>
       </div>
@@ -90,8 +104,14 @@ export function InterestForm() {
       </p>
 
       <div className="mt-6">
-        <PrototypeNotice>{prototypeFormCopy.body}</PrototypeNotice>
+        <FormNotice>{enquiryFormCopy.body}</FormNotice>
       </div>
+
+      {deliveryUnavailable ? (
+        <div role="alert" className="mt-3">
+          <FormNotice>{enquiryFormCopy.unavailable}</FormNotice>
+        </div>
+      ) : null}
 
       <div className="mt-7 grid gap-5 sm:grid-cols-2">
         <TextField
@@ -120,7 +140,7 @@ export function InterestForm() {
           type="email"
           required
           autoComplete="email"
-          hint="Used only to demonstrate field validation in this prototype."
+          hint="Used only to respond to your enquiry."
           value={values.email}
           onChange={(event) => update("email", event.target.value)}
           onBlur={() => markTouched("email")}
@@ -167,19 +187,14 @@ export function InterestForm() {
           onChange={(checked) => update("consent", checked)}
           onBlur={() => markTouched("consent")}
           error={touched.consent ? errors.consent : undefined}
-          label={
-            <>
-              I understand this prototype form does not send or store my details,
-              and that no application or response will be created.
-            </>
-          }
+          label="I agree that AfriYouth may use these details to respond to my enquiry."
         />
       </div>
 
       <div className="mt-7 flex flex-col gap-3 border-t border-forest/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-forest/45">Required fields are marked *</p>
+        <p className="text-xs text-forest/60">Required fields are marked *</p>
         <Button type="submit" disabled={isSubmitting} arrow={false}>
-          {isSubmitting ? "Validating…" : "Register interest"}
+          {isSubmitting ? "Opening draft…" : "Open email draft"}
         </Button>
       </div>
     </form>

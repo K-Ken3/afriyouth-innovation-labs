@@ -1,49 +1,37 @@
 # Asset Credits
 
-All third-party assets used by the prototype are listed here with their licence and attribution. This file should be updated whenever an image, font, icon set or library is added or replaced.
+All third-party assets used by the site are listed here with their licence and attribution. This file should be updated whenever an image, font, icon set or library is added or replaced.
 
 ## Photography
 
-The four photographs in `public/photos/` are licensed placeholders from **Pexels**, used under the [Pexels License](https://www.pexels.com/license/). They illustrate working context only. **They do not show AfriYouth staff, partners, participants or projects, and must not be presented as documentary evidence of AfriYouth's work.**
+The five photographs in `public/photos/` are the Image & Photography examples from the supplied AfriYouth brand guidelines PDF (*Afri Youth Innovation Lab Branding - Logo & Guidelines*, page 5). They establish the brand's photographic direction. **They do not identify AfriYouth staff, partners, participants or specific projects and must not be presented as documentary evidence of AfriYouth's work.**
 
-| File | Dimensions | Photographer | Source | Used on |
-| --- | --- | --- | --- | --- |
-| `team-conversation.jpg` | 3840 × 2560 | Ninthgrid | Pexels | Homepage introduction |
-| `design-workshop.jpg` | 3840 × 2160 | Vitaly Gariev | Pexels | About page |
-| `team-laptop.jpg` | 3840 × 2560 | PICHA Stock | Pexels | Insights index and preview |
-| `meeting-presentation.jpg` | 3840 × 2560 | PICHA Stock | Pexels | Insight detail |
+| File | Dimensions | Source | Used on |
+| --- | --- | --- | --- |
+| `brand-electronics-lab.jpg` | 2000 × 1334 | Brand guidelines, p.5 | Homepage introduction |
+| `brand-researcher-vr.jpg` | 1335 × 2000 | Brand guidelines, p.5 | Homepage insights preview |
+| `brand-young-innovator-vr.jpg` | 1333 × 2000 | Brand guidelines, p.5 | Insights index |
+| `brand-solar-field-team.jpg` | 1500 × 998 | Brand guidelines, p.5 | About page |
+| `brand-circuit-work.jpg` | 2000 × 1143 | Brand guidelines, p.5 | Insight detail |
 
-Credits and alt text are stored in `src/content/photos.ts`. Placeholder credit lines are shown in the interface where the images appear.
+The images were exported from the PDF at native resolution and recompressed as progressive JPEG at quality 82. They were not upscaled, recoloured or cropped, and the set totals roughly 1 MB. Alt text and credits are stored in `src/content/photos.ts`.
 
-### Pexels License summary
+### Usage terms
 
-- Free to use for commercial and non-commercial purposes.
-- Attribution is not required, but is provided here as good practice.
-- Images may not be sold unaltered, and identifiable people may not be shown in a way that is offensive or implies endorsement.
-- The licence does not grant rights to trademarks or to imply that Pexels or the photographer endorses this project.
-
-This summary is not legal advice. Review the current Pexels licence before publication.
-
-### Replacing with official photography
-
-Official AfriYouth photography must carry:
-
-- documented consent from identifiable people;
-- a photographer or organizational credit;
-- the intended licence or internal usage permission;
-- accurate alt text and caption;
-- an updated row in this file.
-
-Prefer compressed JPEG or WebP at the largest size actually displayed. The current 3840px placeholders total roughly 3.2 MB; a final site should serve responsive sizes or smaller derivatives.
+- The imagery is supplied by AfriYouth for brand communication; the organisation is responsible for confirming it holds the necessary model and property permissions for public use.
+- Do not present these images as evidence of a specific programme, partnership, participant or result.
+- If official programme photography replaces these images, record the photographer, consent status, licence and caption in this table.
 
 ## Typography
 
-Both font families are self-hosted through Fontsource packages, so the site makes no third-party font requests at runtime.
+Both font families are self-hosted through Fontsource packages, so the site makes no third-party font requests at runtime. Only latin subsets are imported for Poppins.
 
 | Family | Package | Designer / source | Licence |
 | --- | --- | --- | --- |
-| Space Grotesk Variable | `@fontsource-variable/space-grotesk` | Florian Karsten | SIL Open Font License 1.1 |
+| Poppins | `@fontsource/poppins` | Indian Type Foundry | SIL Open Font License 1.1 |
 | DM Sans Variable | `@fontsource-variable/dm-sans` | DM Sans Project Authors (Colophon Foundry / Google Fonts) | SIL Open Font License 1.1 |
+
+Poppins is the official title face in the AfriYouth brand guidelines. Gilroy, the official body face, is proprietary and is not redistributed; DM Sans is the documented substitute.
 
 The SIL OFL permits embedding, redistribution and commercial use, provided the fonts are not sold on their own and reserved font names are respected. Licence texts are included in the respective packages under `node_modules/`.
 
@@ -52,6 +40,8 @@ The SIL OFL permits embedding, redistribution and commercial use, provided the f
 | Asset | Source | Licence |
 | --- | --- | --- |
 | Interface icons | [Lucide](https://lucide.dev/) via `lucide-react` | ISC (portions derived from Feather, MIT) |
+| AfriYouth figure mark and wordmark | Official brand guidelines supplied by AfriYouth Innovation Labs; geometry extracted from the supplied PDF into `src/components/navigation/BrandMark.tsx` | © AfriYouth Innovation Labs |
+| Social card `public/og-image.png` | Generated for this project from the official palette, mark and tagline | © AfriYouth Innovation Labs project |
 | Orbital atlas, grids, ticker marks, photo plate treatments, favicon | Original to this project | © AfriYouth Innovation Labs project |
 
 No third-party logo, partner mark, photograph or illustration is embedded without a credit above.
@@ -75,21 +65,23 @@ GSAP's licence terms are available at <https://gsap.com/standard-license>. Revie
 
 ## Fonts and images in the Figma handoff
 
-If the Figma file is produced later:
+The Figma builder imports the same fonts and the five brand-guideline photographs:
 
-- install Space Grotesk and DM Sans from Google Fonts or Fontsource;
-- import the same four photographs and record them in the Figma file's asset notes;
-- keep the placeholder-photo disclaimer visible in any presentation of the design;
+- install Poppins and DM Sans from Google Fonts or Fontsource;
+- import the same photographs and record them in the Figma file's asset notes;
+- keep the brand-imagery note visible in any presentation of the design;
 - do not add stock photos that imply AfriYouth staff, beneficiaries or partners without verification.
 
 ## Attribution in the interface
 
-The prototype currently credits placeholder photography in page-level caption rows. If the official site keeps any third-party image, retain a visible or colophon-level credit according to its licence. Do not remove credits from assets that require attribution.
+Brand-guideline photography is credited in page-level caption rows. If AfriYouth supplies its own programme photography, retain a visible or colophon-level credit according to the licence. Do not remove credits from assets that require attribution.
 
 ## Verification log
 
 | Date | Change | Approved by |
 | --- | --- | --- |
-| 2026-11-08 | Initial asset inventory for the challenge prototype | Project team |
+| 2026-11-08 | Initial asset inventory | Project team |
+| 2026-11-15 | Applied official brand palette, Poppins headings, official figure mark and generated social card; removed Space Grotesk | Project team |
+| 2026-11-15 | Integrated the five brand-guideline photographs across homepage, About, Insights and article detail | Project team |
 
 Add a row for every asset change, including replacements, new licences and removals.

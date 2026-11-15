@@ -3,10 +3,11 @@ import type { Insight } from "./types";
 /**
  * INSIGHTS
  * --------
- * These are clearly labelled provisional essays written for the prototype.
- * They are perspective pieces about practice, not research findings, and they
- * contain no invented statistics, partners, authors or achievements.
- * Replace with official publications, reports and articles.
+ * Editorial perspectives from the AfriYouth practice. They discuss methods and
+ * questions rather than report research findings, and contain no statistics,
+ * partners or programme results. Research outputs are published separately as
+ * AfriYouth Evidence Reports, the Policy Solutions Series, the Africa 2050
+ * Futures Series and learning reports.
  */
 export const insights: Insight[] = [
   {
@@ -14,7 +15,7 @@ export const insights: Insight[] = [
     title: "Evidence is not the opposite of imagination",
     category: "Research & evidence",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 4,
     excerpt:
       "Rigour and creativity are often treated as rivals. The most useful research begins with the willingness to be surprised.",
@@ -26,14 +27,13 @@ export const insights: Insight[] = [
       "This is not a rejection of method. It is a demand for better method: sampling that reflects who is missing, analysis that can hold contradiction, and synthesis that resists the temptation to over-claim. Rigour is how we earn the right to ask people to act.",
       "Imagination belongs in that process. It is what lets a team see a pattern before the data confirms it, design a study that can detect what nobody thought to ask, and translate a finding into an option an institution can use. The two are not rivals. They are a working pair.",
     ],
-    provisional: true,
   },
   {
     slug: "designing-with-young-people-not-for-them",
     title: "Designing with young people, not for them",
-    category: "Design",
+    category: "Design & innovation",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 3,
     excerpt:
       "Consultation is not the same as collaboration. The difference shows up in who defines the problem — and who owns the result.",
@@ -45,14 +45,13 @@ export const insights: Insight[] = [
       "That kind of involvement changes the work. A prototype tested with the people who will use it surfaces failure faster and more cheaply. A service designed around real routines is more likely to survive contact with real life. Ownership shifts, too: the result is something people recognise as theirs.",
       "The discipline is in the structure. Pay people for their time. Explain what will happen to their input. Show what changed and what did not. Participation without feedback is extraction with better facilitation.",
     ],
-    provisional: true,
   },
   {
     slug: "the-policy-pipeline-is-a-design-problem",
     title: "The policy pipeline is a design problem",
-    category: "Policy",
+    category: "Policy & governance",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 4,
     excerpt:
       "Good evidence does not walk itself into a ministry. The route from finding to implementation has to be designed, with the incentives of the people inside it.",
@@ -64,14 +63,13 @@ export const insights: Insight[] = [
       "Designing for uptake means mapping the decision before producing the output. Who has authority? What are they accountable for? What would make the current approach costly to defend? What is the smallest change that is both useful and feasible?",
       "It also means staying after the announcement. Implementation is where policy is either made real or quietly undone. Feedback from the people affected is not a communications exercise; it is how a policy learns.",
     ],
-    provisional: true,
   },
   {
     slug: "what-enterprise-teaches-institutions-about-feedback",
     title: "What enterprise teaches institutions about feedback",
-    category: "Enterprise",
+    category: "Enterprise & venture",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 3,
     excerpt:
       "Founders learn from customers because the cost of not listening is immediate. Institutions can borrow that discipline without borrowing the ideology.",
@@ -83,14 +81,13 @@ export const insights: Insight[] = [
       "The lesson is not to run public services like startups. It is to shorten the distance between a decision and its evidence. Prototype before a national rollout. Test the form with the people who will queue for it. Put a feedback loop inside the programme, not only at the end of the funding cycle.",
       "Young entrepreneurs already work this way, often under pressure. Partnerships that treat them as learning partners rather than beneficiaries can transfer that discipline into institutions — and give founders access to problems worth solving at a different scale.",
     ],
-    provisional: true,
   },
   {
     slug: "foresight-belongs-in-the-room",
     title: "Foresight belongs in the room, not the appendix",
     category: "Futures",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 3,
     excerpt:
       "Scenarios are not predictions. Their value is in widening the set of futures a team is prepared to take seriously before a decision is locked in.",
@@ -102,14 +99,13 @@ export const insights: Insight[] = [
       "That work is uncomfortable because it distributes imagination. A scenario that is only written by consultants remains their scenario. When programme staff, young people and policymakers build the futures together, they also notice which decisions look fragile across all of them.",
       "The output should be a changed conversation, not just a changed document. What will we do differently if this future begins to emerge? Which signals will we watch? What are we choosing not to prepare for, and why? Those questions belong in the room where resources are allocated.",
     ],
-    provisional: true,
   },
   {
     slug: "measuring-what-matters-honestly",
     title: "Measuring what matters, honestly",
-    category: "Measurement",
+    category: "Impact & learning",
     kind: "Essay",
-    edition: "Prototype edition",
+    edition: "AfriYouth perspective",
     readingTime: 4,
     excerpt:
       "Impact measurement is not a marketing function. Its first obligation is to improve decisions — including the decision to admit what did not work.",
@@ -121,18 +117,17 @@ export const insights: Insight[] = [
       "It then chooses indicators for usefulness, not availability. A small number of well-defined measures, collected ethically and reported with their limitations, is worth more than a dashboard of convenient numbers. Baselines matter. So do comparison groups, where feasible, and the voices of people whose lives are being counted.",
       "Finally, it builds a route to use. Findings should arrive in time to inform the next cycle, in a form that programme teams can act on. Learning is not a consolation prize when attribution is uncertain. It is often the most defensible result an institution can publish.",
     ],
-    provisional: true,
   },
 ];
 
 export const insightCategories = [
   "All insights",
   "Research & evidence",
-  "Design",
-  "Policy",
-  "Enterprise",
+  "Design & innovation",
+  "Policy & governance",
+  "Enterprise & venture",
   "Futures",
-  "Measurement",
+  "Impact & learning",
 ] as const;
 
 export function getInsight(slug: string): Insight | undefined {

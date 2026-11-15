@@ -6,57 +6,57 @@ export type PageMeta = {
 
 export const pageMeta = {
   home: {
-    title: "Evidence. Innovation. African futures.",
+    title: "Research, innovation & policy consulting",
     description:
-      "AfriYouth Innovation Labs connects research, human-centered design, policy, entrepreneurship and foresight to expand what young Africans can build and shape.",
+      "AfriYouth Innovation Labs identifies, nurtures and advances promising ideas from Africa's young innovators — connecting research, policy, human-centered design, entrepreneurship and foresight.",
     path: "/",
   },
   about: {
-    title: "About the Lab",
+    title: "About the Firm",
     description:
-      "The purpose, mission, vision and working principles of AfriYouth Innovation Labs — a research and innovation institution for African futures.",
+      "The purpose, mission, vision and five strategic divisions of AfriYouth Innovation Labs — a research, innovation and policy consulting firm for African futures.",
     path: "/about",
   },
   whatWeDo: {
     title: "What We Do",
     description:
-      "Research and evidence, policy engagement, human-centered design, entrepreneurship, professional development, strategic foresight and impact measurement.",
+      "Research & Evidence, Policy & Governance, Innovation & Entrepreneurship, Foresight & Futures and Leadership & Capacity Building — with impact and funding readiness services.",
     path: "/what-we-do",
   },
   programs: {
     title: "Programs & Opportunities",
     description:
-      "The AfriYouth opportunity board for fellowships, research calls, innovation challenges, training and enterprise support. Listings appear only when verified.",
+      "AfriYouth Innovation Accelerator cohorts, Policy Innovation Challenges, research calls, employability academies and venture support. Each call lists eligibility, deadline and how to apply.",
     path: "/programs",
   },
   insights: {
     title: "Insights",
     description:
-      "Provisional essays and future publications on evidence, design, policy, enterprise, foresight and honest impact measurement.",
+      "AfriYouth perspectives on evidence, policy, design, enterprise, foresight and honest impact measurement, alongside the firm's research and policy series.",
     path: "/insights",
   },
   impact: {
-    title: "Impact & Accountability",
+    title: "Impact & Learning",
     description:
-      "How AfriYouth measures reach, depth, durability and systems change — and why no impact figures are published until they are verified.",
+      "How AfriYouth measures reach, depth, durability and systems change through theory of change, M&E and learning reports — with every figure sourced, dated and method-noted.",
     path: "/impact",
   },
   getInvolved: {
     title: "Get Involved",
     description:
-      "Register interest in AfriYouth programmes, learning experiences and opportunities for young people. Official calls are published only when confirmed.",
+      "Register interest in AfriYouth accelerators, policy challenges, research calls, professional development and venture support.",
     path: "/get-involved",
   },
   partner: {
     title: "Partner With Us",
     description:
-      "Collaborate with AfriYouth Innovation Labs on research, co-design, policy, enterprise, learning and foresight partnerships.",
+      "Collaborate with AfriYouth on applied research, policy and governance, innovation and venture support, foresight, professional learning and funding readiness.",
     path: "/partner-with-us",
   },
   contact: {
     title: "Contact",
     description:
-      "Contact routes for AfriYouth Innovation Labs. Official channels are pending; prototype forms validate locally and do not transmit data.",
+      "Contact AfriYouth Innovation Labs about research, policy, programmes, partnerships or accessibility.",
     path: "/contact",
   },
 } satisfies Record<string, PageMeta>;

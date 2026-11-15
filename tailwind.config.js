@@ -11,10 +11,12 @@ export default {
         sage: "rgb(var(--c-sage) / <alpha-value>)",
         paper: "rgb(var(--c-paper) / <alpha-value>)",
         clay: "rgb(var(--c-clay) / <alpha-value>)",
+        blush: "rgb(var(--c-blush) / <alpha-value>)",
+        blue: "rgb(var(--c-blue) / <alpha-value>)",
       },
       fontFamily: {
-        display: ['"Space Grotesk Variable"', "Space Grotesk", "system-ui", "sans-serif"],
-        sans: ['"DM Sans Variable"', "DM Sans", "system-ui", "sans-serif"],
+        display: ['"Poppins"', '"DM Sans Variable"', "system-ui", "sans-serif"],
+        sans: ['"DM Sans Variable"', '"DM Sans"', "system-ui", "sans-serif"],
       },
       maxWidth: {
         editorial: "92rem",

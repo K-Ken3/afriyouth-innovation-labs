@@ -22,7 +22,7 @@ export function PageCTA({
       <div className="container-editorial section-tight">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <Reveal className="lg:col-span-7">
-            <p className="eyebrow text-forest/55">{eyebrow}</p>
+            <p className="eyebrow text-forest/60">{eyebrow}</p>
             <h2 className="display-lg mt-4 max-w-2xl text-forest">{title}</h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-forest/65">{body}</p>
           </Reveal>

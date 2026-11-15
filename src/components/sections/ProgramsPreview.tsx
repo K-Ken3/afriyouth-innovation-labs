@@ -18,7 +18,7 @@ export function ProgramsPreview() {
       <div className="container-editorial">
         <SectionHeading
           eyebrow="Programs & opportunities"
-          meta={`${String(programs.length).padStart(2, "0")} live calls`}
+          meta={programs.length > 0 ? `${String(programs.length).padStart(2, "0")} live calls` : "Current calls"}
           title={
             <KineticHeading
               id="programs-heading"
@@ -28,7 +28,7 @@ export function ProgramsPreview() {
               accentClassName="text-forest/32"
             />
           }
-          intro="Fellowships, research calls, innovation challenges and enterprise support will be published here only when eligibility and deadlines are confirmed."
+          intro="Accelerator cohorts, Policy Innovation Challenges, research calls, academies and venture support are published here with eligibility, deadlines, format and a direct application route."
           actions={
             <ButtonLink to="/programs" variant="outline">
               Visit the opportunity board
@@ -40,32 +40,39 @@ export function ProgramsPreview() {
           <Reveal className="lg:col-span-7" y={20}>
             <div className="rounded-2xl border border-forest/20 bg-ivory p-5 sm:p-7">
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-forest/15 pb-4">
-                <span className="text-[0.6875rem] uppercase tracking-[0.18em] text-forest/55">
+                <span className="text-[0.6875rem] uppercase tracking-[0.18em] text-forest/60">
                   Opportunity board
                 </span>
                 <Badge variant="soft" dot>
-                  Board in preparation
+                  Current openings
                 </Badge>
               </div>
 
               <ul>
-                {visibleCategories.map((category, index) => (
-                  <li
-                    key={category.id}
-                    className="flex items-center justify-between gap-5 border-b border-forest/10 py-3.5"
-                  >
-                    <div className="flex items-baseline gap-4">
-                      <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/35">
-                        {String(index + 1).padStart(2, "0")}
+                {visibleCategories.map((category, index) => {
+                  const count = programs.filter(
+                    (program) => program.category === category.id,
+                  ).length;
+                  return (
+                    <li
+                      key={category.id}
+                      className="flex items-center justify-between gap-5 border-b border-forest/10 py-3.5"
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/60">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-sm font-medium text-forest/80">{category.label}</span>
+                      </div>
+                      <span className="font-display text-xs tabular-nums text-forest/60">
+                        {count > 0 ? String(count).padStart(2, "0") : "—"}
                       </span>
-                      <span className="text-sm font-medium text-forest/80">{category.label}</span>
-                    </div>
-                    <span className="font-display text-xs tabular-nums text-forest/35">00</span>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
 
-              <div className="mt-5 flex items-start gap-2.5 text-xs leading-relaxed text-forest/50">
+              <div className="mt-5 flex items-start gap-2.5 text-xs leading-relaxed text-forest/60">
                 <CalendarClock aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none" />
                 <p>
                   Listings appear with eligibility, deadline, format and a direct

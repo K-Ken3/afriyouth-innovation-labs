@@ -30,7 +30,7 @@ export function ApproachSection() {
               accentClassName="text-lime"
             />
           }
-          intro="Research, policy, design, enterprise, professional development, foresight and measurement are usually run as separate tracks. We connect them deliberately — so insight travels, prototypes meet policy, and measurement feeds the next question."
+          intro="Research, policy, human-centered design, entrepreneurship, foresight and professional development are usually commissioned as separate tracks. We connect them deliberately — so evidence travels, prototypes meet policy, and measurement feeds the next question. The philosophy runs in sequence: Think → Research → Design → Build → Influence → Scale."
         />
 
         <Reveal className="mt-14 lg:mt-20" y={20}>
@@ -38,7 +38,7 @@ export function ApproachSection() {
         </Reveal>
 
         <div className="mt-10 flex flex-col gap-4 border-t border-ivory/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-xl text-xs leading-relaxed text-ivory/45">
+          <p className="max-w-xl text-xs leading-relaxed text-ivory/60">
             The loop is not a diagram device. Each engagement is expected to
             return evidence, capability and learning to the system it came from.
           </p>

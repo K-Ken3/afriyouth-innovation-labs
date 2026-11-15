@@ -1,0 +1,12 @@
+{
+  "name": "AfriYouth Design System Builder",
+  "id": "afriyouth-design-system-builder-2026",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["https://afriyouth-innovation-labs.vercel.app"],
+    "reasoning": "Fetches the five brand-guideline photography assets already used by the live AfriYouth website."
+  }
+}

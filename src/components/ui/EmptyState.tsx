@@ -28,7 +28,7 @@ export function EmptyState({
       <span
         className={cn(
           "eyebrow mb-5",
-          dark ? "text-ivory/55" : "text-forest/50",
+          dark ? "text-ivory/55" : "text-forest/60",
         )}
       >
         {marker}

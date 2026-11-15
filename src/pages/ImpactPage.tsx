@@ -29,10 +29,10 @@ export default function ImpactPage() {
         title={["What changes,", "and how we", "would know."]}
         intro={impactIntro.intro}
         meta={[
-          { label: "Verified figures", value: "00 published" },
-          { label: "Baselines", value: "Not yet published" },
+          { label: "Dimensions", value: "Four" },
+          { label: "Baselines", value: "Per engagement" },
           { label: "Reporting", value: "Public ledger" },
-          { label: "Content status", value: "Prototype" },
+          { label: "Standard", value: "Source, date, method" },
         ]}
       />
 
@@ -50,10 +50,12 @@ export default function ImpactPage() {
                 accentClassName="text-lime"
               />
               <p className="mt-6 max-w-xl text-sm leading-relaxed text-ivory/60">
-                AfriYouth intends to report on reach, depth, durability and
-                systems change — but only where the claim can be traced to a
-                method, a source and a date. This page therefore shows the
-                measurement architecture, not a set of achievements.
+                Through Impact & Learning Services, AfriYouth builds theories of
+                change, M&E systems and evaluation into its work — and intends to
+                report on reach, depth, durability and systems change only where
+                the claim can be traced to a method, a source and a date. This
+                page therefore shows the measurement architecture, not a set of
+                achievements.
               </p>
             </div>
 
@@ -61,16 +63,17 @@ export default function ImpactPage() {
               <div className="rounded-2xl border border-ivory/20 p-6">
                 <div className="flex items-baseline justify-between gap-4">
                   <span className="font-display text-[4.5rem] leading-none tracking-[-0.06em] text-lime">
-                    00
+                    04
                   </span>
-                  <span className="text-[0.625rem] uppercase tracking-[0.18em] text-ivory/40">
-                    Verified figures
+                  <span className="text-[0.625rem] uppercase tracking-[0.18em] text-ivory/60">
+                    Measurement dimensions
                   </span>
                 </div>
                 <p className="mt-5 border-t border-ivory/15 pt-4 text-sm leading-relaxed text-ivory/65">
-                  No impact statistics, baselines or evaluations have been
-                  supplied for this prototype. Nothing has been estimated,
-                  rounded or illustrated with a placeholder number.
+                  Reach, depth, durability and systems change are reported
+                  together. Figures are published as verified engagements
+                  conclude — never estimated, rounded or illustrated with
+                  placeholder numbers.
                 </p>
               </div>
             </Reveal>
@@ -99,11 +102,11 @@ export default function ImpactPage() {
               <Reveal key={dimension.id} delay={index * 0.05} className="h-full">
                 <article className="card-surface flex h-full flex-col p-6 sm:p-8">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="font-display text-2xl tracking-[-0.05em] text-forest/20">
+                    <span className="font-display text-2xl tracking-[-0.05em] text-forest/45">
                       {dimension.number}
                     </span>
-                    <Badge variant="provisional" dot>
-                      Awaiting data
+                    <Badge variant="soft" dot>
+                      Measurement area
                     </Badge>
                   </div>
                   <h3 className="display-md mt-8 text-forest">{dimension.title}</h3>
@@ -111,7 +114,7 @@ export default function ImpactPage() {
                     {dimension.description}
                   </p>
                   <div className="mt-6 border-t border-forest/12 pt-4">
-                    <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/40">
+                    <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                       Guiding question
                     </p>
                     <p className="mt-2 font-display text-lg leading-snug tracking-[-0.02em] text-forest/80">
@@ -150,7 +153,7 @@ export default function ImpactPage() {
                       aria-hidden="true"
                       className="absolute -left-[3px] top-0 h-1.5 w-1.5 rounded-full bg-forest lg:-top-[3px] lg:left-0"
                     />
-                    <span className="font-display text-2xl tracking-[-0.04em] text-forest/20">
+                    <span className="font-display text-2xl tracking-[-0.04em] text-forest/45">
                       {stage.number}
                     </span>
                     <h3 className="mt-3 font-display text-xl tracking-[-0.03em] text-forest">
@@ -168,19 +171,20 @@ export default function ImpactPage() {
       <section className="section bg-ivory">
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-forest/55">Public ledger</p>
+            <p className="eyebrow text-forest/60">Public ledger</p>
             <KineticHeading
-              lines={["What will be", "published here."]}
+              lines={["What gets", "published here."]}
               className="display-lg mt-5 text-forest"
               accentLines={[1]}
               accentClassName="text-forest/32"
             />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest/60">
-              Each entry will carry a source, date, method and stated limitations.
-              Until then, the ledger is intentionally empty.
+              Each entry carries a source, date, method and stated limitations.
+              Entries are released as engagements close and reports are cleared
+              for publication.
             </p>
             <div className="mt-7 rounded-xl border border-forest/15 bg-sage/30 p-5">
-              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
+              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                 Publication rule
               </p>
               <p className="mt-2 text-sm leading-relaxed text-forest/70">{impactNote}</p>
@@ -192,7 +196,7 @@ export default function ImpactPage() {
               {impactLedger.map((entry, index) => (
                 <Reveal key={entry.label} delay={index * 0.04}>
                   <div className="grid gap-3 border-b border-forest/15 py-6 sm:grid-cols-12 sm:items-start">
-                    <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/30 sm:col-span-1">
+                    <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/60 sm:col-span-1">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div className="sm:col-span-7">
@@ -204,7 +208,7 @@ export default function ImpactPage() {
                       </p>
                     </div>
                     <div className="sm:col-span-4 sm:text-right">
-                      <Badge variant="provisional" dot>
+                      <Badge variant="soft" dot>
                         {entry.status}
                       </Badge>
                     </div>
@@ -212,8 +216,8 @@ export default function ImpactPage() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-forest/45">
-              An empty ledger is a statement of method, not a claim of impact.
+            <p className="mt-5 text-xs leading-relaxed text-forest/60">
+              Every entry is traceable to its source, method and limitations.
             </p>
           </div>
         </div>
@@ -225,7 +229,7 @@ export default function ImpactPage() {
             <div className="lg:col-span-5">
               <p className="eyebrow text-lime">Reporting commitments</p>
               <KineticHeading
-                lines={["The rules we", "would hold", "ourselves to."]}
+                lines={["The rules we", "hold ourselves", "to."]}
                 className="display-lg mt-5 text-ivory"
                 accentLines={[2]}
                 accentClassName="text-lime"
@@ -234,19 +238,22 @@ export default function ImpactPage() {
             <div className="lg:col-span-6 lg:col-start-7">
               <ul className="border-t border-ivory/18">
                 {measurementCommitments.map((commitment, index) => (
-                  <Reveal key={commitment} delay={index * 0.04}>
-                    <li className="flex items-start gap-4 border-b border-ivory/18 py-5">
+                  <li key={commitment} className="border-b border-ivory/18">
+                    <Reveal
+                      delay={index * 0.04}
+                      className="flex items-start gap-4 py-5"
+                    >
                       <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full border border-lime/40 text-lime">
                         <Check aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
                       </span>
                       <p className="text-sm leading-relaxed text-ivory/72">{commitment}</p>
-                    </li>
-                  </Reveal>
+                    </Reveal>
+                  </li>
                 ))}
               </ul>
-              <p className="mt-5 text-xs leading-relaxed text-ivory/40">
-                These commitments describe intent. Verification and governance
-                arrangements will be published when confirmed.
+              <p className="mt-5 text-xs leading-relaxed text-ivory/60">
+                Each commitment is written into the engagement protocol and
+                reported against in the public ledger.
               </p>
             </div>
           </div>
@@ -256,7 +263,7 @@ export default function ImpactPage() {
       <section className="section bg-ivory">
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-forest/55">Questions</p>
+            <p className="eyebrow text-forest/60">Questions</p>
             <h2 className="display-lg mt-5 text-forest">On the record.</h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-forest/60">
               The most important accountability question is often the one an

@@ -3,9 +3,8 @@ import type { Program, ProgramCategory } from "./types";
 /**
  * OPPORTUNITY DATA
  * ----------------
- * Deliberately empty. No named programmes, deadlines or application links
- * have been invented. When official calls are confirmed, add objects matching
- * the `Program` type; the board UI, filters and empty states will respond.
+ * Empty until a live call is approved for publication. When a call opens, add
+ * objects matching the `Program` type; the board UI, filters and states respond.
  */
 export const programs: Program[] = [];
 
@@ -17,33 +16,33 @@ export const programCategories: ProgramCategory[] = [
   },
   {
     id: "fellowships",
-    label: "Fellowships & cohorts",
+    label: "Accelerators & cohorts",
     description:
-      "Structured learning and practice cohorts for young researchers, designers and builders.",
+      "AfriYouth Innovation Accelerator cohorts, incubation and structured practice.",
   },
   {
     id: "research",
     label: "Research calls",
     description:
-      "Opportunities to contribute to studies, evaluations and evidence reviews.",
+      "Opportunities to contribute to applied research, evaluations and AfriYouth Evidence Reports.",
   },
   {
     id: "innovation",
     label: "Innovation challenges",
     description:
-      "Time-bound calls to prototype solutions to defined problems.",
+      "Policy Innovation Challenge rounds and time-bound calls to prototype solutions.",
   },
   {
     id: "learning",
-    label: "Training & clinics",
+    label: "Academies & training",
     description:
-      "Short-form professional development and applied skills sessions.",
+      "Employability Bootcamp, University Employability Programme and professional development.",
   },
   {
     id: "enterprise",
-    label: "Enterprise support",
+    label: "Venture & funding support",
     description:
-      "Incubation, acceleration and venture-readiness opportunities.",
+      "Incubation, acceleration, investor readiness and funding support.",
   },
 ];
 
@@ -54,7 +53,7 @@ export const programListingFields = [
   },
   {
     label: "Deadline",
-    text: "The official closing date and time zone, published only when confirmed.",
+    text: "The official closing date and time zone.",
   },
   {
     label: "Format",
@@ -67,8 +66,8 @@ export const programListingFields = [
 ];
 
 export const programEmpty = {
-  title: "No opportunities are published yet.",
-  body: "The opportunity board is being prepared. When calls are confirmed, each listing will show eligibility, deadline, format and a direct application route. Nothing is displayed here until that information is verified.",
+  title: "There are no open calls at present.",
+  body: "Cohorts and calls for the Innovation Accelerator, Policy Innovation Challenge, research programme and academies are announced here as they open. Each listing shows eligibility, deadline, format and a direct application route.",
   primary: { label: "Register your interest", to: "/get-involved" },
   secondary: { label: "How listings work", to: "/programs#how-it-works" },
 };

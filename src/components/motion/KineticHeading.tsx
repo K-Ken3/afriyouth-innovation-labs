@@ -31,7 +31,7 @@ export function KineticHeading({
   scroll = true,
   start = "top 85%",
   accentLines = [],
-  accentClassName = "text-forest/35",
+  accentClassName = "text-forest/60",
   id,
 }: KineticHeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);

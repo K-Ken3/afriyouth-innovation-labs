@@ -10,7 +10,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-forest text-ivory hover:bg-ink",
-  lime: "bg-lime text-forest hover:bg-ivory",
+  lime: "border border-lime/45 bg-blush text-forest hover:bg-ivory",
   outline:
     "border border-forest/25 text-forest hover:border-forest hover:bg-forest hover:text-ivory",
   light:

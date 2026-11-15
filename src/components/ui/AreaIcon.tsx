@@ -1,5 +1,6 @@
 import {
   GraduationCap,
+  HandCoins,
   Landmark,
   Microscope,
   PenTool,
@@ -19,6 +20,7 @@ const icons: Record<AreaIconName, LucideIcon> = {
   professional: GraduationCap,
   foresight: Telescope,
   impact: Target,
+  funding: HandCoins,
 };
 
 export function AreaIcon({

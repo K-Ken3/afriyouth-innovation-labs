@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Clock } from "lucide-react";
 import type { Insight } from "@/content/types";
-import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 
 export function InsightCard({
@@ -20,20 +19,15 @@ export function InsightCard({
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
+          <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
             {insight.category}
           </span>
           <span aria-hidden="true" className="h-1 w-1 rounded-full bg-forest/25" />
-          <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/35">
+          <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
             {insight.kind}
           </span>
-          {insight.provisional ? (
-            <Badge variant="provisional" dot className="ml-1">
-              Provisional
-            </Badge>
-          ) : null}
         </div>
-        <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/25">
+        <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/60">
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
@@ -57,7 +51,7 @@ export function InsightCard({
         </p>
       </div>
 
-      <div className="mt-6 flex items-center justify-between gap-4 border-t border-forest/10 pt-3 text-[0.625rem] uppercase tracking-[0.14em] text-forest/40">
+      <div className="mt-6 flex items-center justify-between gap-4 border-t border-forest/10 pt-3 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
         <span className="flex items-center gap-3">
           <span className="flex items-center gap-1.5">
             <Clock aria-hidden="true" className="h-3 w-3" />

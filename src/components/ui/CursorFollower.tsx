@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -101,7 +101,7 @@ export function CursorFollower() {
       <div ref={dotRef} className="fixed left-0 top-0">
         <div
           className={[
-            "h-2 w-2 rounded-full bg-lime shadow-[0_0_0_2px_rgba(21,61,50,0.85),0_0_10px_rgba(201,243,106,0.9)] transition-opacity duration-200",
+            "h-2 w-2 rounded-full bg-lime shadow-[0_0_0_2px_rgba(13,6,36,0.85),0_0_10px_rgba(199,35,223,0.9)] transition-opacity duration-200",
             visible ? "opacity-100" : "opacity-0",
           ].join(" ")}
           style={{ transform: "translate(-50%, -50%)" }}

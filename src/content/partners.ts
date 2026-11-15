@@ -3,46 +3,46 @@ import type { PartnerModel } from "./types";
 export const partnerModels: PartnerModel[] = [
   {
     number: "01",
-    title: "Research & evaluation",
+    title: "Research & evidence",
     description:
-      "Co-design a study, evaluation or evidence review with our team. We bring methodological rigour, participatory practice and a route to uptake.",
-    tags: ["Mixed methods", "Evaluation", "Evidence synthesis"],
+      "Commission applied policy or socio-economic research, baseline and endline studies, impact assessments, programme evaluations or evidence synthesis, published as AfriYouth Evidence Reports.",
+    tags: ["Applied research", "Evaluations", "Evidence synthesis"],
   },
   {
     number: "02",
-    title: "Co-design & innovation",
+    title: "Policy & governance",
     description:
-      "Work with young people and practitioners to reframe a problem, prototype options and test what is adoptable in context.",
-    tags: ["Co-design", "Prototyping", "Field testing"],
+      "Work with us on policy analysis and design, regulatory review, governance diagnostics, stakeholder mapping, policy dialogue and implementation support.",
+    tags: ["Policy analysis", "Governance", "Policy dialogue"],
   },
   {
     number: "03",
-    title: "Policy & systems",
+    title: "Innovation & venture support",
     description:
-      "Translate evidence into policy options, convene the right actors, and stay through implementation to learn what changes.",
-    tags: ["Policy options", "Convening", "Implementation"],
+      "Support young innovators through human-centered design, prototyping, market validation, incubation, acceleration and investor readiness — including the AfriYouth Innovation Accelerator.",
+    tags: ["Human-centered design", "Incubation", "Investor readiness"],
   },
   {
     number: "04",
-    title: "Enterprise & ecosystem",
+    title: "Foresight & futures",
     description:
-      "Support ventures with market insight, business design and ecosystem navigation — or partner on enterprise programming.",
-    tags: ["Venture support", "Market research", "Ecosystem"],
+      "Commission scenario planning, horizon scanning, future-of-work studies or 2030–2050 scenarios for strategy, policy or programme design.",
+    tags: ["Scenarios", "Horizon scanning", "Africa 2050"],
   },
   {
     number: "05",
-    title: "Learning & foresight",
+    title: "Leadership, learning & funding readiness",
     description:
-      "Build professional learning, scenario processes and measurement systems that strengthen capability beyond a single engagement.",
-    tags: ["Professional learning", "Scenarios", "MEL design"],
+      "Build employability programmes, professional competency frameworks and learning systems — or prepare a funding strategy, proposal, business case or due-diligence pack.",
+    tags: ["Employability", "Professional learning", "Funding readiness"],
   },
 ];
 
 export const partnerAudiences = [
-  "Universities and research institutes",
+  "Universities, think tanks and research institutes",
   "Public agencies and policymakers",
   "Funders and philanthropic organizations",
-  "Civil society and youth networks",
+  "Civil society, youth networks and youth-led ventures",
   "Enterprises, incubators and innovation hubs",
 ];
 
@@ -96,25 +96,25 @@ export const partnerFaqs = [
   {
     question: "Can you work with funders and public agencies?",
     answer:
-      "The practice is designed for research institutions, public agencies, funders, civil society, youth networks and enterprises. Specific partnerships and references are not published on this prototype because none have been supplied for verification.",
+      "Yes. The practice is built for research institutes, public agencies, funders, civil society, youth networks, youth-led ventures and enterprises. Engagements are scoped around the decision, the evidence required and the people who must act on the result.",
   },
   {
     question: "Are any current partnerships listed?",
     answer:
-      "No. This prototype does not name partners, clients or endorsements. A verified partner directory will be added when official information is available.",
+      "Partnerships are published only with the partner's permission. Where a collaboration can be named, it appears with a short description of the work and the partner's role.",
   },
   {
     question: "How are ethics and data protection handled?",
     answer:
-      "Governance, ethics and data protection arrangements are agreed before delivery and documented in the engagement protocol. The final policy language will be published with official institutional materials.",
+      "Governance, ethics and data protection are agreed before delivery and documented in the engagement protocol, including consent, data handling and publication rights.",
   },
 ];
 
 export const collaborationOptions = [
-  "Research & evaluation partnership",
-  "Co-design & innovation partnership",
-  "Policy & systems partnership",
-  "Enterprise & ecosystem partnership",
-  "Learning & foresight partnership",
+  "Research & evidence partnership",
+  "Policy & governance partnership",
+  "Innovation & venture support partnership",
+  "Foresight & futures partnership",
+  "Leadership, learning & funding readiness",
   "Not sure yet — let's discuss",
 ];

@@ -29,7 +29,7 @@ function FieldShell({
             *
           </span>
         ) : (
-          <span className="ml-2 text-[0.65rem] font-normal tracking-normal text-forest/45 normal-case">
+          <span className="ml-2 text-[0.65rem] font-normal tracking-normal text-forest/60 normal-case">
             optional
           </span>
         )}
@@ -215,7 +215,7 @@ export function CheckboxField({
   );
 }
 
-export function PrototypeNotice({ children }: { children: ReactNode }) {
+export function FormNotice({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-start gap-3 rounded-xl border border-forest/15 bg-sage/45 px-4 py-3 text-sm leading-relaxed text-forest/75">
       <Info aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none" />

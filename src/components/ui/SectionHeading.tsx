@@ -50,7 +50,7 @@ export function SectionHeading({
                   <span
                     className={cn(
                       "hidden text-[0.625rem] uppercase tracking-[0.18em] sm:block",
-                      dark ? "text-ivory/45" : "text-forest/40",
+                      dark ? "text-ivory/60" : "text-forest/60",
                     )}
                   >
                     {meta}

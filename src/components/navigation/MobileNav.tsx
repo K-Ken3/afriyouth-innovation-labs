@@ -109,7 +109,7 @@ export function MobileNav({ open, onClose, triggerRef }: MobileNavProps) {
                       <span className="font-display text-[clamp(2.15rem,9vw,3rem)] leading-none tracking-[-0.04em] transition-colors group-hover:text-lime">
                         {item.label}
                       </span>
-                      <span className="text-[0.625rem] tracking-[0.18em] text-ivory/35">
+                      <span className="text-[0.625rem] tracking-[0.18em] text-ivory/60">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                     </NavLink>
@@ -149,12 +149,12 @@ export function MobileNav({ open, onClose, triggerRef }: MobileNavProps) {
               </motion.div>
             </nav>
 
-            <div className="container-editorial safe-bottom mt-8 flex-none border-t border-ivory/15 pt-5 text-[0.6875rem] leading-relaxed text-ivory/45">
+            <div className="container-editorial safe-bottom mt-8 flex-none border-t border-ivory/15 pt-5 text-[0.6875rem] leading-relaxed text-ivory/60">
               <p className="uppercase tracking-[0.16em]">
                 Research · Policy · Design · Enterprise · Development · Foresight · Measurement
               </p>
               <p className={cn("mt-1.5")}>
-                Official contact details pending verification.
+                Fueling innovators for sustainable development.
               </p>
             </div>
           </div>

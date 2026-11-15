@@ -17,14 +17,14 @@ export function Hero() {
       <div className="container-editorial relative z-10">
         <div className="mb-9 flex flex-wrap items-center justify-between gap-4 border-b border-forest/15 pb-4 sm:mb-12">
           <p className="eyebrow text-forest/65">
-            Research · Policy · Design · Enterprise · Development · Foresight · Measurement
+            Research · Policy · Design · Enterprise · Foresight · Leadership
           </p>
-          <p className="flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.18em] text-forest/40">
+          <p className="flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.18em] text-forest/60">
             <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-forest/40 [animation-duration:2.8s]" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-forest" />
             </span>
-            Digital prototype · Edition 01
+            Africa's innovation &amp; policy lab
           </p>
         </div>
 
@@ -54,9 +54,9 @@ export function Hero() {
             <div className="mt-9 grid gap-8 sm:grid-cols-[1.35fr_1fr] sm:items-end">
               <Reveal delay={0.5} y={18}>
                 <p className="lede max-w-xl text-forest/72">
-                  A research and innovation institution working where evidence,
-                  human-centered design, enterprise and policy meet — expanding
-                  what young Africans can build, and shape.
+                  A research, innovation and policy consulting firm advancing
+                  promising ideas from Africa's young innovators — connecting
+                  evidence, design, enterprise and policy.
                 </p>
               </Reveal>
               <Reveal delay={0.62} y={16} className="flex flex-wrap gap-3 sm:justify-end">
@@ -70,7 +70,7 @@ export function Hero() {
             <Reveal delay={0.72} y={14} className="mt-10 border-t border-forest/15 pt-5">
               <dl className="grid grid-cols-2 gap-6 sm:grid-cols-3">
                 <div>
-                  <dt className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/40">
+                  <dt className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/60">
                     Focus
                   </dt>
                   <dd className="mt-1.5 text-xs leading-snug text-forest/75">
@@ -78,18 +78,21 @@ export function Hero() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/40">
+                  <dt className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/60">
                     Practice
                   </dt>
                   <dd className="mt-1.5 text-xs leading-snug text-forest/75">
-                    Seven connected areas of work
+                    Five divisions, eight practices
                   </dd>
                 </div>
-                <div className="col-span-2 flex items-end gap-2 sm:col-span-1 sm:justify-end">
-                  <ArrowDown aria-hidden="true" className="h-4 w-4 text-forest/40" />
-                  <span className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/40">
-                    The system follows
-                  </span>
+                <div className="col-span-2 sm:col-span-1">
+                  <dt className="sr-only">Continue</dt>
+                  <dd className="flex items-end gap-2 sm:justify-end">
+                    <ArrowDown aria-hidden="true" className="h-4 w-4 text-forest/60" />
+                    <span className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/60">
+                      The system follows
+                    </span>
+                  </dd>
                 </div>
               </dl>
             </Reveal>
@@ -100,11 +103,11 @@ export function Hero() {
               <OrbitalAtlas className="xl:mt-2" />
             </Reveal>
             <div className="mt-6 flex items-start justify-between gap-6 px-1">
-              <p className="max-w-[16rem] text-xs leading-relaxed text-forest/55">
+              <p className="max-w-[16rem] text-xs leading-relaxed text-forest/60">
                 Not a pipeline. A practice that moves evidence into enterprise,
                 enterprise into policy, and policy into lasting change.
               </p>
-              <span className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/35">
+              <span className="text-[0.6rem] uppercase tracking-[0.18em] text-forest/60">
                 Map / 001
               </span>
             </div>

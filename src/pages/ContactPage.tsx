@@ -15,21 +15,24 @@ import { PageCTA } from "@/components/sections/PageCTA";
 const channels = [
   {
     label: "Email",
-    value: site.contact.email ?? "Pending verification",
+    value: site.contact.email ?? "Use the enquiry form",
     icon: Mail,
-    note: "No address has been supplied for publication.",
+    badge: "Via form",
+    note: "The contact form opens a pre-addressed email draft in your mail client.",
   },
   {
     label: "Telephone",
-    value: site.contact.phone ?? "Pending verification",
+    value: site.contact.phone ?? "Available on request",
     icon: Phone,
-    note: "No number has been supplied for publication.",
+    badge: "On request",
+    note: "Call details are shared with confirmed engagements and published here when finalised.",
   },
   {
     label: "Office",
-    value: site.contact.address ?? "Pending verification",
+    value: site.contact.address ?? "Available on request",
     icon: MapPin,
-    note: "Location details are not stated in this prototype.",
+    badge: "On request",
+    note: "The team works across Africa. Office details are shared with confirmed engagements.",
   },
 ];
 
@@ -41,13 +44,13 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         chapter="08"
-        title={["A direct line,", "once it", "exists."]}
-        intro="Official contact channels are not yet published. This page shows how the contact experience will work — and is explicit about what is still missing rather than inventing an address."
+        title={["Start a", "conversation."]}
+        intro="Tell us what you are working on. The form prepares a pre-addressed email draft, and partnership questions can start with the decision you need to inform."
         meta={[
-          { label: "Email", value: "Pending" },
-          { label: "Telephone", value: "Pending" },
-          { label: "Office", value: "Pending" },
-          { label: "Contact form", value: "Prototype only" },
+          { label: "Email", value: "Enquiry form" },
+          { label: "Telephone", value: "On request" },
+          { label: "Office", value: "On request" },
+          { label: "Form", value: "Email draft" },
         ]}
       />
 
@@ -55,16 +58,16 @@ export default function ContactPage() {
         <div className="container-editorial">
           <SectionHeading
             eyebrow="Official channels"
-            meta="Awaiting verification"
+            meta="Direct enquiries"
             title={
               <KineticHeading
-                lines={["Nothing invented.", "Nothing implied."]}
+                lines={["Direct contact,", "clearly routed."]}
                 className="display-lg text-forest"
                 accentLines={[1]}
                 accentClassName="text-forest/32"
               />
             }
-            intro="A missing contact detail is a content task, not a design problem. The layout is ready for verified information when it arrives."
+            intro="The form prepares a pre-addressed email draft for the team. Telephone and office details are published here as they are confirmed for each engagement."
           />
 
           <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -77,17 +80,15 @@ export default function ContactPage() {
                       <span className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/20 text-forest/70">
                         <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
                       </span>
-                      <Badge variant="provisional" dot>
-                        Pending
-                      </Badge>
+                      <Badge variant="soft">{channel.badge}</Badge>
                     </div>
-                    <p className="mt-7 text-[0.625rem] uppercase tracking-[0.16em] text-forest/40">
+                    <p className="mt-7 text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                       {channel.label}
                     </p>
-                    <p className="mt-2 font-display text-xl tracking-[-0.03em] text-forest/55">
+                    <p className="mt-2 font-display text-xl tracking-[-0.03em] text-forest">
                       {channel.value}
                     </p>
-                    <p className="mt-3 text-xs leading-relaxed text-forest/50">{channel.note}</p>
+                    <p className="mt-3 text-xs leading-relaxed text-forest/60">{channel.note}</p>
                   </div>
                 </Reveal>
               );
@@ -96,15 +97,15 @@ export default function ContactPage() {
 
           <div className="mt-4 grid gap-4 lg:grid-cols-12">
             <div className="rounded-2xl border border-forest/15 bg-sage/35 p-6 lg:col-span-8">
-              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
-                Contact status
+              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
+                How enquiries reach us
               </p>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-forest/70">
                 {site.contact.note}
               </p>
             </div>
             <div className="rounded-2xl border border-forest/15 bg-sage/35 p-6 lg:col-span-4">
-              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
+              <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                 Social channels
               </p>
               <p className="mt-3 text-sm leading-relaxed text-forest/65">{site.socialNote}</p>
@@ -118,30 +119,30 @@ export default function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-28">
-                <p className="eyebrow text-forest/55">Contact form</p>
-                <h2 className="display-lg mt-5 text-forest">A message, held locally.</h2>
+                <p className="eyebrow text-forest/60">Contact form</p>
+                <h2 className="display-lg mt-5 text-forest">Start with your question.</h2>
                 <p className="mt-4 max-w-sm text-sm leading-relaxed text-forest/60">
-                  The form validates your input in the browser and shows the
-                  success state an official endpoint would trigger. It does not
-                  transmit or store anything.
+                  The form checks your details in the browser and then opens a
+                  pre-addressed email draft. Nothing is stored on this site, and
+                  nothing is sent until you send it.
                 </p>
                 <div className="mt-6 space-y-4 border-t border-forest/15 pt-4">
                   <div className="flex items-start gap-3">
-                    <Globe2 aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none text-forest/50" />
+                    <Globe2 aria-hidden="true" className="mt-0.5 h-4 w-4 flex-none text-forest/60" />
                     <p className="text-xs leading-relaxed text-forest/60">
-                      Official email, phone and office details will replace the
-                      pending states above when verified.
+                      Please write in English or French and include the decision or
+                      deadline your enquiry relates to.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Accessibility
                       aria-hidden="true"
-                      className="mt-0.5 h-4 w-4 flex-none text-forest/50"
+                      className="mt-0.5 h-4 w-4 flex-none text-forest/60"
                     />
                     <p className="text-xs leading-relaxed text-forest/60">
-                      An official accessibility feedback route is also pending. The
-                      prototype supports keyboard navigation, visible focus and
-                      reduced motion.
+                      Report an accessibility issue by selecting Accessibility
+                      feedback. The site supports keyboard navigation, visible focus
+                      and reduced motion.
                     </p>
                   </div>
                 </div>
@@ -157,7 +158,7 @@ export default function ContactPage() {
       <section className="section bg-ivory">
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-forest/55">Questions</p>
+            <p className="eyebrow text-forest/60">Questions</p>
             <h2 className="display-lg mt-5 text-forest">About contacting us.</h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-forest/60">
               Clear answers about channels, the form and where to direct different

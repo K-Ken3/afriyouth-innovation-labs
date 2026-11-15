@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Brand } from "@/components/navigation/Brand";
 import { footerNav, site } from "@/content/site";
-import { Badge } from "@/components/ui/Badge";
 import { ButtonLink } from "@/components/ui/Button";
 
 export function Footer() {
@@ -12,11 +11,14 @@ export function Footer() {
         <div className="grid gap-10 border-b border-ivory/15 py-12 sm:py-16 lg:grid-cols-12 lg:items-start lg:gap-8">
           <div className="lg:col-span-5">
             <Brand theme="dark" />
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-ivory/72">
+            <p className="mt-4 text-[0.6875rem] uppercase tracking-[0.18em] text-lime/80">
+              {site.tagline}
+            </p>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-ivory/72">
               {site.description}
             </p>
-            <p className="mt-4 max-w-md text-xs leading-relaxed text-ivory/45">
-              {site.provisionalNotice}
+            <p className="mt-4 max-w-md text-xs leading-relaxed text-ivory/60">
+              {site.accountability}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <ButtonLink to="/partner-with-us" variant="lime">
@@ -31,7 +33,7 @@ export function Footer() {
           <div className="grid gap-9 sm:grid-cols-3 lg:col-span-7 lg:gap-6">
             {footerNav.map((section) => (
               <div key={section.title}>
-                <p className="mb-4 text-[0.6875rem] uppercase tracking-[0.18em] text-ivory/45">
+                <p className="mb-4 text-[0.6875rem] uppercase tracking-[0.18em] text-ivory/60">
                   {section.title}
                 </p>
                 <ul className="space-y-2">
@@ -58,17 +60,14 @@ export function Footer() {
 
         <div className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-wrap items-center gap-3">
-            <p className="text-[0.6875rem] uppercase tracking-[0.18em] text-ivory/45">
+            <p className="text-[0.6875rem] uppercase tracking-[0.18em] text-ivory/60">
               © {site.copyrightYear} {site.name}
             </p>
-            <Badge variant="provisional" className="border-ivory/25 text-ivory/60">
-              Prototype
-            </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-[0.6875rem] uppercase tracking-[0.16em] text-ivory/40">
-            <span>Research · Policy · Design · Enterprise · Development · Foresight · Measurement</span>
+          <div className="flex flex-wrap items-center gap-4 text-[0.6875rem] uppercase tracking-[0.16em] text-ivory/60">
+            <span>Research · Policy · Design · Enterprise · Foresight · Leadership</span>
             <span className="hidden sm:inline">·</span>
-            <span>Contact channels pending verification</span>
+            <span>Africa's innovation &amp; policy lab</span>
           </div>
         </div>
       </div>

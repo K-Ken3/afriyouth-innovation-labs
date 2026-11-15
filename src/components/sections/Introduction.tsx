@@ -23,7 +23,7 @@ export function Introduction() {
             />
             <Reveal delay={0.2} className="mt-9 flex items-center gap-4">
               <span aria-hidden="true" className="h-px w-14 bg-forest/40" />
-              <p className="text-[0.65rem] uppercase tracking-[0.18em] text-forest/50">
+              <p className="text-[0.65rem] uppercase tracking-[0.18em] text-forest/60">
                 One connected practice
               </p>
             </Reveal>
@@ -55,14 +55,14 @@ export function Introduction() {
           <div className="lg:col-span-7">
             <MaskReveal className="rounded-2xl">
               <PhotoPlate
-                photo={photos.teamConversation}
+                photo={photos.electronicsLab}
                 variant={1}
                 className="aspect-[4/3] w-full"
                 title="The connected practice"
                 index="01"
               />
             </MaskReveal>
-            <div className="relative z-10 -mt-10 ml-5 mr-5 max-w-md bg-lime p-5 sm:ml-8 sm:p-6">
+            <div className="relative z-10 -mt-10 ml-5 mr-5 max-w-md border border-lime/40 bg-blush p-5 sm:ml-8 sm:p-6">
               <div className="flex items-start gap-3">
                 <RotateCcw
                   aria-hidden="true"
@@ -82,7 +82,7 @@ export function Introduction() {
                 <li key={item.label}>
                   <Reveal delay={index * 0.06}>
                     <div className="group flex items-start gap-4 border-b border-forest/15 py-5 sm:gap-6">
-                      <span className="mt-1 font-display text-[0.65rem] tabular-nums tracking-[0.14em] text-forest/35">
+                      <span className="mt-1 font-display text-[0.65rem] tabular-nums tracking-[0.14em] text-forest/60">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <div className="flex-1">
@@ -93,7 +93,7 @@ export function Introduction() {
                           {index < purpose.relationship.length - 1 ? (
                             <ArrowDown
                               aria-hidden="true"
-                              className="h-4 w-4 text-forest/25 transition-transform duration-300 group-hover:translate-y-1"
+                              className="h-4 w-4 text-forest/45 transition-transform duration-300 group-hover:translate-y-1"
                             />
                           ) : null}
                         </div>
@@ -105,7 +105,7 @@ export function Introduction() {
               ))}
             </ol>
             <Reveal delay={0.2} className="mt-5">
-              <p className="text-xs leading-relaxed text-forest/45">
+              <p className="text-xs leading-relaxed text-forest/60">
                 Each part strengthens the others. The loop is the point — not a
                 one-way route from research to a report.
               </p>

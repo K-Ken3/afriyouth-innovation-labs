@@ -27,15 +27,15 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About the lab"
+        eyebrow="About the firm"
         chapter="01"
-        title={["A research and", "innovation", "institution for", "African futures."]}
+        title={["A research,", "innovation and", "policy consulting", "firm."]}
         intro={aboutIntro.intro}
         meta={[
-          { label: "Focus", value: "Research & innovation" },
-          { label: "Structure", value: "Connected practice" },
-          { label: "Content status", value: "Brief-verified" },
-          { label: "Edition", value: "Prototype 01" },
+          { label: "Focus", value: "Research, innovation & policy" },
+          { label: "Structure", value: "Five divisions" },
+          { label: "Horizon", value: "2050" },
+          { label: "Cross-cutting", value: "Impact & funding" },
         ]}
       />
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <aside className="lg:col-span-3">
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-forest/50">On this page</p>
+              <p className="eyebrow text-forest/60">On this page</p>
               <nav aria-label="About sections" className="mt-5">
                 <ol className="border-t border-forest/15">
                   {aboutChapters.map((chapter, index) => (
@@ -53,7 +53,7 @@ export default function AboutPage() {
                         className="group flex items-center justify-between gap-3 py-3 text-sm text-forest/60 transition-colors hover:text-forest"
                       >
                         <span className="flex items-baseline gap-3">
-                          <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/30">
+                          <span className="text-[0.625rem] tabular-nums tracking-[0.12em] text-forest/60">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           {chapter.label}
@@ -68,13 +68,13 @@ export default function AboutPage() {
                 </ol>
               </nav>
               <div className="mt-8 hidden border border-forest/15 p-4 lg:block">
-                <p className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/40">
-                  Provisional content
+                <p className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/60">
+                  Mandate
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-forest/55">
-                  Mission, vision, positioning and brand pillars follow the
-                  challenge brief. History, people and governance remain
-                  unpublished until verified.
+                <p className="mt-2 text-xs leading-relaxed text-forest/60">
+                  AfriYouth connects research, policy, human-centered design,
+                  entrepreneurship, foresight and leadership development around a
+                  single question — then stays through implementation and scale.
                 </p>
               </div>
             </div>
@@ -99,16 +99,16 @@ export default function AboutPage() {
 
             <MaskReveal className="mt-12 rounded-2xl">
               <PhotoPlate
-                photo={photos.designWorkshop}
+                photo={photos.solarFieldTeam}
                 variant={0}
                 className="aspect-[16/9] w-full"
                 title="Institution / Connected"
                 index="A1"
               />
             </MaskReveal>
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[0.625rem] uppercase tracking-[0.16em] text-forest/40">
-              <span>Placeholder photography — Pexels</span>
-              <span>Official photography will replace this image</span>
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
+              <span>Brand photography — AfriYouth brand guidelines</span>
+              <span>Brand-direction imagery, not staff photography</span>
             </div>
           </div>
         </div>
@@ -120,25 +120,25 @@ export default function AboutPage() {
             <Reveal className="on-dark grain flex flex-col justify-between rounded-2xl bg-forest p-7 text-ivory sm:p-10">
               <div className="flex items-center justify-between gap-4">
                 <p className="eyebrow text-lime/80">Mission</p>
-                <Badge variant="provisional" className="border-ivory/20 text-ivory/55">
-                  Brief-verified
+                <Badge variant="soft" className="border-ivory/20 bg-ivory/10 text-ivory/70">
+                  September 2026
                 </Badge>
               </div>
               <p className="display-md mt-12 max-w-xl text-ivory">{site.mission}</p>
-              <p className="mt-8 text-xs uppercase tracking-[0.15em] text-ivory/35">
+              <p className="mt-8 text-xs uppercase tracking-[0.15em] text-ivory/60">
                 Why the work exists
               </p>
             </Reveal>
 
-            <Reveal delay={0.08} className="flex flex-col justify-between rounded-2xl bg-lime p-7 text-forest sm:p-10">
+            <Reveal delay={0.08} className="flex flex-col justify-between rounded-2xl border border-lime/40 bg-blush p-7 text-forest sm:p-10">
               <div className="flex items-center justify-between gap-4">
                 <p className="eyebrow text-forest/60 before:bg-forest">Vision</p>
-                <span className="font-display text-xs tracking-[0.14em] text-forest/35">
+                <span className="font-display text-xs tracking-[0.14em] text-forest/60">
                   Horizon
                 </span>
               </div>
               <p className="display-md mt-12 max-w-xl text-forest">{site.vision}</p>
-              <p className="mt-8 text-xs uppercase tracking-[0.15em] text-forest/45">
+              <p className="mt-8 text-xs uppercase tracking-[0.15em] text-forest/60">
                 The future we are working toward
               </p>
             </Reveal>
@@ -151,15 +151,17 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <Reveal>
-                <p className="eyebrow text-forest/55">Brand pillars</p>
+                <p className="eyebrow text-forest/60">Brand pillars</p>
               </Reveal>
               <KineticHeading
                 lines={["Six commitments", "that frame", "the work."]}
                 className="display-lg mt-5 text-forest"
               />
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest/60">
-                Verified from the challenge brief, these pillars frame how the
-                lab presents its work while official brand materials are pending.
+                Six keywords from the official brand guidelines frame how the
+                organisation presents its work: innovation, youth empowerment,
+                sustainability, global impact, human-centered design and
+                leadership development.
               </p>
             </div>
 
@@ -167,9 +169,9 @@ export default function AboutPage() {
               {site.brandPillars.map((pillar, index) => (
                 <li
                   key={pillar}
-                  className="group flex min-h-[8.5rem] flex-col justify-between bg-paper p-5 transition-colors duration-300 hover:bg-lime sm:p-6"
+                  className="group flex min-h-[8.5rem] flex-col justify-between bg-paper p-5 transition-colors duration-300 hover:bg-blush sm:p-6"
                 >
-                  <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/35">
+                  <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/60">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-8 font-display text-2xl leading-tight tracking-[-0.035em] text-forest">
@@ -186,31 +188,34 @@ export default function AboutPage() {
         <div className="container-editorial">
           <SectionHeading
             eyebrow="How we work"
-            meta="Five provisional principles"
+            meta="Six-step philosophy"
             title={
               <KineticHeading
-                lines={["Principles before", "posture."]}
+                lines={["Think. Research.", "Design. Build.", "Influence. Scale."]}
                 className="display-xl text-forest"
-                accentLines={[1]}
+                accentLines={[2]}
                 accentClassName="text-forest/32"
               />
             }
-            intro="These working principles are provisional articulations of the brief. They describe how the lab intends to operate, not claims about a track record."
+            intro="The official philosophy runs from thinking to scale. These steps describe how AfriYouth moves an idea from question to durable change."
           />
 
           <ol className="mt-14 border-t border-forest/20">
             {principles.map((principle, index) => (
-              <Reveal key={principle.number} delay={index * 0.04}>
-                <li className="grid gap-4 border-b border-forest/15 py-6 sm:grid-cols-12 sm:items-start sm:gap-6 lg:py-8">
-                  <span className="font-display text-2xl leading-none tracking-[-0.05em] text-forest/20 sm:col-span-1">
+              <li key={principle.number} className="border-b border-forest/15">
+                <Reveal
+                  delay={index * 0.04}
+                  className="grid gap-4 py-6 sm:grid-cols-12 sm:items-start sm:gap-6 lg:py-8"
+                >
+                  <span className="font-display text-2xl leading-none tracking-[-0.05em] text-forest/45 sm:col-span-1">
                     {principle.number}
                   </span>
                   <h3 className="font-display text-2xl leading-tight tracking-[-0.035em] text-forest sm:col-span-4 lg:text-[1.75rem]">
                     {principle.title}
                   </h3>
                   <p className="body-copy sm:col-span-7 sm:max-w-2xl">{principle.text}</p>
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
           </ol>
 
@@ -218,7 +223,7 @@ export default function AboutPage() {
             {aboutCommitments.map((commitment, index) => (
               <Reveal key={commitment.title} delay={index * 0.04}>
                 <div className="card-surface h-full p-5">
-                  <span className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/35">
+                  <span className="text-[0.6rem] uppercase tracking-[0.16em] text-forest/60">
                     Commitment {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-3 text-sm font-semibold text-forest">{commitment.title}</h3>
@@ -235,7 +240,7 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <Reveal>
-                <p className="eyebrow text-forest/55">People & governance</p>
+                <p className="eyebrow text-forest/60">People & governance</p>
               </Reveal>
               <KineticHeading
                 lines={["Built by people.", "Accountable to", "the work."]}
@@ -245,33 +250,33 @@ export default function AboutPage() {
 
             <div className="grid gap-4 lg:col-span-8 sm:grid-cols-2">
               <Reveal className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border border-dashed border-forest/30 bg-ivory/70 p-6">
+                <div className="flex h-full flex-col rounded-2xl border border-forest/15 bg-paper p-6">
                   <div className="flex items-center justify-between gap-4">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/20 text-forest/60">
                       <Users aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
                     </span>
-                    <Badge variant="provisional" dot>
-                      Pending verification
+                    <Badge variant="soft" dot>
+                      Multidisciplinary
                     </Badge>
                   </div>
                   <h3 className="mt-8 font-display text-xl tracking-[-0.03em] text-forest">
                     {teamStatement.heading}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-forest/60">{teamStatement.body}</p>
-                  <p className="mt-auto pt-6 text-[0.625rem] uppercase tracking-[0.14em] text-forest/35">
+                  <p className="mt-auto pt-6 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                     {teamStatement.note}
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={0.06} className="h-full">
-                <div className="flex h-full flex-col rounded-2xl border border-dashed border-forest/30 bg-ivory/70 p-6">
+                <div className="flex h-full flex-col rounded-2xl border border-forest/15 bg-paper p-6">
                   <div className="flex items-center justify-between gap-4">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-forest/20 text-forest/60">
                       <Database aria-hidden="true" className="h-4 w-4" strokeWidth={1.5} />
                     </span>
-                    <Badge variant="provisional" dot>
-                      Pending verification
+                    <Badge variant="soft" dot>
+                      By agreement
                     </Badge>
                   </div>
                   <h3 className="mt-8 font-display text-xl tracking-[-0.03em] text-forest">
@@ -280,7 +285,7 @@ export default function AboutPage() {
                   <p className="mt-3 text-sm leading-relaxed text-forest/60">
                     {partnershipStatement.body}
                   </p>
-                  <p className="mt-auto pt-6 text-[0.625rem] uppercase tracking-[0.14em] text-forest/35">
+                  <p className="mt-auto pt-6 text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                     {partnershipStatement.note}
                   </p>
                 </div>
@@ -304,7 +309,7 @@ export default function AboutPage() {
                 accentClassName="text-lime"
               />
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-ivory/60">
-                {site.provisionalNotice}
+                {site.accountability}
               </p>
               <Link
                 to="/impact"
@@ -319,15 +324,15 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <div className="rounded-2xl border border-ivory/20 p-6">
-                <p className="text-[0.625rem] uppercase tracking-[0.16em] text-ivory/40">
-                  Verification standard
+                <p className="text-[0.625rem] uppercase tracking-[0.16em] text-ivory/60">
+                  Publication standard
                 </p>
                 <ul className="mt-4 space-y-3">
                   {[
-                    "No invented statistics or achievements.",
-                    "No unnamed partnerships presented as endorsements.",
-                    "No programmes, deadlines or staff published before confirmation.",
-                    "No testimonials or contact details created for the prototype.",
+                    "Figures carry their source, date and method.",
+                    "Partnerships are named only with permission.",
+                    "Calls show eligibility, deadlines and a direct route to apply.",
+                    "Testimonials appear only with written consent.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm text-ivory/65">
                       <span aria-hidden="true" className="mt-2 h-1 w-1 flex-none rounded-full bg-lime" />
@@ -342,9 +347,9 @@ export default function AboutPage() {
       </section>
 
       <PageCTA
-        eyebrow="Work with the lab"
+        eyebrow="Work with the firm"
         title="Bring a question worth taking seriously."
-        body="We are open to research, design, policy, enterprise, learning, foresight and measurement collaborations — and to conversations that clarify what is needed first."
+        body="We are open to research, policy, innovation, venture support, learning, foresight, funding readiness and measurement collaborations — and to conversations that clarify what is needed first."
         primary={{ label: "Partner With Us", to: "/partner-with-us" }}
         secondary={{ label: "Get Involved", to: "/get-involved" }}
       />

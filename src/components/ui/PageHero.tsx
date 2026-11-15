@@ -51,13 +51,13 @@ export function PageHero({
                   to="/"
                   className={cn(
                     "transition-colors",
-                    dark ? "text-ivory/55 hover:text-lime" : "text-forest/55 hover:text-forest",
+                    dark ? "text-ivory/55 hover:text-lime" : "text-forest/60 hover:text-forest",
                   )}
                 >
                   Home
                 </Link>
               </li>
-              <li aria-hidden="true" className={dark ? "text-ivory/30" : "text-forest/30"}>
+              <li aria-hidden="true" className={dark ? "text-ivory/30" : "text-forest/60"}>
                 /
               </li>
               <li className={cn("font-medium", dark ? "text-ivory/85" : "text-forest/85")}>
@@ -68,7 +68,7 @@ export function PageHero({
           <span
             className={cn(
               "text-[0.625rem] uppercase tracking-[0.2em]",
-              dark ? "text-ivory/40" : "text-forest/40",
+              dark ? "text-ivory/60" : "text-forest/60",
             )}
           >
             Chapter {chapter}
@@ -94,7 +94,7 @@ export function PageHero({
               delay={0.05}
               className="display-xl"
               accentLines={title.length > 1 ? [title.length - 1] : []}
-              accentClassName={dark ? "text-lime" : "text-forest/35"}
+              accentClassName={dark ? "text-lime" : "text-forest/60"}
             />
             <Reveal delay={0.35} className="mt-7 max-w-2xl">
               <p
@@ -133,7 +133,7 @@ export function PageHero({
                       <dt
                         className={cn(
                           "text-[0.625rem] uppercase tracking-[0.16em]",
-                          dark ? "text-ivory/45" : "text-forest/45",
+                          dark ? "text-ivory/60" : "text-forest/60",
                         )}
                       >
                         {item.label}
@@ -152,7 +152,7 @@ export function PageHero({
                 <div
                   className={cn(
                     "mt-6 flex items-center gap-2 text-[0.625rem] uppercase tracking-[0.18em]",
-                    dark ? "text-ivory/35" : "text-forest/35",
+                    dark ? "text-ivory/60" : "text-forest/60",
                   )}
                 >
                   <ArrowDownRight aria-hidden="true" className="h-3.5 w-3.5" />

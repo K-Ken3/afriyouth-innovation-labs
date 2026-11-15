@@ -8,7 +8,7 @@ export function ClosingCTA() {
   return (
     <section
       aria-labelledby="closing-heading"
-      className="relative overflow-hidden bg-lime text-forest"
+      className="relative overflow-hidden bg-blush text-forest"
     >
       <svg
         aria-hidden="true"
@@ -16,16 +16,16 @@ export function ClosingCTA() {
         className="pointer-events-none absolute inset-0 h-full w-full"
         preserveAspectRatio="xMidYMid slice"
       >
-        <circle cx="1030" cy="120" r="360" fill="none" stroke="#153D32" strokeOpacity="0.16" />
-        <circle cx="1030" cy="120" r="280" fill="none" stroke="#153D32" strokeOpacity="0.12" strokeDasharray="2 10" />
-        <circle cx="1030" cy="120" r="200" fill="none" stroke="#153D32" strokeOpacity="0.1" />
+        <circle cx="1030" cy="120" r="360" fill="none" stroke="#0D0624" strokeOpacity="0.16" />
+        <circle cx="1030" cy="120" r="280" fill="none" stroke="#0D0624" strokeOpacity="0.12" strokeDasharray="2 10" />
+        <circle cx="1030" cy="120" r="200" fill="none" stroke="#0D0624" strokeOpacity="0.1" />
         <path
           d="M-100 520C180 400 360 460 560 560S980 660 1300 500"
           fill="none"
-          stroke="#153D32"
+          stroke="#0D0624"
           strokeOpacity="0.18"
         />
-        <path d="M1030 120L1160 -10M1030 120L1160 250" stroke="#153D32" strokeOpacity="0.16" />
+        <path d="M1030 120L1160 -10M1030 120L1160 250" stroke="#0D0624" strokeOpacity="0.16" />
       </svg>
 
       <div className="container-editorial relative z-10 py-20 sm:py-28 lg:py-32">
@@ -37,7 +37,7 @@ export function ClosingCTA() {
           lines={["The future is not", "a prediction.", "It is a practice."]}
           className="display-xl mt-6 max-w-5xl text-forest"
           accentLines={[2]}
-          accentClassName="text-forest/40"
+          accentClassName="text-forest/60"
         />
 
         <div className="mt-10 grid gap-8 border-t border-forest/25 pt-8 sm:mt-14 lg:grid-cols-12 lg:items-end">
@@ -58,8 +58,8 @@ export function ClosingCTA() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.12} className="mt-10 flex flex-wrap items-center justify-between gap-4 text-[0.625rem] uppercase tracking-[0.16em] text-forest/50">
-          <span>Research · Policy · Design · Enterprise · Development · Foresight · Measurement</span>
+        <Reveal delay={0.12} className="mt-10 flex flex-wrap items-center justify-between gap-4 text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
+          <span>Research · Policy · Design · Enterprise · Foresight · Leadership</span>
           <Link to="/contact" className="link-underline inline-flex items-center gap-2 text-forest/70">
             Contact the lab
             <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />

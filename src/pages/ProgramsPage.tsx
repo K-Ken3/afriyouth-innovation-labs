@@ -17,17 +17,17 @@ export default function ProgramsPage() {
         eyebrow="Programs & opportunities"
         chapter="03"
         title={["The opportunity", "board."]}
-        intro="Fellowships, research calls, innovation challenges, learning opportunities and enterprise support will appear here with eligibility, deadline, format and a direct application route — only when verified."
+        intro="Cohorts for the AfriYouth Innovation Accelerator, Policy Innovation Challenge rounds, research calls, academies and venture support are announced here. Every listing carries eligibility, deadline, format and a direct application route."
         meta={[
           {
             label: "Status",
-            value: publishedCount === 0 ? "Board in preparation" : `${openCount} open`,
+            value: publishedCount === 0 ? "Calls by announcement" : `${openCount} open`,
           },
           {
             label: "Published calls",
             value: String(publishedCount).padStart(2, "0"),
           },
-          { label: "Updates", value: "Only when confirmed" },
+          { label: "Updates", value: "As calls open" },
           { label: "Format", value: "Filterable board" },
         ]}
       />
@@ -36,17 +36,17 @@ export default function ProgramsPage() {
         <div className="container-editorial">
           <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <p className="eyebrow text-forest/55">Live board</p>
-              <Badge variant="provisional" dot>
+              <h2 className="eyebrow text-forest/60">Live board</h2>
+              <Badge variant="soft" dot>
                 {publishedCount === 0
-                  ? "No published calls"
+                  ? "No open calls"
                   : `${publishedCount} published ${publishedCount === 1 ? "call" : "calls"}`}
               </Badge>
             </div>
-            <p className="text-xs text-forest/45">
+            <p className="text-xs text-forest/60">
               {publishedCount === 0
-                ? "Prototype behaviour only — no programs are listed"
-                : "Official listings only — updated when information is confirmed"}
+                ? "New calls are added here as cohorts open"
+                : "Open calls, with eligibility and a direct application route"}
             </p>
           </div>
           <ProgramBoard />
@@ -56,7 +56,7 @@ export default function ProgramsPage() {
       <PageCTA
         eyebrow="Can't see a fit yet?"
         title="Register your interest for future calls."
-        body="Tell us which areas you're curious about. This prototype form validates locally and does not send or store your details; official interest channels will be published with verified information."
+        body="Tell us which areas you're curious about and we will let you know when a relevant call opens. Registering interest is not an application."
         primary={{ label: "Get Involved", to: "/get-involved" }}
         secondary={{ label: "What we do", to: "/what-we-do" }}
       />

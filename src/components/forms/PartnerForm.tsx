@@ -1,11 +1,11 @@
-import { usePrototypeForm, validate } from "@/hooks/usePrototypeForm";
+import { draftBody, useEnquiryForm, validate } from "@/hooks/useEnquiryForm";
 import { collaborationOptions } from "@/content/partners";
-import { prototypeFormCopy } from "@/content/pages";
+import { enquiryFormCopy } from "@/content/pages";
 import { Button } from "@/components/ui/Button";
 import { FormSuccess } from "@/components/ui/FormSuccess";
 import {
   CheckboxField,
-  PrototypeNotice,
+  FormNotice,
   SelectField,
   TextAreaField,
   TextField,
@@ -42,6 +42,20 @@ function validatePartner(values: PartnerValues) {
   };
 }
 
+function composePartner(values: PartnerValues) {
+  return {
+    subject: `Partnership enquiry — ${values.organisation}`,
+    body: draftBody([
+      `Name: ${values.name}`,
+      `Organisation: ${values.organisation}`,
+      values.role ? `Role: ${values.role}` : undefined,
+      `Email: ${values.email}`,
+      `Collaboration type: ${values.collaboration}`,
+      `Context:\n${values.context}`,
+    ]),
+  };
+}
+
 export function PartnerForm() {
   const {
     values,
@@ -49,19 +63,20 @@ export function PartnerForm() {
     touched,
     submitted,
     isSubmitting,
+    deliveryUnavailable,
     update,
     markTouched,
     handleSubmit,
     reset,
-  } = usePrototypeForm(initialValues, validatePartner);
+  } = useEnquiryForm(initialValues, validatePartner, composePartner);
 
   if (submitted) {
     return (
       <FormSuccess
-        title={prototypeFormCopy.successTitle}
-        body={prototypeFormCopy.successBody}
+        title={enquiryFormCopy.successTitle}
+        body={enquiryFormCopy.successBody}
         onReset={reset}
-        resetLabel={prototypeFormCopy.resetLabel}
+        resetLabel={enquiryFormCopy.resetLabel}
       />
     );
   }
@@ -75,12 +90,12 @@ export function PartnerForm() {
     >
       <div className="flex items-start justify-between gap-4">
         <div>
-          <p className="eyebrow text-forest/50">Start a conversation</p>
+          <p className="eyebrow text-forest/60">Start a conversation</p>
           <h2 id="partner-form-title" className="display-md mt-3 text-forest">
             Bring us the question.
           </h2>
         </div>
-        <span className="hidden font-display text-xs uppercase tracking-[0.16em] text-forest/30 sm:block">
+        <span className="hidden font-display text-xs uppercase tracking-[0.16em] text-forest/60 sm:block">
           Form 02
         </span>
       </div>
@@ -91,8 +106,14 @@ export function PartnerForm() {
       </p>
 
       <div className="mt-6">
-        <PrototypeNotice>{prototypeFormCopy.body}</PrototypeNotice>
+        <FormNotice>{enquiryFormCopy.body}</FormNotice>
       </div>
+
+      {deliveryUnavailable ? (
+        <div role="alert" className="mt-3">
+          <FormNotice>{enquiryFormCopy.unavailable}</FormNotice>
+        </div>
+      ) : null}
 
       <div className="mt-7 grid gap-5 sm:grid-cols-2">
         <TextField
@@ -130,7 +151,7 @@ export function PartnerForm() {
           type="email"
           required
           autoComplete="email"
-          hint="Validated locally only. Nothing is sent."
+          hint="Used only to respond to this enquiry."
           value={values.email}
           onChange={(event) => update("email", event.target.value)}
           onBlur={() => markTouched("email")}
@@ -168,19 +189,14 @@ export function PartnerForm() {
           onChange={(checked) => update("consent", checked)}
           onBlur={() => markTouched("consent")}
           error={touched.consent ? errors.consent : undefined}
-          label={
-            <>
-              I understand this prototype form does not transmit or store this
-              enquiry, and that no partnership or response is created.
-            </>
-          }
+          label="I agree that AfriYouth may use these details to respond to this enquiry."
         />
       </div>
 
       <div className="mt-7 flex flex-col gap-3 border-t border-forest/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs text-forest/45">Required fields are marked *</p>
+        <p className="text-xs text-forest/60">Required fields are marked *</p>
         <Button type="submit" disabled={isSubmitting} arrow={false}>
-          {isSubmitting ? "Validating…" : "Outline a conversation"}
+          {isSubmitting ? "Opening draft…" : "Open email draft"}
         </Button>
       </div>
     </form>

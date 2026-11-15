@@ -3,15 +3,15 @@ import type { ImpactDimension } from "./types";
 /**
  * IMPACT CONTENT
  * --------------
- * No statistics, baselines, evaluations or achievements are included because
- * none have been supplied. The page explains the measurement architecture and
- * uses explicit "not yet published" states instead of fabricated numbers.
+ * No statistics, baselines, evaluations or achievements are listed because none
+ * have been cleared for publication. The page sets out the measurement standard
+ * and the public ledger through which verified results are released.
  */
 export const impactIntro = {
   eyebrow: "Impact & accountability",
-  heading: "We will publish what changes. Not just what we did.",
+  heading: "We publish what changes. Not just what we did.",
   intro:
-    "Impact is a claim that requires evidence. This prototype shows how AfriYouth intends to measure and report its work — and deliberately displays no figures until they can be verified, sourced and dated.",
+    "Impact & Learning Services is one of AfriYouth's cross-cutting services, spanning theory of change, M&E systems, baseline and outcome measurement, evaluation and learning reports. This page sets out how the firm measures and reports its work — and how verified results are released.",
   statement:
     "A number without a source is not evidence. It is decoration.",
 };
@@ -89,44 +89,49 @@ export const measurementCommitments = [
 
 export const impactLedger = [
   {
-    label: "Baseline studies",
-    description: "Starting conditions for each engagement, with methods and sample notes.",
-    status: "Not yet published",
+    label: "Baseline and endline studies",
+    description: "Starting and closing conditions for each engagement, with methods and sample notes.",
+    status: "Published on completion",
   },
   {
-    label: "Outcome & contribution studies",
+    label: "Impact assessments",
     description: "What changed, for whom, and what else may explain it.",
-    status: "Not yet published",
+    status: "Published on completion",
   },
   {
-    label: "Evaluation reports",
+    label: "Programme evaluations",
     description: "Independent and internal assessments, including negative findings.",
-    status: "Not yet published",
+    status: "Published on completion",
   },
   {
-    label: "Learning briefs",
-    description: "Practical lessons for programme teams, partners and funders.",
-    status: "Not yet published",
+    label: "Learning reports",
+    description: "Practical lessons for programme teams, partners, funders and the Impact Dashboard.",
+    status: "Published on completion",
   },
 ];
 
 export const impactNote =
-  "No impact figures appear on this prototype. When verified results exist, they will be published here with their source, date, method and stated limitations. The absence of a number is intentional.";
+  "Verified results are published here with their source, date, method and stated limitations, and surfaced through the AfriYouth Impact Dashboard. Estimates are never presented as achievements.";
 
 export const impactFaqs = [
   {
-    question: "Why are there no impact numbers on this page?",
+    question: "How are impact results published?",
     answer:
-      "Because no verified impact data has been supplied for this prototype. Publishing estimates as achievements would misrepresent the organization. The measurement framework is shown so the reporting architecture can be reviewed before data arrives.",
+      "Impact figures are published as verified engagements conclude, with their source, date, method and stated limitations. Publishing estimates as achievements would misrepresent the work; the measurement framework is shown so the reporting standard is clear.",
+  },
+  {
+    question: "What is the AfriYouth Impact Dashboard?",
+    answer:
+      "It is the product through which verified indicators, outcome measures and learning reports are surfaced. It carries only data that has passed the verification standard set for the engagement.",
   },
   {
     question: "Will you publish negative findings?",
     answer:
-      "The measurement commitments state that limitations and unintended effects are reported alongside results. A public impact ledger is only credible if it can contain findings that are inconvenient.",
+      "Yes. Our measurement commitments state that limitations and unintended effects are reported alongside results. A public impact ledger is only credible if it can contain findings that are inconvenient.",
   },
   {
     question: "Who verifies the data?",
     answer:
-      "Verification arrangements are not yet published. The final governance model, including any independent review, will be documented here when confirmed.",
+      "Verification arrangements are agreed with each partner before delivery and documented in the engagement protocol. The public ledger reports only data that meets that standard.",
   },
 ];

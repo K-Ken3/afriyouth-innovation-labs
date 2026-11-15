@@ -20,7 +20,7 @@ export function Pathways() {
               className="display-xl text-forest"
             />
           }
-          intro="The lab is built for young people, for organizations that need rigorous work, and for institutions ready to collaborate on longer horizons."
+          intro="AfriYouth is built for young innovators, for organisations that need rigorous work, and for institutions ready to collaborate on longer horizons."
         />
 
         <div className="mt-12 grid gap-4 lg:mt-16 lg:grid-cols-3">
@@ -31,17 +31,17 @@ export function Pathways() {
                 className={cn(
                   "group flex h-full min-h-[20rem] flex-col justify-between rounded-2xl border p-6 transition-[transform,border-color,background-color] duration-300 ease-editorial hover:-translate-y-1 sm:p-8",
                   index === 0
-                    ? "border-forest/20 bg-lime hover:bg-[#d3fa80]"
+                    ? "border-lime/45 bg-blush hover:bg-[#f2c7fa]"
                     : "border-forest/15 bg-paper hover:border-forest/35",
                   index === 1 ? "lg:mt-8" : "",
                   index === 2 ? "lg:mt-16" : "",
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/55">
+                  <span className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                     {pathway.audience}
                   </span>
-                  <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/35">
+                  <span className="font-display text-xs tabular-nums tracking-[0.14em] text-forest/60">
                     {pathway.number}
                   </span>
                 </div>
@@ -54,7 +54,7 @@ export function Pathways() {
                 </div>
 
                 <div className="mt-8 flex items-center justify-between gap-4 border-t border-forest/20 pt-4">
-                  <span className="text-[0.625rem] uppercase tracking-[0.14em] text-forest/45">
+                  <span className="text-[0.625rem] uppercase tracking-[0.14em] text-forest/60">
                     {pathway.note}
                   </span>
                   <ArrowUpRight

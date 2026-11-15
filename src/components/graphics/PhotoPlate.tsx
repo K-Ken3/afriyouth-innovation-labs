@@ -39,7 +39,7 @@ export function PhotoPlate({
   }
 
   return (
-    <figure className={cn("relative overflow-hidden bg-forest", className)}>
+    <figure className={cn("on-dark relative overflow-hidden bg-forest", className)}>
       <img
         src={photo.src}
         alt={photo.alt}
@@ -56,7 +56,7 @@ export function PhotoPlate({
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/5 to-transparent"
       />
       <span className="pointer-events-none absolute left-3 top-3 rounded-full border border-ivory/25 bg-forest/60 px-2.5 py-1 text-[0.5rem] uppercase tracking-[0.16em] text-ivory/80 backdrop-blur-sm">
-        Placeholder · {photo.credit}
+        {photo.credit}
       </span>
       <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-4 sm:p-5">
         <span className="text-[0.6rem] uppercase tracking-[0.18em] text-ivory/85">

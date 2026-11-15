@@ -7,38 +7,45 @@ export type Photo = {
 };
 
 /**
- * Licensed placeholder photography (Pexels). These images illustrate context
- * only; they are not AfriYouth staff, partners or participants, and will be
- * replaced with official photography.
+ * Photography supplied on the Image & Photography page of the AfriYouth brand
+ * guidelines. These are brand-direction images, not photographs of named
+ * staff, partners or participants.
  */
 export const photos = {
-  teamConversation: {
-    src: "/photos/team-conversation.jpg",
-    alt: "Four colleagues in conversation around a table in a bright office.",
-    credit: "Ninthgrid / Pexels",
-    width: 3840,
-    height: 2560,
+  electronicsLab: {
+    src: "/photos/brand-electronics-lab.jpg",
+    alt: "A young woman in glasses soldering components at a brightly lit workbench.",
+    credit: "AfriYouth brand guidelines",
+    width: 2000,
+    height: 1334,
   },
-  designWorkshop: {
-    src: "/photos/design-workshop.jpg",
-    alt: "Two colleagues arranging sticky notes on a workshop wall.",
-    credit: "Vitaly Gariev / Pexels",
-    width: 3840,
-    height: 2160,
+  researcherVr: {
+    src: "/photos/brand-researcher-vr.jpg",
+    alt: "A researcher wearing a virtual-reality headset while writing at a desk in a bright office.",
+    credit: "AfriYouth brand guidelines",
+    width: 1335,
+    height: 2000,
   },
-  teamLaptop: {
-    src: "/photos/team-laptop.jpg",
-    alt: "Four colleagues reviewing work together around a laptop.",
-    credit: "PICHA Stock / Pexels",
-    width: 3840,
-    height: 2560,
+  youngInnovatorVr: {
+    src: "/photos/brand-young-innovator-vr.jpg",
+    alt: "A young person wearing a virtual-reality headset beside a table of electronic components.",
+    credit: "AfriYouth brand guidelines",
+    width: 1333,
+    height: 2000,
   },
-  meetingPresentation: {
-    src: "/photos/meeting-presentation.jpg",
-    alt: "A colleague presenting on a tablet to a small seated team.",
-    credit: "PICHA Stock / Pexels",
-    width: 3840,
-    height: 2560,
+  solarFieldTeam: {
+    src: "/photos/brand-solar-field-team.jpg",
+    alt: "Three engineers in hard hats reviewing a tablet beneath a solar-panel canopy.",
+    credit: "AfriYouth brand guidelines",
+    width: 1500,
+    height: 998,
+  },
+  circuitWork: {
+    src: "/photos/brand-circuit-work.jpg",
+    alt: "A young person in glasses soldering a circuit board under warm task lighting.",
+    credit: "AfriYouth brand guidelines",
+    width: 2000,
+    height: 1143,
   },
 } as const satisfies Record<string, Photo>;
 

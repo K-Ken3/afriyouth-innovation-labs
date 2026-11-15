@@ -4,14 +4,15 @@ All public copy, programme data, people-facing forms and metadata live in `src/c
 
 ## 1. The content rule
 
-This prototype separates two kinds of copy:
+This site separates three kinds of copy:
 
-| Status | Meaning | Where it appears |
+| Type | Meaning | Where it appears |
 | --- | --- | --- |
-| **Brief-verified** | Supplied verbatim by the AfriYouth challenge brief | Mission, vision, positioning, brand pillars, seven areas of work |
-| **Provisional** | Written to demonstrate structure and interaction; not an organizational claim | Programme descriptions, essays, process steps, FAQ answers, service framing |
+| **Supplied** | Taken from the official AfriYouth organisational profile, or the brand guidelines where the profile is silent | Mission, vision, positioning, tagline, five divisions, products and services, philosophy, brand pillars, eight practice cards |
+| **Editorial** | Written by the practice to explain method, standards and ways of working | Essays, process framing, FAQ answers, service descriptions |
+| **Published when verified** | Organizational facts that need a source, permission or confirmed channel | Programme calls, named partners, people, impact figures, direct contact details |
 
-Provisional copy is labelled in the interface where it could be mistaken for a verified claim. Do not remove those labels until the corresponding content has been approved by AfriYouth.
+The organisational profile is authoritative for mission, vision, divisions and services. The brand guidelines are authoritative for identity. Where older brand-guideline mission or vision wording conflicts with the newer profile, use the profile and do not merge the two.
 
 Never add any of the following unless an official, citable source has been supplied:
 
@@ -23,20 +24,20 @@ Never add any of the following unless an official, citable source has been suppl
 - testimonials, quotes or case studies attributed to real people;
 - publication titles, authors, dates or research findings.
 
-When in doubt, publish the pending state. An honest gap is part of the design.
+When in doubt, state the current position plainly. An honest gap is part of the design.
 
 ## 2. Replacement map
 
 | File | Controls | Main surfaces |
 | --- | --- | --- |
-| `src/content/site.ts` | Name, tagline, description, mission, vision, positioning, brand pillars, notice, contact, navigation, pathways, ticker | Header, footer, hero, homepage, about, contact |
-| `src/content/areas.ts` | Seven areas of work, capabilities, questions, accents, approach nodes | Homepage areas, What We Do, footer anchors |
+| `src/content/site.ts` | Name, tagline, description, positioning, mission, vision, philosophy, five divisions, brand pillars, accountability, contact, navigation, pathways, ticker | Header, footer, hero, homepage, about, contact |
+| `src/content/areas.ts` | Eight practice cards (five divisions plus the Policy Innovation Challenge, Impact & Learning and Funding & Investment Readiness), capabilities, questions, accents, approach nodes | Homepage areas, What We Do, footer anchors |
 | `src/content/about.ts` | Purpose narrative, commitments, team and partnership statements, chapter navigation | About |
 | `src/content/programs.ts` | Opportunity listings, categories, empty state, listing fields | Programs, homepage preview |
 | `src/content/insights.ts` | Essays, categories, detail bodies, pull quotes | Insights, article detail, homepage preview |
 | `src/content/impact.ts` | Measurement dimensions, stages, commitments, ledger states, FAQs | Impact, homepage preview |
 | `src/content/partners.ts` | Collaboration models, audiences, process, questions, FAQs | Partner With Us |
-| `src/content/pages.ts` | Shared process copy, FAQ sets, audience options, prototype form notices | Multiple pages |
+| `src/content/pages.ts` | Shared process copy, FAQ sets, audience options, enquiry form copy | Multiple pages |
 | `src/content/photos.ts` | Photo paths, alt text, credits, intrinsic dimensions | About, insights, homepage |
 | `src/content/seo.ts` | Per-page title, description and canonical path | Every route |
 | `src/content/types.ts` | Shapes for all of the above | Type checking |
@@ -45,22 +46,22 @@ When in doubt, publish the pending state. An honest gap is part of the design.
 
 Edit `src/content/site.ts`.
 
-The mission, vision, positioning and six brand pillars currently mirror the challenge brief. If official wording supersedes the brief, replace them there; every surface reads from this object.
+The mission, vision, positioning and brand pillars currently mirror the official organisational profile. If approved wording supersedes the profile, replace them there; every surface reads from this object. `site.philosophy` holds the six-step Think → Research → Design → Build → Influence → Scale model and `site.purpose.relationship` holds the five divisions.
 
 ### Contact channels
 
-`site.contact` uses `null` for unpublished values, and the Contact page renders “Pending verification” instead:
+The three enquiry forms open a pre-addressed email draft in the visitor's mail client. Set `email` in `site.contact` to the official address; when it is `null`, the forms show a "channel being configured" message instead of opening a draft:
 
 ```ts
 contact: {
-  email: "hello@example.org",   // only after official confirmation
-  phone: "+000 000 0000",
-  address: "Street, City, Country",
-  note: "Official contact channels are published here.",
+  email: "hello@afriyouth.org", // replace with the official address
+  phone: null,                  // set when a monitored line is confirmed
+  address: null,                // set when an office is confirmed for publication
+  note: "For enquiries, use the form on this page. Direct email, telephone and office details are published as they are confirmed.",
 },
 ```
 
-Update the surrounding `meta` values on the Contact page if the channel status changes from pending. Search for `Pending` in `src/pages/ContactPage.tsx`.
+The Contact page reads these values directly. Setting `email` immediately enables all three forms; telephone and office values replace the "Available on request" states.
 
 ### Social accounts
 
@@ -73,9 +74,22 @@ Update the surrounding `meta` values on the Contact page if the channel status c
 
 Use full `https://` URLs. Do not add handles that have not been verified as official.
 
-## 4. Seven areas of work
+## 4. Practice cards and divisions
 
 Edit `src/content/areas.ts`.
+
+The interface keeps eight cards for layout reasons. They represent the five official divisions plus the Policy Innovation Challenge, Impact & Learning Services and Funding & Investment Readiness:
+
+| Card `id` | Position |
+| --- | --- |
+| `research` | Research & Evidence Lab (division) |
+| `policy` | Policy & Governance Lab (division) |
+| `innovation` | Policy Innovation Challenge |
+| `entrepreneurship` | Innovation & Venture Lab (division) |
+| `professional-development` | Career & Professional Development Academy (division) |
+| `foresight` | Strategic Foresight & Futures Lab (division) |
+| `impact-measurement` | Impact & Learning Services (cross-cutting) |
+| `funding` | Funding & Investment Readiness (cross-cutting) |
 
 Each area has an `id`, a `number`, a short and long title, an icon key, a tagline, summary, description paragraphs, capabilities, a framing question, output formats and an accent.
 
@@ -106,7 +120,7 @@ export const programs: Program[] = [
 ];
 ```
 
-Valid category ids are `fellowships`, `research`, `innovation`, `learning` and `enterprise`. The filter chips, counts, status controls and empty states rebuild automatically from this array.
+Valid category ids are `fellowships`, `research`, `innovation`, `learning` and `enterprise`. The filter chips, counts, status controls and empty states rebuild automatically from this array. Their display labels are "Accelerators & cohorts", "Research calls", "Innovation challenges", "Academies & training" and "Venture & funding support" — edit `programCategories` if approved terminology changes.
 
 Before publishing a listing, confirm:
 
@@ -133,51 +147,50 @@ Add an `Insight` object to `src/content/insights.ts`:
   excerpt: "One or two sentences used on cards and in metadata.",
   pullQuote: "Optional pull quote.",
   body: ["First paragraph.", "Second paragraph."],
-  provisional: false,
 }
 ```
 
 The detail route `/insights/:slug` and related-article logic are generated from the array. Keep `slug` stable once published, and add the new URL to `public/sitemap.xml`.
 
-For official research, replace the provisional essays rather than appending to them. Do not invent authors, dates or findings. If an author is supplied, the detail page currently prints “No author attribution supplied”; adding author metadata requires a type and template change.
+The current essays are editorial perspectives on method and practice. They carry the edition label “AfriYouth perspective” and make no research claims. When a research output is supplied, add it with its real kind, edition and author information; do not attribute essays to people who did not write them. Author metadata requires a type and template change.
 
 ## 7. Impact content
 
-Impact figures are deliberately absent. `src/content/impact.ts` describes the measurement framework only, and `src/content/site.ts` exports an empty `homeStats` array that is not rendered.
+Impact figures are deliberately absent until engagements close. `src/content/impact.ts` describes the measurement framework only, and `src/content/site.ts` exports an empty `homeStats` array that is not rendered.
 
 Do not place a statistic into a narrative field as a substitute for a supported data component. When verified figures arrive:
 
 1. Record the source, collection date, method, sample and limitations.
 2. Add a typed data module with those fields.
 3. Build a dedicated figure component that displays the source and date beside the number.
-4. Update the ledger entries in `impactLedger` with links to the actual reports.
-5. Only then remove the “Not yet published” states.
+4. Replace the `impactLedger` status “Published on completion” with a link to the actual report.
+5. Keep the measurement framework visible alongside the figures.
 
 The five `measurementCommitments` are organizational promises. Confirm them with AfriYouth before presenting them as policy.
 
 ## 8. Partner content
 
-`src/content/partners.ts` describes collaboration models and audiences. No partners or clients are named. An official partner directory needs:
+`src/content/partners.ts` describes collaboration models and audiences. No partners or clients are named. Adding a partner directory requires:
 
 - written permission from each organization;
 - a logo asset with appropriate rights;
 - a link to the partner's own confirmation or the AfriYouth announcement;
 - a layout decision on whether partners are implied endorsements.
 
-Until then, keep the pending statement.
+Until permission exists, describe how AfriYouth collaborates rather than who it has worked with.
 
 ## 9. Photography
 
-`src/content/photos.ts` is the single source for photo paths, alt text, credit and intrinsic dimensions. Images live in `public/photos/`.
+`src/content/photos.ts` is the single source for photo paths, alt text, credit and intrinsic dimensions. Images live in `public/photos/`. The current five images come from page 5 (Image & Photography) of the supplied brand guidelines.
 
 When replacing an image:
 
-1. Export a web-optimised JPEG or WebP. The current placeholders are 3840px wide; that is larger than necessary for most placements.
+1. Export a web-optimised JPEG or WebP at native resolution. The current set is 1333–2000px on the long edge and about 1 MB in total; do not upscale a smaller source.
 2. Save it in `public/photos/` with a descriptive filename.
 3. Update `src`, `alt`, `credit`, `width` and `height`.
 4. Keep alt text descriptive of the image, not promotional.
-5. Ensure people shown have consented to publication if the image is official AfriYouth photography.
-6. Update `ASSET_CREDITS.md` if the licence changes.
+5. Confirm the organisation holds publication consent for the people shown before using it as official programme photography.
+6. Update `ASSET_CREDITS.md` if the licence or source changes.
 
 ## 10. SEO metadata and the sitemap
 
@@ -187,25 +200,54 @@ After launch:
 
 1. Replace the host in `public/sitemap.xml` and `public/robots.txt`.
 2. Add any new article or page URLs to the sitemap.
-3. Consider adding a static Open Graph image and referencing it from `index.html` and `usePageMeta`. One is not included because no official brand asset has been supplied.
+3. The social card lives at `public/og-image.png` (1200×630) and is referenced from `index.html` with Open Graph and Twitter metadata. Regenerate it if the palette, wordmark or tagline changes.
 
-## 11. Connecting forms to a real endpoint
+## 11. Enquiry forms and the mailto workflow
 
-The three forms (`ContactForm`, `InterestForm`, `PartnerForm`) use `src/hooks/usePrototypeForm.ts`. It validates in the browser, focuses the first invalid field and then waits 480ms before showing a success message. **No network request is made.**
+The three forms (`ContactForm`, `InterestForm`, `PartnerForm`) use `src/hooks/useEnquiryForm.ts`. It validates in the browser, focuses the first invalid field, shows a brief submitting state and then opens a pre-addressed email draft in the visitor's mail client. **The site itself stores and transmits nothing.**
 
-The success copy in `src/content/pages.ts` states that nothing was sent. That copy must change in the same release that connects an endpoint.
+### Enabling delivery
 
-A real integration needs:
+All three forms read the recipient from `site.contact.email` in `src/content/site.ts`:
+
+```ts
+contact: {
+  email: "hello@afriyouth.org", // set this to the monitored official address
+  phone: null,
+  address: null,
+  note: "For enquiries, use the form on this page. Direct email, telephone and office details are published as they are confirmed.",
+},
+```
+
+While `email` is `null`, a valid submission shows the `enquiryFormCopy.unavailable` notice instead of opening a draft. The notice lives in `src/content/pages.ts` together with the success copy:
+
+```ts
+export const enquiryFormCopy = {
+  body: "We use your details only to respond to your enquiry and never share them.",
+  successTitle: "Your email draft is ready.",
+  successBody:
+    "Your mail client should have opened with the message addressed to AfriYouth. Review it and send when you are ready.",
+  resetLabel: "Write another",
+  unavailable:
+    "The direct email channel is being configured. Please check back shortly.",
+};
+```
+
+Do not remove the `unavailable` copy while the address is unset; it is the honest fallback.
+
+### Moving to a hosted form endpoint
+
+The mailto flow has known limits: it depends on a configured mail client, gives no delivery confirmation and cannot feed a CRM. A server integration needs:
 
 1. A server endpoint (Vercel Function, form provider or CRM API).
 2. Server-side validation, spam protection and rate limiting.
 3. A privacy notice and lawful basis for collecting the data.
-4. An error state in the form hook. The current hook has no failure path.
-5. Updated success copy that describes what happens next.
+4. A `submitError` state in the hook, rendered in each form with `role="alert"`.
+5. Success copy that describes what happens next, replacing the draft wording.
 
 Do not put API keys or service tokens in the frontend. Vite exposes every `VITE_*` variable to the browser bundle. Server secrets belong in the hosting provider's server-side environment settings, never in source control.
 
-Sketch of the hook change:
+Sketch of the submission branch:
 
 ```ts
 const response = await fetch("/api/contact", {
@@ -224,29 +266,26 @@ setSubmitted(true);
 setIsSubmitting(false);
 ```
 
-Add a `submitError` value to the hook's return object and render it in each form with `role="alert"`. Keep the existing focus management and `aria-invalid` behaviour.
+Keep the existing focus management and `aria-invalid` behaviour. If a third-party form service is used, place only its public form identifier in the frontend and verify its privacy and data-residency terms.
 
-If a third-party form service is used, place only its public form identifier in the frontend and verify its privacy and data-residency terms.
+## 12. Content states before publication
 
-## 12. Removing the prototype state
-
-Before the official launch, search the repository for these markers and resolve each one:
+The interface is designed to read as complete while some information is still unpublished. Search for these markers when auditing a release:
 
 ```bash
-rg -n -i "prototype|provisional|pending|placeholder|not yet|unverified" src public index.html
+rg -n -i "provisional|pending|placeholder|not yet|unverified" src public index.html
 ```
 
-The main locations are:
+Locations that intentionally describe an unpublished state:
 
-- `site.provisionalNotice`, `site.contact.note`, `site.socialNote`, `site.formNotice`;
-- the badges and panels on About, Programs, Insights, Impact, Get Involved, Partner With Us and Contact;
-- `prototypeFormCopy` in `pages.ts`;
-- header/footer prototype labels;
-- photo credit lines;
-- the `provisional: true` flags in `insights.ts`;
+- `site.contact.email`, `site.contact.phone`, `site.contact.address` — `null` until confirmed;
+- `site.contact.note`, `site.socialNote`, `site.formNotice`;
+- `enquiryFormCopy.unavailable` in `pages.ts`;
+- the impact ledger statuses `Published on completion`;
+- the empty programmes array and its empty state;
 - `public/sitemap.xml` and `public/robots.txt` host names.
 
-Do not remove a pending state until the replacement information has been verified. The interface is designed to look intentional while information is missing.
+Replace each state only when the underlying detail has been confirmed. A `null` contact field or an empty programme list is accurate; a plausible-looking placeholder is not.
 
 ## 13. Content sign-off checklist
 
@@ -256,9 +295,9 @@ Do not remove a pending state until the replacement information has been verifie
 - [ ] Every programme has a confirmed deadline, time zone and application URL.
 - [ ] Every statistic has a source, date, method and limitation.
 - [ ] Every quote or testimonial has documented consent.
-- [ ] Contact details are monitored by someone responsible for replies.
-- [ ] Social accounts are verified as official.
+- [ ] `site.contact.email` is set to a monitored address and the forms have been tested end to end.
+- [ ] Contact channels are monitored by someone responsible for replies.
+- [ ] Social accounts are verified as official before being rendered.
 - [ ] Images have consent and correct credits.
-- [ ] Provisional labels have been removed only where verification is complete.
 - [ ] `sitemap.xml` and `robots.txt` use the production host.
-- [ ] The all-clear has been recorded with a date and approver.
+- [ ] The release has been reviewed and approved with a date and approver.

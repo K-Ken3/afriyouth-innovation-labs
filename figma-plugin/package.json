@@ -1,0 +1,10 @@
+{
+  "name": "afriyouth-figma-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Figma development plugin that builds the AfriYouth website design system into an existing Figma file.",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node --check code.js"
+  }
+}

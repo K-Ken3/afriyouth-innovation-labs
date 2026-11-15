@@ -40,7 +40,7 @@ export function FilterChips({
               "inline-flex min-h-10 items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-colors duration-200",
               active
                 ? dark
-                  ? "border-lime bg-lime text-forest"
+                  ? "border-lime bg-lime/15 text-ivory"
                   : "border-forest bg-forest text-ivory"
                 : dark
                   ? "border-ivory/25 text-ivory/75 hover:border-ivory/60 hover:text-ivory"
@@ -52,7 +52,7 @@ export function FilterChips({
               <span
                 className={cn(
                   "text-[0.625rem] tabular-nums",
-                  active ? "opacity-70" : "opacity-50",
+                  active ? "opacity-80" : "opacity-100",
                 )}
               >
                 {String(item.count).padStart(2, "0")}

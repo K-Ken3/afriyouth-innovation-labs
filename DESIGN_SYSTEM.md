@@ -1,6 +1,6 @@
 # Design System
 
-The visual language is **contemporary African editorial practice crossed with an experimental innovation lab**: oversized type, visible grid lines, precise hairlines, generous negative space, archival numbering, one electric accent, and photography treated as documentary material rather than decoration.
+The visual language is **contemporary African editorial practice crossed with an experimental innovation lab**: oversized type, visible grid lines, precise hairlines, generous negative space, archival numbering, one deliberate accent, and photography treated as documentary material rather than decoration. It is built on the official AfriYouth brand system: Dark Purple, Steel Pink, Duke Blue and Blue, with Poppins headings and DM Sans standing in for the proprietary Gilroy body face.
 
 The system avoids the generic nonprofit look (soft gradients, rounded cards everywhere, stock smiling children) and the generic AI-dashboard look (glassmorphism, neon purple, floating metric cards).
 
@@ -8,8 +8,8 @@ The system avoids the generic nonprofit look (soft gradients, rounded cards ever
 
 1. **Editorial before decorative.** Layout, hierarchy and typography carry the identity. Ornament is restrained.
 2. **Evidence made visible.** Numbered chapters, captions, sources and status labels are part of the aesthetic.
-3. **Honest states are designed states.** Empty, pending and prototype states get the same care as finished content.
-4. **One accent, used with intent.** Lime marks attention, action and data. It is never a background wash for whole pages.
+3. **Honest states are designed states.** Empty channels, unpublished figures and unopened calls get the same care as finished content.
+4. **One accent, used with intent.** Steel Pink marks attention, action and data. It is never a background wash for whole pages.
 5. **Motion reveals structure.** Animation clarifies hierarchy and sequence. It never delays access to content or hijacks scrolling.
 6. **Accessible by construction.** Contrast, focus, target size, semantics and reduced motion are system defaults, not patches.
 
@@ -17,38 +17,46 @@ The system avoids the generic nonprofit look (soft gradients, rounded cards ever
 
 Colour is defined once in `src/styles/index.css` as RGB channel variables, then exposed to Tailwind in `tailwind.config.js`. Components use token classes such as `bg-forest`, `text-lime/70`, `border-forest/15`. Do not introduce raw hex values in components.
 
-| Token | Value | Hex | Role |
-| --- | --- | --- | --- |
-| `forest` | `21 61 50` | `#153D32` | Primary ink, dark sections, primary buttons |
-| `ink` | `23 27 24` | `#171B18` | Hover/darkest text, near-black contrast |
-| `lime` | `201 243 106` | `#C9F36A` | Accent, active states, data marks, CTA panel |
-| `ivory` | `245 243 235` | `#F5F3EB` | Page background |
-| `sage` | `220 230 219` | `#DCE6DB` | Quiet panels, supporting surfaces |
-| `paper` | `255 255 255` | `#FFFFFF` | Cards and form fields |
-| `clay` | `196 115 76` | `#C4734C` | Secondary marker, required-field asterisk, ticker dot |
+Token names are semantic slots inherited from the first build: `forest` is the primary ink slot, `lime` the accent slot and `clay` the secondary accent slot. The official palette is mapped onto those slots, so a future change remains a one-file edit.
+
+| Token | Value | Hex | Official name | Role |
+| --- | --- | --- | --- | --- |
+| `forest` | `13 6 36` | `#0D0624` | Dark Purple | Primary ink, dark sections, primary buttons |
+| `ink` | `7 3 20` | `#070314` | — | Hover/darkest text, near-black contrast |
+| `lime` | `199 35 223` | `#C723DF` | Steel Pink | Accent, active states, data marks, CTA panel |
+| `ivory` | `247 245 251` | `#F7F5FB` | — | Page background |
+| `sage` | `233 229 247` | `#E9E5F7` | — | Quiet panels, supporting surfaces |
+| `paper` | `255 255 255` | `#FFFFFF` | White | Cards and form fields |
+| `blush` | `250 232 253` | `#FAE8FD` | — | Filled accent surfaces that carry dark text |
+| `clay` | `3 1 255` | `#0301FF` | Duke Blue | Secondary marker, required-field asterisk, ticker dot |
+| `blue` | `2 0 167` | `#0200A7` | Blue | Text selection, deep supporting graphic accent |
 
 Support colours:
 
 - Error border `#A33A2A`, error text `#8F2F20`.
-- Focus ring: `#153D32` on light surfaces, `#C9F36A` inside `.on-dark`.
-- Text muting is achieved with forest/ivory plus opacity, typically `/35`, `/45`, `/55`, `/65`, `/70`, `/75`.
+- Focus ring: `#0D0624` on light surfaces, `#E879F9` inside `.on-dark`.
+- Text muting is achieved with forest/ivory plus opacity. Body and label copy sits at `/60` or higher so it clears WCAG AA on ivory; display-size accent lines may also use `/60` because their weight and size carry the contrast.
+- Inside `.on-dark`, the `lime` token resolves to `#E879F9` so pink text and focus rings stay legible on Dark Purple. Components keep using the same classes.
 
 Rules:
 
 - Default page background is ivory, not white.
-- Dark sections use forest with ivory text and the `.on-dark` class so focus and hairline colours switch correctly.
-- Lime is reserved for emphasis. A typical page has one lime moment, not five.
-- Never place lime text on ivory. Lime text is only for dark backgrounds.
+- Dark sections use Dark Purple with ivory text and the `.on-dark` class so focus and hairline colours switch correctly.
+- Steel Pink is reserved for emphasis. A typical page has one pink moment, not five.
+- Filled pink surfaces use the `blush` tint with Dark Purple text; never place Steel Pink text on ivory or paper.
+- Steel Pink text is for dark backgrounds only, where it resolves to `#E879F9`.
 - Use opacity for secondary text rather than adding new grey tokens.
 
 ## 3. Typography
 
-Self-hosted variable fonts via Fontsource. No external font requests.
+Self-hosted variable fonts via Fontsource. No external font requests. Only latin subsets are imported, which keeps the payload to roughly 60 kB instead of loading the Devanagari range.
 
 | Use | Family | Fallback |
 | --- | --- | --- |
-| Display and headings | Space Grotesk Variable | Space Grotesk, system-ui, sans-serif |
+| Display and headings | Poppins | Poppins, DM Sans Variable, system-ui, sans-serif |
 | Body, labels, UI | DM Sans Variable | DM Sans, system-ui, sans-serif |
+
+Poppins is the official title face. Gilroy is the official body face but is proprietary, so DM Sans is the documented substitute: it is a self-hosted geometric sans with a close weight and rhythm match.
 
 Headings: weight 500, tight negative tracking, line-height near 1. Body: 400, line-height 1.6. Paragraphs use `text-wrap: pretty`; headings use `text-wrap: balance`.
 
@@ -64,16 +72,16 @@ Defined as component classes in `src/styles/index.css`:
 | `display-md` | `clamp(1.65rem, 3vw, 2.5rem)` | 1.04 | -0.035em | Card and feature titles |
 | `lede` | `clamp(1.05rem, 1.6vw, 1.35rem)` | 1.5 | -0.015em | Introductory paragraph |
 | `body-copy` | 0.95rem | 1.7 | normal | Standard prose |
-| `eyebrow` | 0.6875rem | 1.2 | 0.18em, uppercase | Section labels with lime square marker |
+| `eyebrow` | 0.6875rem | 1.2 | 0.18em, uppercase | Section labels with Steel Pink square marker |
 | `field-label` | 0.75rem | — | 0.1em, uppercase | Form labels |
 
 The root also defines `--text-xs` through `--text-5xl` for documentation and future use. Components mostly use Tailwind sizes plus the display classes.
 
 ### Editorial devices
 
-- `eyebrow` includes a small lime square via `::before`; `eyebrow--bordered` swaps it for a 1.6rem rule.
+- `eyebrow` includes a small Steel Pink square via `::before`; `eyebrow--bordered` swaps it for a 1.6rem rule.
 - `vertical-label` runs a small label vertically for marginal notes.
-- Chapter numbers use Space Grotesk, tabular numerals, low opacity.
+- Chapter numbers use Poppins, tabular numerals, low opacity.
 - Kinetic headlines split into masked lines (`mask-line` + `[data-kinetic-line]`).
 
 ## 4. Layout and spacing
@@ -109,7 +117,7 @@ Surfaces are border-led, not shadow-led:
 
 - Default card: `paper` background, `1px solid forest/12`, radius 20px (`.card-surface`).
 - Dark card: `ivory/4` background with `ivory/16` border.
-- Hover: border strengthens, optional `0 18px 40px -30px rgba(21,61,50,0.55)`.
+- Hover: border strengthens, optional `0 18px 40px -30px rgba(13,6,36,0.55)`.
 - Hairlines: `forest/15` on light, `ivory/18` on dark.
 
 ## 5. Components
@@ -120,8 +128,8 @@ Surfaces are border-led, not shadow-led:
 
 | Variant | Light surfaces | Notes |
 | --- | --- | --- |
-| `primary` | Forest background, ivory text, hover ink | Default CTA |
-| `lime` | Lime background, forest text, hover ivory | High-emphasis on dark |
+| `primary` | Dark Purple background, ivory text, hover ink | Default CTA |
+| `lime` | Blush background with Steel Pink border, Dark Purple text, hover ivory | High-emphasis accent, especially on dark |
 | `outline` | Forest border and text, fills forest on hover | Secondary CTA |
 | `light` | Ivory border/text on dark, inverts on hover | Dark sections |
 | `ghost` | Text only, faint forest wash on hover | Tertiary actions |
@@ -130,7 +138,7 @@ Disabled state: 55% opacity, no pointer events. Active state: 1px downward shift
 
 ### Badges
 
-Pill, 10px semibold uppercase, 0.14em tracking. Variants: `lime`, `outline`, `dark`, `soft`, `provisional`. The provisional variant uses a sage wash and a clay dot to signal unverified content. Use it consistently for pending states.
+Pill, 10px semibold uppercase, 0.14em tracking. Variants: `lime`, `outline`, `dark`, `soft`. The `lime` badge uses a blush fill with a Steel Pink border and Dark Purple text. Use badges for live status only — open calls, active editions, current category — never as decoration.
 
 ### Cards
 
@@ -145,10 +153,10 @@ Pill, 10px semibold uppercase, 0.14em tracking. Variants: `lime`, `outline`, `da
 ### Forms
 
 - `field-input`: minimum 48px height, paper background, forest/24 border, 0.65rem radius.
-- Focus: forest border plus 3px lime ring.
+- Focus: Dark Purple border plus 3px Steel Pink ring.
 - Invalid: `#A33A2A` border and 12% red ring, paired with text error and `aria-invalid`.
 - Labels always visible; placeholders are never the only label.
-- Required fields marked with a clay asterisk and `required` semantics.
+- Required fields marked with a Duke Blue asterisk and `required` semantics.
 - Success panels use `role="status"` and `aria-live="polite"`.
 
 ### Navigation
@@ -164,7 +172,7 @@ Native button plus controlled panel. Each trigger exposes `aria-expanded` and `a
 
 ### Photography
 
-`PhotoPlate` frames images with editorial captions, index labels and a subtle grain or duotone treatment. Alt text is always specific. Placeholder photos are credited in the interface where used.
+`PhotoPlate` frames images with editorial captions, index labels and a subtle grain or duotone treatment. Alt text is always specific. Brand-guidelines photography is credited in the interface where used.
 
 ### Graphics
 
@@ -211,14 +219,14 @@ Content is visible by default in the DOM and only hidden by GSAP after hydration
 
 ### Cursor
 
-The custom cursor appears only when `(pointer: fine)` and motion is allowed. It keeps a precise lime dot and adds a trailing ring that grows over interactive elements. The native cursor is hidden only under the same conditions. Touch and reduced-motion users get the normal cursor.
+The custom cursor appears only when `(pointer: fine)` and motion is allowed. It keeps a precise Steel Pink dot and adds a trailing ring that grows over interactive elements. The native cursor is hidden only under the same conditions. Touch and reduced-motion users get the normal cursor.
 
 ## 7. Accessibility standards
 
 - WCAG 2.2 AA is the target.
 - One `h1` per page; heading order is not skipped.
 - Landmarks: header, nav, main, footer; skip link targets `#main`.
-- Focus ring: 2px solid, 3px offset, lime on dark.
+- Focus ring: 2px solid, 3px offset, Dark Purple on light and light pink `#E879F9` on dark.
 - Interactive targets: buttons 48px high; chips at least 36px; inline links have generous padding where possible.
 - Images have descriptive alt text; decorative SVG and grain are hidden from assistive technology.
 - Status messages use live regions.
@@ -232,7 +240,7 @@ The custom cursor appears only when `(pointer: fine)` and motion is allowed. It 
 - Use sentence case for headings; uppercase only for eyebrows, labels and small metadata.
 - Numbers appear as two-digit archival indices (`01`, `02`).
 - Prefer specific nouns and active verbs over institutional abstraction.
-- State limits explicitly: “not yet published”, “prototype only”, “pending verification”.
+- State limits explicitly: “published on completion”, “available on request”, “current openings”.
 - Never invent a name, date, figure, partner or credential to fill a layout.
 - A designed empty state is better than fabricated content.
 
@@ -249,13 +257,39 @@ The custom cursor appears only when `(pointer: fine)` and motion is allowed. It 
 **Do not**
 
 - Add raw hex colours or new grey scales to components.
-- Put lime text on ivory or paper.
+- Put Steel Pink text on ivory or paper.
 - Use gradients, glass effects or floating dashboard cards.
 - Animate layout properties or hijack scroll.
-- Claim an effect that is still a prototype state.
+- Claim a result, partnership or credential that has not been verified.
 - Add a new font family or icon style.
 
-## 10. Where the system lives
+## 11. Official brand alignment
+
+The site is built on the official AfriYouth identity from the brand guidelines and the organisational profile. The palette, typography and figure mark are applied across every page and the Figma builder.
+
+| Element | Applied implementation |
+| --- | --- |
+| Primary ink and dark surfaces | Dark Purple `#0D0624` |
+| Accent | Steel Pink `#C723DF` |
+| Secondary accent | Duke Blue `#0301FF` |
+| Deep supporting blue | Blue `#0200A7` |
+| Page and card surfaces | Ivory `#F7F5FB`, White `#FFFFFF` |
+| Headings | Poppins |
+| Body | DM Sans Variable — documented substitute for Gilroy |
+| Logo | The raised-hands figure mark extracted from the brand guidelines, paired with the typographic wordmark |
+| `theme-color` | `#0D0624` |
+| Social card | `public/og-image.png`, 1200×630, built on the official palette |
+
+Two accommodations keep the identity accessible without changing it:
+
+- **Filled pink surfaces use blush.** Steel Pink with white or dark text cannot reach AA at text sizes, so filled buttons, badges and highlights use the `#FAE8FD` blush tint with Dark Purple text, while Steel Pink carries the border and marker.
+- **Pink text on dark resolves to `#E879F9`.** Inside `.on-dark`, the accent token is lightened so pink labels and focus rings clear contrast on Dark Purple. Official Steel Pink is still the visible accent on light surfaces.
+
+The official tagline, "Fueling Innovators for Sustainable Development", appears in the footer and metadata; the six official brand keywords are carried as `site.brandPillars`; and the wordmark is set in Poppins, not redrawn.
+
+When changing brand colour, edit the RGB channel values in `src/styles/index.css` and the matching tokens in `figma-plugin/src/00-core.js`. Because component classes use semantic slot names, no component needs editing.
+
+## 12. Where the system lives
 
 | Concern | File |
 | --- | --- |

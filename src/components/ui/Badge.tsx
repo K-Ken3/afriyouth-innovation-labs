@@ -1,14 +1,13 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type BadgeVariant = "lime" | "outline" | "dark" | "soft" | "provisional";
+type BadgeVariant = "lime" | "outline" | "dark" | "soft";
 
 const styles: Record<BadgeVariant, string> = {
-  lime: "bg-lime text-forest",
+  lime: "border border-lime/45 bg-blush text-forest",
   outline: "border border-forest/20 text-forest/75",
   dark: "bg-forest text-ivory",
   soft: "bg-sage/60 text-forest/80",
-  provisional: "border border-forest/20 bg-sage/40 text-forest/70",
 };
 
 export function Badge({

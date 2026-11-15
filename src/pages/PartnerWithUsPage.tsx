@@ -26,12 +26,12 @@ export default function PartnerWithUsPage() {
         eyebrow="Partner with us"
         chapter="07"
         title={["A partner for", "the whole", "question."]}
-        intro="Commission research, evaluation, co-design, policy analysis, enterprise support or professional learning from one connected team — or start with the part that is most useful now."
+        intro="Commission applied research, policy and governance work, innovation and venture support, foresight, professional learning, funding readiness or impact and learning services from one connected team — or start with the part that is most useful now."
         meta={[
           { label: "Models", value: "05 collaboration types" },
           { label: "First step", value: "Scoping conversation" },
-          { label: "Published partners", value: "None yet" },
-          { label: "Content status", value: "Provisional" },
+          { label: "Cross-cutting", value: "Funding & impact" },
+          { label: "Engagement", value: "Scope first" },
         ]}
       />
 
@@ -60,7 +60,7 @@ export default function PartnerWithUsPage() {
               >
                 <article className="card-surface flex h-full flex-col p-6 sm:p-8">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="font-display text-2xl tracking-[-0.05em] text-forest/20">
+                    <span className="font-display text-2xl tracking-[-0.05em] text-forest/45">
                       {model.number}
                     </span>
                     <Badge variant="soft">Collaboration</Badge>
@@ -73,7 +73,7 @@ export default function PartnerWithUsPage() {
                     {model.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-forest/15 px-3 py-1 text-[0.625rem] uppercase tracking-[0.12em] text-forest/55"
+                        className="rounded-full border border-forest/15 px-3 py-1 text-[0.625rem] uppercase tracking-[0.12em] text-forest/60"
                       >
                         {tag}
                       </span>
@@ -112,8 +112,8 @@ export default function PartnerWithUsPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-5 text-xs leading-relaxed text-ivory/40">
-                No partners, clients or endorsements are named in this prototype.
+              <p className="mt-5 text-xs leading-relaxed text-ivory/60">
+                Partnerships are named only with the partner's permission.
               </p>
             </div>
 
@@ -121,16 +121,16 @@ export default function PartnerWithUsPage() {
               <p className="eyebrow text-lime">The questions we bring</p>
               <ol className="mt-6 border-t border-ivory/18">
                 {partnerQuestions.map((question, index) => (
-                  <Reveal key={question} delay={index * 0.04}>
-                    <li className="flex items-start gap-5 border-b border-ivory/18 py-5">
+                  <li key={question} className="border-b border-ivory/18">
+                    <Reveal delay={index * 0.04} className="flex items-start gap-5 py-5">
                       <span className="font-display text-xs tabular-nums tracking-[0.14em] text-ivory/30">
                         {String(index + 1).padStart(2, "0")}
                       </span>
                       <p className="font-display text-xl leading-snug tracking-[-0.025em] text-ivory/85 sm:text-2xl">
                         {question}
                       </p>
-                    </li>
-                  </Reveal>
+                    </Reveal>
+                  </li>
                 ))}
               </ol>
               <p className="mt-6 max-w-lg text-sm leading-relaxed text-ivory/55">
@@ -167,7 +167,7 @@ export default function PartnerWithUsPage() {
                       aria-hidden="true"
                       className="absolute -left-[3px] top-0 h-1.5 w-1.5 rounded-full bg-forest lg:-top-[3px] lg:left-0"
                     />
-                    <span className="font-display text-2xl tracking-[-0.04em] text-forest/20">
+                    <span className="font-display text-2xl tracking-[-0.04em] text-forest/45">
                       {step.number}
                     </span>
                     <h3 className="mt-3 font-display text-xl tracking-[-0.03em] text-forest">
@@ -187,7 +187,7 @@ export default function PartnerWithUsPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-28">
-                <p className="eyebrow text-forest/55">Start a conversation</p>
+                <p className="eyebrow text-forest/60">Start a conversation</p>
                 <h2 className="display-lg mt-5 text-forest">Outline the decision.</h2>
                 <p className="mt-4 max-w-sm text-sm leading-relaxed text-forest/60">
                   We do not need a finished brief. A clear description of the
@@ -195,17 +195,16 @@ export default function PartnerWithUsPage() {
                   begin.
                 </p>
                 <div className="mt-6 rounded-xl border border-forest/15 bg-ivory/70 p-5">
-                  <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/45">
+                  <p className="text-[0.625rem] uppercase tracking-[0.16em] text-forest/60">
                     Response expectations
                   </p>
                   <p className="mt-2 text-sm leading-relaxed text-forest/65">
-                    This prototype form does not send anything. Official
-                    partnership channels and response times will be published when
-                    confirmed.
+                    We review every enquiry and respond to the contact address you
+                    provide.
                   </p>
                 </div>
-                <Badge variant="provisional" dot className="mt-6">
-                  No partnerships published
+                <Badge variant="soft" dot className="mt-6">
+                  Scoped by decision
                 </Badge>
               </div>
             </div>
@@ -219,7 +218,7 @@ export default function PartnerWithUsPage() {
       <section className="section bg-ivory">
         <div className="container-editorial grid gap-10 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-4">
-            <p className="eyebrow text-forest/55">Questions</p>
+            <p className="eyebrow text-forest/60">Questions</p>
             <h2 className="display-lg mt-5 text-forest">Before the first call.</h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-forest/60">
               Practical answers about process, briefs, ethics and what is currently
