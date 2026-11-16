@@ -26,9 +26,9 @@ function handRow(parent, cells, widths, dark) {
   return r;
 }
 
-function buildHandover() {
+async function buildHandover() {
   const page = getOrCreatePage("14 · Handover", ["Handover", "99 · Handover"]);
-  figma.currentPage = page;
+  await figma.setCurrentPageAsync(page);
   const base = canvasBase(page);
   const board = frame(null, { name: "Handover / Read me", w: 1440, gap: 0, p: 58, bg: COLORS.ivory });
   board.setPluginData(MARK, BUILD);

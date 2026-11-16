@@ -23,9 +23,9 @@ function closeGlyph(parent) {
   return box;
 }
 
-function menuFrame(page, w) {
+async function menuFrame(page, w) {
   const d = dims(w);
-  const f = newPageFrame(page, PAGE_LABEL.menu + " / " + w, w);
+  const f = await newPageFrame(page, PAGE_LABEL.menu + " / " + w, w);
   f.primaryAxisSizingMode = "FIXED";
   f.resize(w, w >= 700 ? 1024 : 844);
   f.fills = [paint(COLORS.forest)];
@@ -92,8 +92,8 @@ function menuFrame(page, w) {
   return f;
 }
 
-function successFrame(page, w, x, y) {
-  const f = newPageFrame(page, PAGE_LABEL.success + " / " + w, w);
+async function successFrame(page, w, x, y) {
+  const f = await newPageFrame(page, PAGE_LABEL.success + " / " + w, w);
   f.x = x;
   f.y = y;
   const label = txt("Form success · " + w + " px", {
@@ -145,9 +145,9 @@ function successFrame(page, w, x, y) {
   return f;
 }
 
-function buildInteractionFlows() {
+async function buildInteractionFlows() {
   const page = getOrCreatePage("13 · Interaction flows", ["Interaction Flows"]);
-  figma.currentPage = page;
+  await figma.setCurrentPageAsync(page);
   const base = canvasBase(page);
 
   const board = frame(null, { name: "Interaction notes", w: 1440, p: 58, gap: 20, bg: COLORS.ivory });
@@ -187,16 +187,16 @@ function buildInteractionFlows() {
   board.x = XPOS[1];
   board.y = 0;
 
-  const menu390 = menuFrame(page, 390);
+  const menu390 = await menuFrame(page, 390);
   menu390.x = 0;
   menu390.y = base + boardHeight + 140;
 
-  const menu768 = menuFrame(page, 768);
+  const menu768 = await menuFrame(page, 768);
   menu768.x = 470;
   menu768.y = base + boardHeight + 140;
 
-  const success1440 = successFrame(page, 1440, 1520, base + boardHeight + 140);
-  successFrame(page, 768, 1520, base + boardHeight + 140 + success1440.height + 120);
-  successFrame(page, 390, 2350, base + boardHeight + 140 + success1440.height + 120);
+  const success1440 = await successFrame(page, 1440, 1520, base + boardHeight + 140);
+  await successFrame(page, 768, 1520, base + boardHeight + 140 + success1440.height + 120);
+  await successFrame(page, 390, 2350, base + boardHeight + 140 + success1440.height + 120);
   return page;
 }

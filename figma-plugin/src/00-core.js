@@ -304,8 +304,8 @@ function bodyText(parent, chars, w, options) {
 
 /* ---- page frames -------------------------------------------------------- */
 
-function newPageFrame(page, name, w) {
-  figma.currentPage = page;
+async function newPageFrame(page, name, w) {
+  await figma.setCurrentPageAsync(page);
   const f = figma.createFrame();
   f.name = name;
   f.resize(w, 100);
@@ -487,15 +487,15 @@ function getOrCreatePage(name, aliases) {  const candidates = [name].concat(alia
   return created;
 }
 
-function cleanupGenerated() {
+async function cleanupGenerated() {
   const pages = figma.root.children.filter((node) => node.type === "PAGE");
   const generatedOn = (page) =>
     page.children.filter((child) => child.getPluginData(MARK));
 
   // Frames first: a component cannot be removed while an instance survives on
   // another page, so instances are deleted before the library is rebuilt.
-  pages.forEach((page) => {
-    figma.currentPage = page;
+  for (const page of pages) {
+    await figma.setCurrentPageAsync(page);
     generatedOn(page)
       .filter((node) => node.type !== "COMPONENT" && node.type !== "COMPONENT_SET")
       .forEach((node) => {
@@ -505,10 +505,10 @@ function cleanupGenerated() {
           /* locked or already removed */
         }
       });
-  });
+  }
 
-  pages.forEach((page) => {
-    figma.currentPage = page;
+  for (const page of pages) {
+    await figma.setCurrentPageAsync(page);
     generatedOn(page)
       .filter((node) => node.type === "COMPONENT" || node.type === "COMPONENT_SET")
       .forEach((node) => {
@@ -518,5 +518,5 @@ function cleanupGenerated() {
           /* an instance still references this component */
         }
       });
-  });
+  }
 }

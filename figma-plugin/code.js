@@ -306,8 +306,8 @@ function bodyText(parent, chars, w, options) {
 
 /* ---- page frames -------------------------------------------------------- */
 
-function newPageFrame(page, name, w) {
-  figma.currentPage = page;
+async function newPageFrame(page, name, w) {
+  await figma.setCurrentPageAsync(page);
   const f = figma.createFrame();
   f.name = name;
   f.resize(w, 100);
@@ -489,15 +489,15 @@ function getOrCreatePage(name, aliases) {  const candidates = [name].concat(alia
   return created;
 }
 
-function cleanupGenerated() {
+async function cleanupGenerated() {
   const pages = figma.root.children.filter((node) => node.type === "PAGE");
   const generatedOn = (page) =>
     page.children.filter((child) => child.getPluginData(MARK));
 
   // Frames first: a component cannot be removed while an instance survives on
   // another page, so instances are deleted before the library is rebuilt.
-  pages.forEach((page) => {
-    figma.currentPage = page;
+  for (const page of pages) {
+    await figma.setCurrentPageAsync(page);
     generatedOn(page)
       .filter((node) => node.type !== "COMPONENT" && node.type !== "COMPONENT_SET")
       .forEach((node) => {
@@ -507,10 +507,10 @@ function cleanupGenerated() {
           /* locked or already removed */
         }
       });
-  });
+  }
 
-  pages.forEach((page) => {
-    figma.currentPage = page;
+  for (const page of pages) {
+    await figma.setCurrentPageAsync(page);
     generatedOn(page)
       .filter((node) => node.type === "COMPONENT" || node.type === "COMPONENT_SET")
       .forEach((node) => {
@@ -520,7 +520,7 @@ function cleanupGenerated() {
           /* an instance still references this component */
         }
       });
-  });
+  }
 }
 
 /* ===== 10-data.js ===== */
@@ -1294,8 +1294,8 @@ function typeSpecimen(parent, label, sample, size, family, tracking, lineHeight)
   return rowNode;
 }
 
-function buildFoundations(page) {
-  figma.currentPage = page;
+async function buildFoundations(page) {
+  await figma.setCurrentPageAsync(page);
   const board = frame(null, { name: "Foundations / Brand, tokens & type", w: 1440, gap: 48, p: 58, bg: COLORS.ivory });
   board.setPluginData(MARK, BUILD);
   board.x = 0;
@@ -1771,8 +1771,8 @@ function buildHeaderFooterComponents(parent) {
   return wrap;
 }
 
-function buildComponents(page) {
-  figma.currentPage = page;
+async function buildComponents(page) {
+  await figma.setCurrentPageAsync(page);
   const lib = frame(null, { name: "AfriYouth / Component Library", w: 1440, p: 58, gap: 52, bg: COLORS.ivory });
   lib.setPluginData(MARK, BUILD);
   lib.x = 0;
@@ -4088,11 +4088,11 @@ function readingSection(parent, w, contentWidth, options) {
   return s;
 }
 
-function buildRouteFrames(page, key, builder, y) {
+async function buildRouteFrames(page, key, builder, y) {
   const widths = [1440, 768, 390];
   const frames = [];
-  widths.forEach((w, index) => {
-    const f = newPageFrame(page, PAGE_LABEL[key] + " / " + w, w);
+  for (const [index, w] of widths.entries()) {
+    const f = await newPageFrame(page, PAGE_LABEL[key] + " / " + w, w);
     f.x = XPOS[index];
     f.y = y + 52;
     const label = txt(PAGE_LABEL[key] + " · " + w + " px", {
@@ -4122,7 +4122,7 @@ function buildRouteFrames(page, key, builder, y) {
         /* flows are optional; frames still open individually */
       }
     }
-  });
+  }
   return frames;
 }
 
@@ -4133,20 +4133,20 @@ const ROUTE_SETS = [
   { key: "programs", name: "06 · Programs", aliases: ["Programs"], build: programsPage },
 ];
 
-function buildAllPages() {
+async function buildAllPages() {
   const heights = {};
 
-  ROUTE_SETS.forEach((set) => {
+  for (const set of ROUTE_SETS) {
     const page = getOrCreatePage(set.name, set.aliases);
-    const frames = buildRouteFrames(page, set.key, set.build, canvasBase(page));
+    const frames = await buildRouteFrames(page, set.key, set.build, canvasBase(page));
     heights[set.key] = Math.max.apply(null, frames.map((frameNode) => frameNode.height));
-  });
+  }
 
   const insightsPageNode = getOrCreatePage("07 · Insights", ["Insights"]);
   const insightsBase = canvasBase(insightsPageNode);
-  const insightFrames = buildRouteFrames(insightsPageNode, "insights", insightsPage, insightsBase);
+  const insightFrames = await buildRouteFrames(insightsPageNode, "insights", insightsPage, insightsBase);
   const articleY = insightsBase + Math.max.apply(null, insightFrames.map((frameNode) => frameNode.height)) + 140;
-  const articleFrames = buildRouteFrames(insightsPageNode, "article", articlePage, articleY);
+  const articleFrames = await buildRouteFrames(insightsPageNode, "article", articlePage, articleY);
   heights.insights = articleY + Math.max.apply(null, articleFrames.map((frameNode) => frameNode.height));
 
   const rest = [
@@ -4156,11 +4156,11 @@ function buildAllPages() {
     { key: "contact", name: "11 · Contact", aliases: ["Contact"], build: contactPage },
     { key: "notfound", name: "12 · 404", aliases: ["404", "Not Found"], build: notFoundPage },
   ];
-  rest.forEach((set) => {
+  for (const set of rest) {
     const page = getOrCreatePage(set.name, set.aliases);
-    const frames = buildRouteFrames(page, set.key, set.build, canvasBase(page));
+    const frames = await buildRouteFrames(page, set.key, set.build, canvasBase(page));
     heights[set.key] = Math.max.apply(null, frames.map((frameNode) => frameNode.height));
-  });
+  }
 
   return heights;
 }
@@ -4191,9 +4191,9 @@ function closeGlyph(parent) {
   return box;
 }
 
-function menuFrame(page, w) {
+async function menuFrame(page, w) {
   const d = dims(w);
-  const f = newPageFrame(page, PAGE_LABEL.menu + " / " + w, w);
+  const f = await newPageFrame(page, PAGE_LABEL.menu + " / " + w, w);
   f.primaryAxisSizingMode = "FIXED";
   f.resize(w, w >= 700 ? 1024 : 844);
   f.fills = [paint(COLORS.forest)];
@@ -4260,8 +4260,8 @@ function menuFrame(page, w) {
   return f;
 }
 
-function successFrame(page, w, x, y) {
-  const f = newPageFrame(page, PAGE_LABEL.success + " / " + w, w);
+async function successFrame(page, w, x, y) {
+  const f = await newPageFrame(page, PAGE_LABEL.success + " / " + w, w);
   f.x = x;
   f.y = y;
   const label = txt("Form success · " + w + " px", {
@@ -4313,9 +4313,9 @@ function successFrame(page, w, x, y) {
   return f;
 }
 
-function buildInteractionFlows() {
+async function buildInteractionFlows() {
   const page = getOrCreatePage("13 · Interaction flows", ["Interaction Flows"]);
-  figma.currentPage = page;
+  await figma.setCurrentPageAsync(page);
   const base = canvasBase(page);
 
   const board = frame(null, { name: "Interaction notes", w: 1440, p: 58, gap: 20, bg: COLORS.ivory });
@@ -4355,17 +4355,17 @@ function buildInteractionFlows() {
   board.x = XPOS[1];
   board.y = 0;
 
-  const menu390 = menuFrame(page, 390);
+  const menu390 = await menuFrame(page, 390);
   menu390.x = 0;
   menu390.y = base + boardHeight + 140;
 
-  const menu768 = menuFrame(page, 768);
+  const menu768 = await menuFrame(page, 768);
   menu768.x = 470;
   menu768.y = base + boardHeight + 140;
 
-  const success1440 = successFrame(page, 1440, 1520, base + boardHeight + 140);
-  successFrame(page, 768, 1520, base + boardHeight + 140 + success1440.height + 120);
-  successFrame(page, 390, 2350, base + boardHeight + 140 + success1440.height + 120);
+  const success1440 = await successFrame(page, 1440, 1520, base + boardHeight + 140);
+  await successFrame(page, 768, 1520, base + boardHeight + 140 + success1440.height + 120);
+  await successFrame(page, 390, 2350, base + boardHeight + 140 + success1440.height + 120);
   return page;
 }
 
@@ -4398,9 +4398,9 @@ function handRow(parent, cells, widths, dark) {
   return r;
 }
 
-function buildHandover() {
+async function buildHandover() {
   const page = getOrCreatePage("14 · Handover", ["Handover", "99 · Handover"]);
-  figma.currentPage = page;
+  await figma.setCurrentPageAsync(page);
   const base = canvasBase(page);
   const board = frame(null, { name: "Handover / Read me", w: 1440, gap: 0, p: 58, bg: COLORS.ivory });
   board.setPluginData(MARK, BUILD);
@@ -4503,19 +4503,19 @@ async function main() {
   await initFonts();
   await initImages();
 
-  cleanupGenerated();
+  await cleanupGenerated();
   buildStyles();
   buildVariables();
 
   const foundationsPage = getOrCreatePage("01 · Foundations", ["Foundations", "00 · Foundations"]);
-  buildFoundations(foundationsPage);
+  await buildFoundations(foundationsPage);
 
   const componentsPage = getOrCreatePage("02 · Components", ["Components", "Component Library"]);
-  buildComponents(componentsPage);
+  await buildComponents(componentsPage);
 
-  buildAllPages();
-  buildInteractionFlows();
-  buildHandover();
+  await buildAllPages();
+  await buildInteractionFlows();
+  await buildHandover();
 
   const linked = applyReactions(FRAMES);
   const frames = Object.keys(FRAMES).length;

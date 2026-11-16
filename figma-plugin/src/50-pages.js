@@ -1591,11 +1591,11 @@ function readingSection(parent, w, contentWidth, options) {
   return s;
 }
 
-function buildRouteFrames(page, key, builder, y) {
+async function buildRouteFrames(page, key, builder, y) {
   const widths = [1440, 768, 390];
   const frames = [];
-  widths.forEach((w, index) => {
-    const f = newPageFrame(page, PAGE_LABEL[key] + " / " + w, w);
+  for (const [index, w] of widths.entries()) {
+    const f = await newPageFrame(page, PAGE_LABEL[key] + " / " + w, w);
     f.x = XPOS[index];
     f.y = y + 52;
     const label = txt(PAGE_LABEL[key] + " · " + w + " px", {
@@ -1625,7 +1625,7 @@ function buildRouteFrames(page, key, builder, y) {
         /* flows are optional; frames still open individually */
       }
     }
-  });
+  }
   return frames;
 }
 
@@ -1636,20 +1636,20 @@ const ROUTE_SETS = [
   { key: "programs", name: "06 · Programs", aliases: ["Programs"], build: programsPage },
 ];
 
-function buildAllPages() {
+async function buildAllPages() {
   const heights = {};
 
-  ROUTE_SETS.forEach((set) => {
+  for (const set of ROUTE_SETS) {
     const page = getOrCreatePage(set.name, set.aliases);
-    const frames = buildRouteFrames(page, set.key, set.build, canvasBase(page));
+    const frames = await buildRouteFrames(page, set.key, set.build, canvasBase(page));
     heights[set.key] = Math.max.apply(null, frames.map((frameNode) => frameNode.height));
-  });
+  }
 
   const insightsPageNode = getOrCreatePage("07 · Insights", ["Insights"]);
   const insightsBase = canvasBase(insightsPageNode);
-  const insightFrames = buildRouteFrames(insightsPageNode, "insights", insightsPage, insightsBase);
+  const insightFrames = await buildRouteFrames(insightsPageNode, "insights", insightsPage, insightsBase);
   const articleY = insightsBase + Math.max.apply(null, insightFrames.map((frameNode) => frameNode.height)) + 140;
-  const articleFrames = buildRouteFrames(insightsPageNode, "article", articlePage, articleY);
+  const articleFrames = await buildRouteFrames(insightsPageNode, "article", articlePage, articleY);
   heights.insights = articleY + Math.max.apply(null, articleFrames.map((frameNode) => frameNode.height));
 
   const rest = [
@@ -1659,11 +1659,11 @@ function buildAllPages() {
     { key: "contact", name: "11 · Contact", aliases: ["Contact"], build: contactPage },
     { key: "notfound", name: "12 · 404", aliases: ["404", "Not Found"], build: notFoundPage },
   ];
-  rest.forEach((set) => {
+  for (const set of rest) {
     const page = getOrCreatePage(set.name, set.aliases);
-    const frames = buildRouteFrames(page, set.key, set.build, canvasBase(page));
+    const frames = await buildRouteFrames(page, set.key, set.build, canvasBase(page));
     heights[set.key] = Math.max.apply(null, frames.map((frameNode) => frameNode.height));
-  });
+  }
 
   return heights;
 }

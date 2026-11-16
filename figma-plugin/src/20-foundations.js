@@ -162,8 +162,8 @@ function typeSpecimen(parent, label, sample, size, family, tracking, lineHeight)
   return rowNode;
 }
 
-function buildFoundations(page) {
-  figma.currentPage = page;
+async function buildFoundations(page) {
+  await figma.setCurrentPageAsync(page);
   const board = frame(null, { name: "Foundations / Brand, tokens & type", w: 1440, gap: 48, p: 58, bg: COLORS.ivory });
   board.setPluginData(MARK, BUILD);
   board.x = 0;

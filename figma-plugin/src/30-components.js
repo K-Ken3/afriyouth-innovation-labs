@@ -406,8 +406,8 @@ function buildHeaderFooterComponents(parent) {
   return wrap;
 }
 
-function buildComponents(page) {
-  figma.currentPage = page;
+async function buildComponents(page) {
+  await figma.setCurrentPageAsync(page);
   const lib = frame(null, { name: "AfriYouth / Component Library", w: 1440, p: 58, gap: 52, bg: COLORS.ivory });
   lib.setPluginData(MARK, BUILD);
   lib.x = 0;

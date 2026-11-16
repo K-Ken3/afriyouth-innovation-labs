@@ -7,19 +7,19 @@ async function main() {
   await initFonts();
   await initImages();
 
-  cleanupGenerated();
+  await cleanupGenerated();
   buildStyles();
   buildVariables();
 
   const foundationsPage = getOrCreatePage("01 · Foundations", ["Foundations", "00 · Foundations"]);
-  buildFoundations(foundationsPage);
+  await buildFoundations(foundationsPage);
 
   const componentsPage = getOrCreatePage("02 · Components", ["Components", "Component Library"]);
-  buildComponents(componentsPage);
+  await buildComponents(componentsPage);
 
-  buildAllPages();
-  buildInteractionFlows();
-  buildHandover();
+  await buildAllPages();
+  await buildInteractionFlows();
+  await buildHandover();
 
   const linked = applyReactions(FRAMES);
   const frames = Object.keys(FRAMES).length;
